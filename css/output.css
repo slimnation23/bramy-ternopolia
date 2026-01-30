@@ -554,17 +554,14 @@ video {
   display: none;
 }
 
-.font-gilroy {
-  font-family: Gilroy;
+html {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 20px;
+  color: #000000;
 }
 
-.font-ermilov {
-  font-family: Ermilov;
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+body {
+  background-color: #fff;
 }
 
 /* Fonts */
@@ -586,7 +583,7 @@ video {
 
   src: url('/fonts/Gilroy-light.woff2') format('woff2');
 
-  font-weight: 700;
+  font-weight: 400;
 
   font-style: normal;
 
