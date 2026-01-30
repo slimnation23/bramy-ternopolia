@@ -1,7 +1,12 @@
 module.exports = {
   content: ["./*.html", "./**/*.html", "./js/**/*.js"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        gilroy: ["Gilroy"],
+        ermilov: ["Ermilov"],
+      },
+    },
   },
   plugins: [],
 };

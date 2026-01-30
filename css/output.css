@@ -554,7 +554,41 @@ video {
   display: none;
 }
 
+.font-gilroy {
+  font-family: Gilroy;
+}
+
+.font-ermilov {
+  font-family: Ermilov;
+}
+
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Ermilov';
+
+  src: url('/fonts/Ermilov-bold.woff2') format('woff2');
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+
+  src: url('/fonts/Gilroy-light.woff2') format('woff2');
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
 }
