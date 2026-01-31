@@ -672,8 +672,21 @@ body {
   inset: -0.25rem;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
 }
 
 .isolate {
@@ -735,6 +748,14 @@ body {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .box-border {
@@ -836,6 +857,30 @@ body {
   display: none;
 }
 
+.h-\[408px\] {
+  height: 408px;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[40ppx\] {
+  height: 40ppx;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[324px\] {
+  height: 324px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -850,6 +895,18 @@ body {
 
 .w-\[weird-and-invalid\] {
   width: weird-and-invalid;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[592px\] {
+  width: 592px;
 }
 
 .flex-shrink {
@@ -1370,6 +1427,22 @@ body {
   justify-items: stretch;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -1815,6 +1888,11 @@ body {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -1950,6 +2028,29 @@ body {
   padding-bottom: 2.5rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.py-28 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2004,6 +2105,20 @@ body {
 
 .align-super {
   vertical-align: super;
+}
+
+.font-ermilov {
+  font-family: Ermilov;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2589,6 +2704,11 @@ body {
 @media (min-width: 1024px) {
   .lg\:gap-14 {
     gap: 3.5rem;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
