@@ -676,49 +676,20 @@ body {
   inset: 0px;
 }
 
-.inset-x-0 {
-  left: 0px;
-  right: 0px;
-}
-
-.end-1 {
-  inset-inline-end: 0.25rem;
+.-top-8 {
+  top: -2rem;
 }
 
 .bottom-0 {
   bottom: 0px;
 }
 
+.end-1 {
+  inset-inline-end: 0.25rem;
+}
+
 .left-0 {
   left: 0px;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.left-40 {
-  left: 10rem;
-}
-
-.-top-0 {
-  top: -0px;
-}
-
-.-top-5 {
-  top: -1.25rem;
-}
-
-.-top-10 {
-  top: -2.5rem;
-}
-
-.-top-8 {
-  top: -2rem;
 }
 
 .left-44 {
@@ -735,10 +706,6 @@ body {
 
 .z-\[-1\] {
   z-index: -1;
-}
-
-.z-30 {
-  z-index: 30;
 }
 
 .float-start {
@@ -792,10 +759,6 @@ body {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
 }
 
 .mt-20 {
@@ -901,48 +864,28 @@ body {
   display: none;
 }
 
-.h-\[408px\] {
-  height: 408px;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.h-\[400px\] {
-  height: 400px;
-}
-
-.h-\[40ppx\] {
-  height: 40ppx;
-}
-
-.h-\[\] {
-  height: ;
+.h-28 {
+  height: 7rem;
 }
 
 .h-\[324px\] {
   height: 324px;
 }
 
+.h-\[408px\] {
+  height: 408px;
+}
+
 .h-full {
   height: 100%;
 }
 
-.h-auto {
-  height: auto;
-}
-
-.h-40 {
-  height: 10rem;
-}
-
-.h-28 {
-  height: 7rem;
-}
-
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-\[this-is\\\\\] {
@@ -959,22 +902,6 @@ body {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[592px\] {
-  width: 592px;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-56 {
-  width: 14rem;
 }
 
 .flex-shrink {
@@ -1495,20 +1422,12 @@ body {
   justify-items: stretch;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
 .gap-10 {
   gap: 2.5rem;
 }
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-4 {
-  gap: 1rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1961,30 +1880,6 @@ body {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\] {
-  background-color: ;
-}
-
-.bg-\[ur\] {
-  background-color: ur;
-}
-
-.bg-\[url\] {
-  background-color: url;
-}
-
-.bg-\[url\:\'\'\] {
-  background-image: '';
-}
-
-.bg-\[url\(\'\/img\/hero-pattern\.svg\'\)\] {
-  background-image: url('/img/hero-pattern.svg');
-}
-
-.bg-\[url\(\'images\/Vector\.webp\'\)\] {
-  background-image: url('images/Vector.webp');
-}
-
 .bg-\[url\(\'\/images\/Vector\.webp\'\)\] {
   background-image: url('/images/Vector.webp');
 }
@@ -2011,10 +1906,6 @@ body {
 
 .bg-cover {
   background-size: cover;
-}
-
-.bg-contain {
-  background-size: contain;
 }
 
 .bg-fixed {
@@ -2107,10 +1998,6 @@ body {
      object-fit: scale-down;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2131,49 +2018,9 @@ body {
   padding-right: 1.5rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
 .py-28 {
   padding-top: 7rem;
   padding-bottom: 7rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 
 .py-3\.5 {
@@ -2181,20 +2028,12 @@ body {
   padding-bottom: 0.875rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pb-5 {
   padding-bottom: 1.25rem;
 }
 
-.pt-28 {
-  padding-top: 7rem;
-}
-
-.pt-40 {
-  padding-top: 10rem;
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .pt-36 {
@@ -2271,24 +2110,9 @@ body {
   line-height: 1.75rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-bold {
@@ -2365,10 +2189,6 @@ body {
 .stacked-fractions {
   --tw-numeric-fraction: stacked-fractions;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
-}
-
-.leading-tight {
-  line-height: 1.25;
 }
 
 .text-\[\#336699\]\/\[\.35\] {
