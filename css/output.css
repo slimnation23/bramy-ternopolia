@@ -642,6 +642,22 @@ body {
   left: 11rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.left-auto {
+  left: auto;
+}
+
 .z-\[-1\] {
   z-index: -1;
 }
@@ -691,6 +707,14 @@ body {
   max-width: 56rem;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -720,8 +744,16 @@ body {
   background-image: url('/images/Vector.webp');
 }
 
+.bg-\[url\(\'\/images\/bg\.webp\'\)\] {
+  background-image: url('/images/bg.webp');
+}
+
 .bg-cover {
   background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .object-cover {
