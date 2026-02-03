@@ -804,12 +804,12 @@ body {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[url\(\'\/images\/Vector\.webp\'\)\] {
-  background-image: url('/images/Vector.webp');
-}
-
 .bg-\[url\(\'\/images\/bg\.webp\'\)\] {
   background-image: url('/images/bg.webp');
+}
+
+.bg-\[url\(\'images\/Vector\.webp\'\)\] {
+  background-image: url('images/Vector.webp');
 }
 
 .bg-cover {
@@ -940,7 +940,7 @@ body {
 @font-face {
   font-family: 'Ermilov';
 
-  src: url('/fonts/Ermilov-bold.woff2') format('woff2');
+  src: url('../fonts/Ermilov-bold.woff2') format('woff2');
 
   font-weight: 700;
 
@@ -952,7 +952,7 @@ body {
 @font-face {
   font-family: 'Gilroy';
 
-  src: url('/fonts/Gilroy-light.woff2') format('woff2');
+  src: url('../fonts/Gilroy-light.woff2') format('woff2');
 
   font-weight: 400;
 
@@ -964,7 +964,7 @@ body {
 @font-face {
   font-family: 'Gilroy';
 
-  src: url('/fonts/Gilroy-medium.woff2') format('woff2');
+  src: url('../fonts/Gilroy-medium.woff2') format('woff2');
 
   font-weight: 500;
 
@@ -976,7 +976,7 @@ body {
 @font-face {
   font-family: 'Gilroy';
 
-  src: url('/fonts/Gilroy-bold.woff2') format('woff2');
+  src: url('../fonts/Gilroy-bold.woff2') format('woff2');
 
   font-weight: 700;
 
