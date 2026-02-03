@@ -105,33 +105,34 @@
       </div>
     </section>
 
-    <section class="w-full pt-28 relative overflow-hidden flex">
+    <section class="w-full pt-28 relative overflow-hidden">
       <img
         src="images/bg.webp"
         class="absolute inset-0 w-full h-full object-cover z-[-1]"
         alt="bg"
       />
-      <div class="flex items-end">
-        <div class="relative z-0">
+      <div class="container mx-auto relative z-10 px-6">
+        <div class="relative w-fit">
           <img
             src="images/people.webp"
             alt="people"
-            class="h-[420px] w-[283px] object-cover -z-10"
+            class="h-[420px] w-[283px] object-cover rounded-sm"
           />
+
           <div
-            class="absolute -top-10 left-44 flex justify-center items-center text-center bg-[url('/images/Vector.webp')] w-[340px] bg-cover h-[170px] px-8"
+            class="absolute -top-10 left-56 flex justify-center items-center text-center bg-[url('/images/Vector.webp')] w-[350px] bg-cover h-[180px] px-8 z-30"
           >
-            <p class="text-lg font-bold text-white leading-tight">
+            <p class="text-xl font-bold text-white leading-tight">
               Слідкуйте за нами у Instagram: архітектурні відкриття, бекстейдж реставрацій, історії та анонси подій.
             </p>
           </div>
         </div>
       </div>
-      <!-- Full Width Slider -->
-      <div class="swiper eventsSlider w-full z-20">
+
+      <div class="swiper eventsSlider w-full absolute top-28 left-0 z-40 h-full">
         <div class="swiper-wrapper">
           <!-- Slide 1 -->
-          <div class="swiper-slide !w-[288px]">
+          <a href="#" class="swiper-slide !w-[288px]">
             <div class="group cursor-pointer">
               <div
                 class="relative overflow-hidden rounded-sm border-2 border-black bg-white transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#000]"
@@ -143,9 +144,9 @@
                 />
               </div>
             </div>
-          </div>
+          </a>
           <!-- Slide 2 -->
-          <div class="swiper-slide !w-[288px]">
+          <a href="#" class="swiper-slide !w-[288px]">
             <div class="group cursor-pointer">
               <div
                 class="relative overflow-hidden rounded-sm border-2 border-black bg-white transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#000]"
@@ -157,9 +158,9 @@
                 />
               </div>
             </div>
-          </div>
+          </a>
           <!-- Slide 3 -->
-          <div class="swiper-slide !w-[288px]">
+          <a href="#" class="swiper-slide !w-[288px]">
             <div class="group cursor-pointer">
               <div
                 class="relative overflow-hidden rounded-sm border-2 border-black bg-white transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#000]"
@@ -171,9 +172,9 @@
                 />
               </div>
             </div>
-          </div>
+          </a>
           <!-- Slide 4 -->
-          <div class="swiper-slide !w-[288px]">
+          <a href="#" class="swiper-slide !w-[288px]">
             <div class="group cursor-pointer">
               <div
                 class="relative overflow-hidden rounded-sm border-2 border-black bg-white transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#000]"
@@ -185,9 +186,9 @@
                 />
               </div>
             </div>
-          </div>
+          </a>
           <!-- Slide 5 -->
-          <div class="swiper-slide !w-[288px]">
+          <a href="#" class="swiper-slide !w-[288px]">
             <div class="group cursor-pointer">
               <div
                 class="relative overflow-hidden rounded-sm border-2 border-black bg-white transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#000]"
@@ -199,42 +200,12 @@
                 />
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const getSliderOffsets = () => {
-        const screenWidth = window.innerWidth;
-        // На десктопі слайдер починається після людини (приблизно 45% від ширини екрана)
-        const beforeOffset = screenWidth > 1024 ? screenWidth * 0.45 : 24;
-        const afterOffset = screenWidth > 1024 ? (screenWidth - 1280) / 2 + 24 : 24;
-        return { beforeOffset, afterOffset };
-      };
-
-      const { beforeOffset, afterOffset } = getSliderOffsets();
-
-      const swiper = new Swiper('.eventsSlider', {
-        slidesPerView: 'auto',
-        spaceBetween: 40,
-        freeMode: true,
-        slidesOffsetBefore: beforeOffset,
-        slidesOffsetAfter: afterOffset,
-        grabCursor: true,
-        mousewheel: {
-          forceToAxis: true,
-        },
-      });
-
-      window.addEventListener('resize', () => {
-        const { beforeOffset, afterOffset } = getSliderOffsets();
-        swiper.params.slidesOffsetBefore = beforeOffset;
-        swiper.params.slidesOffsetAfter = afterOffset;
-        swiper.update();
-      });
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
