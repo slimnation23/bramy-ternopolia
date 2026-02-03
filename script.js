@@ -29,3 +29,14 @@ window.addEventListener('resize', () => {
   swiper.params.slidesOffsetAfter = afterOffset;
   swiper.update();
 });
+
+// Projects Slider
+const projectsSwiper = new Swiper('.projectsSlider', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: '.projects-next',
+    prevEl: '.projects-prev',
+  },
+});

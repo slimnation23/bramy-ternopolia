@@ -34,11 +34,7 @@
 
 @layer base {
   html {
-    font-family: 'Gilroy', sans-serif;
-    color: #000000;
-  }
-  body {
-    background-color: #fff;
+    @apply font-gilroy text-black bg-white scroll-smooth;
   }
   .btn-primary-small {
     display: inline-block;
