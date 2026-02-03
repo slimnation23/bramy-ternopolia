@@ -669,36 +669,12 @@ body {
   left: 0px;
 }
 
-.left-56 {
-  left: 14rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
-.top-32 {
-  top: 8rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.top-12 {
-  top: 3rem;
-}
-
-.top-14 {
-  top: 3.5rem;
-}
-
 .left-52 {
   left: 13rem;
 }
 
-.left-48 {
-  left: 12rem;
+.top-12 {
+  top: 3rem;
 }
 
 .z-10 {
@@ -734,8 +710,8 @@ body {
   display: flex;
 }
 
-.h-\[180px\] {
-  height: 180px;
+.h-\[190px\] {
+  height: 190px;
 }
 
 .h-\[324px\] {
@@ -758,14 +734,6 @@ body {
   height: 100%;
 }
 
-.h-\[190px\] {
-  height: 190px;
-}
-
-.h-\[200px\] {
-  height: 200px;
-}
-
 .\!w-\[288px\] {
   width: 288px !important;
 }
@@ -774,8 +742,8 @@ body {
   width: 283px;
 }
 
-.w-\[350px\] {
-  width: 350px;
+.w-\[380px\] {
+  width: 380px;
 }
 
 .w-fit {
@@ -785,18 +753,6 @@ body {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[360px\] {
-  width: 360px;
-}
-
-.w-\[370px\] {
-  width: 370px;
-}
-
-.w-\[380px\] {
-  width: 380px;
 }
 
 .max-w-2xl {
@@ -843,23 +799,9 @@ body {
   border-radius: 0.125rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-}
-
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[url\(\'\/images\/Vector\.webp\'\)\] {
@@ -883,24 +825,19 @@ body {
      object-fit: cover;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .py-36 {
   padding-top: 9rem;
   padding-bottom: 9rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .\!pt-10 {
@@ -913,10 +850,6 @@ body {
 
 .pt-10 {
   padding-top: 2.5rem;
-}
-
-.pt-28 {
-  padding-top: 7rem;
 }
 
 .pt-20 {
@@ -1054,22 +987,6 @@ body {
 
 .hover\:opacity-70:hover {
   opacity: 0.7;
-}
-
-.group:hover .group-hover\:-translate-x-1 {
-  --tw-translate-x: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:-translate-y-1 {
-  --tw-translate-y: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:shadow-\[6px_6px_0px_0px_\#000\] {
-  --tw-shadow: 6px 6px 0px 0px #000;
-  --tw-shadow-colored: 6px 6px 0px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .group:hover .group-hover\:grayscale-0 {
