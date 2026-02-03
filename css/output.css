@@ -588,29 +588,6 @@ body {
   transform: translate(2px, 2px);
 }
 
-.event-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.125rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.group:hover .event-card {
-  --tw-translate-x: -0.25rem;
-  --tw-translate-y: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-shadow: 6px 6px 0px 0px #000;
-  --tw-shadow-colored: 6px 6px 0px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .container {
   width: 100%;
 }
@@ -643,6 +620,42 @@ body {
   .container {
     max-width: 1536px;
   }
+}
+
+/* Event Card Styles */
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.125rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.group:hover .event-card {
+  --tw-translate-x: -0.25rem;
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-shadow: 6px 6px 0px 0px #000;
+  --tw-shadow-colored: 6px 6px 0px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Instagram Bubble */
+
+.instagram-bubble {
+  background-image: url('../images/Vector.webp');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  text-align: center;
 }
 
 .absolute {
@@ -779,10 +792,6 @@ body {
   align-items: center;
 }
 
-.justify-center {
-  justify-content: center;
-}
-
 .justify-between {
   justify-content: space-between;
 }
@@ -804,12 +813,8 @@ body {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[url\(\'\/images\/bg\.webp\'\)\] {
-  background-image: url('/images/bg.webp');
-}
-
-.bg-\[url\(\'images\/Vector\.webp\'\)\] {
-  background-image: url('images/Vector.webp');
+.bg-\[url\(\'\.\.\/images\/bg\.webp\'\)\] {
+  background-image: url('../images/bg.webp');
 }
 
 .bg-cover {
@@ -854,10 +859,6 @@ body {
 
 .pt-20 {
   padding-top: 5rem;
-}
-
-.text-center {
-  text-align: center;
 }
 
 .text-justify {
