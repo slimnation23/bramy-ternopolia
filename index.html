@@ -32,7 +32,7 @@
           <ul class="font-medium flex lg:gap-14">
             <li>
               <a
-                href="#"
+                href="#about"
                 class="hover:opacity-70 transition-all duration-300 ease-in-out"
               >
                 Про проєкт
@@ -40,7 +40,7 @@
             </li>
             <li>
               <a
-                href="#"
+                href="#projects"
                 class="hover:opacity-70 transition-all duration-300 ease-in-out"
               >
                 Реставрації
@@ -48,7 +48,7 @@
             </li>
             <li>
               <a
-                href="#"
+                href="#events"
                 class="hover:opacity-70 transition-all duration-300 ease-in-out"
               >
                 Події
@@ -56,7 +56,7 @@
             </li>
             <li>
               <a
-                href="#"
+                href="#map"
                 class="hover:opacity-70 transition-all duration-300 ease-in-out"
               >
                 Мапа
@@ -64,7 +64,7 @@
             </li>
           </ul>
           <a
-            href="#"
+            href="#support"
             class="btn-primary-small"
           >
             Підтримати
@@ -90,7 +90,10 @@
       </div>
     </section>
 
-    <section class="container mx-auto flex items-center justify-between gap-5 py-36">
+    <section
+      id="about"
+      class="container mx-auto flex items-center justify-between gap-5 py-36"
+    >
       <div class="flex flex-col gap-5 lg:w-5/12">
         <h2 class="text-4xl font-ermilov uppercase">Про проєкт</h2>
         <p class="text-lg text-justify">
@@ -205,6 +208,86 @@
             </div>
           </a>
         </div>
+      </div>
+    </section>
+
+    <section
+      id="projects"
+      class="py-36 container mx-auto"
+    >
+      <h2 class="text-4xl font-ermilov uppercase">Наші проєкти</h2>
+      <p class="text-lg max-w-2xl mt-5">
+        Ми зберігаємо архітектурну спадщину Тернопільщини через освіту, дії громади та любов до краю. Долучайся до змін.
+      </p>
+      <div class="flex gap-20 mt-9">
+        <div class="w-8/12">
+          <div class="swiper projectsSlider relative">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <img
+                  src="images/img-3.webp"
+                  class="w-full h-[510px] object-cover"
+                  alt="Project slide"
+                />
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <img
+                  src="images/img-3.webp"
+                  class="w-full h-[510px] object-cover"
+                  alt="Project slide"
+                />
+              </div>
+            </div>
+
+            <!-- Custom Navigation Arrows -->
+            <button
+              class="projects-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 opacity-60 bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-opacity="0.6"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              class="projects-next absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 opacity-60 bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-opacity="0.6"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6">
+            <h3 class="text-3xl font-bold">Реставрація брами</h3>
+            <p class="text-xl italic">вул. Сагайдачного 11</p>
+            <p class="text-2xl mt-6 text-justify">
+              Історична брама вимагає невідкладного комплексного відновлення. Межах проєкту буде проведено демонтаж
+              пошкоджених елементів, очищення від старої фарби, а також укріплення конструкції. Ключове завдання —
+              повернути архітектурному об'єкту його первісний вигляд і забезпечити.
+            </p>
+          </div>
+        </div>
+        <div class="w-4/12"></div>
       </div>
     </section>
 
