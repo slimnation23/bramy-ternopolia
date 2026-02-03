@@ -3,7 +3,7 @@ const getSliderOffsets = () => {
   const screenWidth = window.innerWidth;
   const containerWidth = Math.min(1280, screenWidth - 48);
   const paddingLeft = (screenWidth - containerWidth) / 2;
-  const beforeOffset = screenWidth > 1024 ? screenWidth * 0.45 : paddingLeft;
+  const beforeOffset = screenWidth > 1024 ? screenWidth * 0.46 : paddingLeft;
   const afterOffset = paddingLeft;
 
   return { beforeOffset, afterOffset };
