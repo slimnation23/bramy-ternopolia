@@ -727,6 +727,10 @@ html {
   margin-top: 5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -745,6 +749,10 @@ html {
 
 .flex {
   display: flex;
+}
+
+.h-56 {
+  height: 14rem;
 }
 
 .h-8 {
@@ -777,6 +785,14 @@ html {
 
 .h-full {
   height: 100%;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.h-60 {
+  height: 15rem;
 }
 
 .\!w-\[288px\] {
@@ -855,6 +871,10 @@ html {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .overflow-hidden {
