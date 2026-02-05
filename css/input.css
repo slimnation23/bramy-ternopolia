@@ -63,7 +63,7 @@
 @layer components {
   /* Event Card Styles */
   .event-card {
-    @apply relative overflow-hidden rounded-sm border-2 border-black bg-white transition-all duration-300;
+    @apply relative overflow-hidden rounded-sm border-2 bg-white transition-all duration-300;
   }
 
   .group:hover .event-card {
@@ -72,7 +72,11 @@
 
   /* Instagram Bubble */
   .instagram-bubble {
-    background-image: url('../images/Vector.webp');
-    @apply bg-cover flex justify-center items-center text-center;
+    @apply flex items-center bg-[url('../images/Vector.webp')] bg-no-repeat bg-contain;
+  }
+
+  /* Map Markers */
+  .custom-marker {
+    @apply flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-sky-600 text-white font-bold text-sm cursor-pointer;
   }
 }
