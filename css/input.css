@@ -72,7 +72,16 @@
 
   /* Instagram Bubble */
   .instagram-bubble {
-    background-image: url('../images/Vector.webp');
-    @apply bg-cover flex justify-center items-center text-center;
+    @apply flex items-center bg-[url('../images/Vector.webp')] bg-no-repeat bg-contain;
+  }
+
+  /* Map Markers */
+  .custom-marker {
+    @apply flex items-center justify-center w-8 h-8 rounded-full border-2 border-black bg-[#1CA5C3] text-white font-bold text-sm shadow-[2px_2px_0px_0px_#000] cursor-pointer hover:scale-110 transition-transform;
+  }
+
+  /* Marker active state if needed */
+  .custom-marker.active {
+    @apply bg-blue-700 scale-110 shadow-[4px_4px_0px_0px_#000];
   }
 }

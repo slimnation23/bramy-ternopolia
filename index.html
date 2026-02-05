@@ -13,6 +13,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
       href="css/output.css"
     />
   </head>
@@ -402,29 +406,131 @@
       id="map"
       class="py-36 container mx-auto px-6"
     >
-      <h2 class="text-4xl font-ermilov uppercase">Інтерактивна мапа історичних брам Тернополя</h2>
-      <div class="border border-black py-6 px-20 mt-12 flex gap-10">
-        <div class="w-1/2">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5176.803232196115!2d25.59096657666662!3d49.5524448714347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473036b499c9b30f%3A0x181c4cba3d0de8ac!2z0LLRg9C70LjRhtGPINCT0LXRgtGM0LzQsNC90LAg0KHQsNCz0LDQudC00LDRh9C90L7Qs9C-LCAxMSwg0KLQtdGA0L3QvtC_0ZbQu9GMLCDQotC10YDQvdC-0L_RltC70YzRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDRl9C90LAsIDQ2MDAw!5e0!3m2!1suk!2snl!4v1770302240805!5m2!1suk!2snl"
-            style="border: 0"
-            height="350"
-            class="w-full"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <h3 class="text-2xl font-bold mt-5">Сагайдачного 11</h3>
+      <h2 class="text-4xl font-ermilov uppercase max-w-4xl">Інтерактивна мапа історичних брам Тернополя</h2>
+
+      <div class="mt-12 flex gap-10">
+        <!-- Map Container -->
+        <div class="w-1/2 flex flex-col gap-10">
+          <div
+            id="leaflet-map"
+            class="h-[200px] ьфч-ц-"
+          ></div>
+          <div
+            id="map-detail-info"
+            class="max-w-lg"
+          >
+            <div class="flex items-center gap-4 mb-8">
+              <div class="flex items-center justify-center border-cyan-600 border-2 rounded-full w-10 h-10 text-white">
+                <span
+                  id="map-point-id"
+                  class="flex items-center justify-center rounded-full p-2 w-8 h-8 bg-cyan-600 font-bold text-xl"
+                >
+                  1
+                </span>
+              </div>
+              <h3
+                id="map-point-title"
+                class="text-3xl font-bold font-ermilov"
+              >
+                Сагайдачного, 11
+              </h3>
+            </div>
+            <div class="flex flex-col gap-4 text-lg pl-14">
+              <p
+                id="map-point-desc"
+                class="text-xl text-justify leading-tight"
+              >
+                Сецесійна брама початку XX століття, відреставрована завдяки ГО «Брами Тернополя» у 2024 році.
+              </p>
+              <p>
+                Вітраж:
+                <a
+                  href="#"
+                  id="map-point-vitrazh"
+                  class="underline hover:opacity-70 transition-all"
+                >
+                  Ліля Василько
+                </a>
+              </p>
+              <p id="map-point-photo">
+                Фото:
+                <a
+                  href="#"
+                  class="underline hover:opacity-70 transition-all"
+                >
+                  Захар Дябло
+                </a>
+                ,
+                <a
+                  href="#"
+                  class="underline hover:opacity-70 transition-all"
+                >
+                  Анна Золотнюк
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="w-1/2">
-          <img
-            src="images/img-1.webp"
-            alt=""
-          />
+
+        <!-- Detail Info & Slider -->
+        <div class="flex flex-col w-1/2 md:flex-row bg-white relative rounded-r-sm overflow-hidden min-h-[417px]">
+          <!-- Left Info Part -->
+          <div class="md:w-1/2 p-8 flex flex-col justify-between">
+            <!-- Slide counter or pagination if needed -->
+            <div class="mt-8 flex items-center gap-2">
+              <span
+                id="map-slide-current"
+                class="text-sm font-bold"
+              >
+                01
+              </span>
+              <span class="text-sm opacity-30">/</span>
+              <span
+                id="map-slide-total"
+                class="text-sm opacity-30"
+              >
+                03
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Slider Part -->
+          <div class="md:w-1/2 relative h-[400px] md:h-full">
+            <div class="swiper mapDetailSlider h-full">
+              <div
+                class="swiper-wrapper"
+                id="map-slider-wrapper"
+              >
+                <!-- Slides will be injected via JS -->
+              </div>
+
+              <!-- Custom Pagination -->
+              <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2 map-detail-pagination"></div>
+            </div>
+
+            <!-- Navigation Arrow -->
+            <button
+              class="map-detail-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-black rounded-full flex items-center justify-center shadow-[2px_2px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
