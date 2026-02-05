@@ -6,6 +6,10 @@ module.exports = {
         gilroy: ['Gilroy'],
         ermilov: ['Ermilov'],
       },
+      colors: {
+        coffee: '#EFECE8',
+        gray: '#D2D2D2'
+      }
     },
   },
   plugins: [],
