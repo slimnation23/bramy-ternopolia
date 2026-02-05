@@ -7,7 +7,8 @@ module.exports = {
         ermilov: ['Ermilov'],
       },
       colors: {
-        coffee: '#EFECE8'
+        coffee: '#EFECE8',
+        gray: '#D2D2D2'
       }
     },
   },
