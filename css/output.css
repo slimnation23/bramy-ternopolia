@@ -125,7 +125,6 @@
   border-style: solid;
   /* 2 */
   border-color: currentColor;
-  border-color: currentColor;
   /* 2 */
 }
 
@@ -722,16 +721,8 @@ html {
   right: 0px;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .right-2 {
   right: 0.5rem;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .right-4 {
