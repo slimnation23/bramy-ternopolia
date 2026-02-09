@@ -104,13 +104,17 @@ const mapData = [
 
 let mapDetailSwiper;
 
-const initMapDetailSlider = () => {
-  if (mapDetailSwiper) mapDetailSwiper.destroy();
+const initMapDetailSlider = (totalSlides) => {
+  if (mapDetailSwiper) {
+    mapDetailSwiper.destroy(true, true);
+  }
 
   mapDetailSwiper = new Swiper('.mapDetailSlider', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
+    observer: true,
+    observeParents: true,
     navigation: {
       nextEl: '.map-detail-next',
     },
@@ -123,11 +127,14 @@ const initMapDetailSlider = () => {
     on: {
       slideChange: function () {
         const current = (this.realIndex + 1).toString().padStart(2, '0');
-        const total = this.slides.length.toString().padStart(2, '0'); // Corrected total slides calculation for loop if needed, but here simple
         document.getElementById('map-slide-current').textContent = current;
       },
     },
   });
+
+  if (document.getElementById('map-slide-total')) {
+    document.getElementById('map-slide-total').textContent = totalSlides.toString().padStart(2, '0');
+  }
 };
 
 const updateMapDetail = (id) => {
@@ -135,26 +142,27 @@ const updateMapDetail = (id) => {
   if (!data) return;
 
   // Update text content
-  document.getElementById('map-point-id').textContent = data.id;
-  document.getElementById('map-point-title').textContent = data.title;
-  document.getElementById('map-point-desc').textContent = data.desc;
-  document.getElementById('map-point-vitrazh').textContent = data.vitrazh;
+  if (document.getElementById('map-point-id')) document.getElementById('map-point-id').textContent = data.id;
+  if (document.getElementById('map-point-title')) document.getElementById('map-point-title').textContent = data.title;
+  if (document.getElementById('map-point-desc')) document.getElementById('map-point-desc').textContent = data.desc;
+  if (document.getElementById('map-point-vitrazh'))
+    document.getElementById('map-point-vitrazh').textContent = data.vitrazh;
 
   // Update slides
   const wrapper = document.getElementById('map-slider-wrapper');
-  wrapper.innerHTML = data.images
-    .map(
-      (img) => `
-    <div class="swiper-slide">
-      <img src="${img}" class="w-full h-full object-cover" alt="${data.title}">
-    </div>
-  `,
-    )
-    .join('');
+  if (wrapper) {
+    wrapper.innerHTML = data.images
+      .map(
+        (img) => `
+      <div class="swiper-slide">
+        <img src="${img}" class="w-full h-full object-cover" alt="${data.title}">
+      </div>
+    `,
+      )
+      .join('');
+  }
 
-  document.getElementById('map-slide-total').textContent = data.images.length.toString().padStart(2, '0');
-
-  initMapDetailSlider();
+  initMapDetailSlider(data.images.length);
 };
 
 // Initialize Leaflet Map

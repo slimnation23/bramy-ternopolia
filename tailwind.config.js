@@ -8,8 +8,9 @@ module.exports = {
       },
       colors: {
         coffee: '#EFECE8',
-        gray: '#D2D2D2'
-      }
+        gray: '#D2D2D2',
+        cyan: '#1CA5C3',
+      },
     },
   },
   plugins: [],
