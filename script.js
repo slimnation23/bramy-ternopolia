@@ -1,10 +1,12 @@
 const getSliderOffsets = () => {
   const screenWidth = window.innerWidth;
-  const containerWidth = Math.min(1280, screenWidth - 48);
-  const paddingLeft = (screenWidth - containerWidth) / 2;
 
-  // paddingLeft + 24px (px-6) is where the content actually starts
-  const contentStart = paddingLeft + 24;
+  // Try to get actual header position for precise alignment
+  const header = document.querySelector('.container.px-6 h2');
+  const contentStart = header
+    ? header.getBoundingClientRect().left
+    : (screenWidth - Math.min(1280, screenWidth - 48)) / 2 + 24;
+  const paddingLeft = (screenWidth - Math.min(1280, screenWidth - 48)) / 2;
 
   // This one is for the overlapping slider (starts at ~46% of screen)
   const overlapOffset = screenWidth > 1024 ? screenWidth * 0.46 : contentStart;
@@ -12,7 +14,7 @@ const getSliderOffsets = () => {
   return { contentStart, overlapOffset, paddingLeft };
 };
 
-const offsets = getSliderOffsets();
+let offsets = getSliderOffsets();
 
 const swiper = new Swiper('.eventsSlider', {
   slidesPerView: 'auto',
@@ -24,13 +26,6 @@ const swiper = new Swiper('.eventsSlider', {
   mousewheel: {
     forceToAxis: true,
   },
-});
-
-window.addEventListener('resize', () => {
-  const { beforeOffset, afterOffset } = getSliderOffsets();
-  swiper.params.slidesOffsetBefore = beforeOffset;
-  swiper.params.slidesOffsetAfter = afterOffset;
-  swiper.update();
 });
 
 // Projects Slider
@@ -58,16 +53,16 @@ const actualEventsSwiper = new Swiper('.actualEventsSlider', {
 });
 
 window.addEventListener('resize', () => {
-  const newOffsets = getSliderOffsets();
+  offsets = getSliderOffsets();
 
-  // Update overlapping slider
-  swiper.params.slidesOffsetBefore = newOffsets.overlapOffset;
-  swiper.params.slidesOffsetAfter = newOffsets.paddingLeft;
+  // Update Instagram overlapping slider
+  swiper.params.slidesOffsetBefore = offsets.overlapOffset;
+  swiper.params.slidesOffsetAfter = offsets.paddingLeft;
   swiper.update();
 
   // Update break-out events slider
-  actualEventsSwiper.params.slidesOffsetBefore = newOffsets.contentStart;
-  actualEventsSwiper.params.slidesOffsetAfter = newOffsets.paddingLeft;
+  actualEventsSwiper.params.slidesOffsetBefore = offsets.contentStart;
+  actualEventsSwiper.params.slidesOffsetAfter = offsets.paddingLeft;
   actualEventsSwiper.update();
 });
 
