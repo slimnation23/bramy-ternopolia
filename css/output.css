@@ -670,39 +670,6 @@ html {
   }
 }
 
-/* Event Card Styles */
-
-.event-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.125rem;
-  border-width: 2px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.group:hover .event-card {
-  --tw-translate-x: -0.25rem;
-  --tw-translate-y: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-shadow: 6px 6px 0px 0px #000;
-  --tw-shadow-colored: 6px 6px 0px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-/* Instagram Bubble */
-
-.instagram-bubble {
-  display: flex;
-  align-items: center;
-  background-image: url('../images/Vector.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 /* Map Markers */
 
 .custom-marker {
@@ -757,10 +724,6 @@ html {
   bottom: -14rem;
 }
 
-.-top-10 {
-  top: -2.5rem;
-}
-
 .bottom-6 {
   bottom: 1.5rem;
 }
@@ -779,10 +742,6 @@ html {
 
 .left-2 {
   left: 0.5rem;
-}
-
-.left-52 {
-  left: 13rem;
 }
 
 .right-0 {
@@ -809,10 +768,6 @@ html {
   top: 50%;
 }
 
-.top-12 {
-  top: 3rem;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -835,10 +790,6 @@ html {
 
 .z-50 {
   z-index: 50;
-}
-
-.z-\[-1\] {
-  z-index: -1;
 }
 
 .mx-auto {
@@ -922,10 +873,6 @@ html {
   height: 2.25rem;
 }
 
-.h-\[190px\] {
-  height: 190px;
-}
-
 .h-\[300px\] {
   height: 300px;
 }
@@ -940,10 +887,6 @@ html {
 
 .h-\[418px\] {
   height: 418px;
-}
-
-.h-\[420px\] {
-  height: 420px;
 }
 
 .h-\[510px\] {
@@ -1010,14 +953,6 @@ html {
   width: 66.666667%;
 }
 
-.w-\[283px\] {
-  width: 283px;
-}
-
-.w-\[380px\] {
-  width: 380px;
-}
-
 .w-\[392px\] {
   width: 392px;
 }
@@ -1029,14 +964,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[575px\] {
-  width: 575px;
 }
 
 .max-w-2xl {
@@ -1218,6 +1145,10 @@ html {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1)) !important;
 }
 
+.bg-\[\#221C09\]\/15 {
+  background-color: rgb(34 28 9 / 0.15);
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -1252,27 +1183,6 @@ html {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\] {
-  background-color: ;
-}
-
-.bg-\[\#221C09\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 28 9 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#221C09\/15\] {
-  background-color: #221C09/15;
-}
-
-.bg-\[\#221C09\/10\] {
-  background-color: #221C09/10;
-}
-
-.bg-\[\#221C09\]\/15 {
-  background-color: rgb(34 28 9 / 0.15);
-}
-
 .bg-\[url\(\'\.\.\/images\/tarnopol-001\.png\'\)\] {
   background-image: url('../images/tarnopol-001.png');
 }
@@ -1298,19 +1208,24 @@ html {
   padding: 2rem;
 }
 
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-16 {
@@ -1333,20 +1248,6 @@ html {
   padding-bottom: 9rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.\!pt-10 {
-  padding-top: 2.5rem !important;
-}
-
 .pb-14 {
   padding-bottom: 3.5rem;
 }
@@ -1365,10 +1266,6 @@ html {
 
 .pt-14 {
   padding-top: 3.5rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .pt-32 {
@@ -1458,11 +1355,6 @@ html {
   opacity: 0.6;
 }
 
-.grayscale {
-  --tw-grayscale: grayscale(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1477,10 +1369,6 @@ html {
 
 .duration-300 {
   transition-duration: 300ms;
-}
-
-.duration-500 {
-  transition-duration: 500ms;
 }
 
 .duration-700 {
@@ -1586,11 +1474,6 @@ html {
   outline-offset: 2px;
 }
 
-.group:hover .group-hover\:grayscale-0 {
-  --tw-grayscale: grayscale(0);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 @media (min-width: 768px) {
   .md\:mt-0 {
     margin-top: 0px;
@@ -1654,10 +1537,6 @@ html {
     width: 50%;
   }
 
-  .lg\:w-5\/12 {
-    width: 41.666667%;
-  }
-
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -1666,20 +1545,12 @@ html {
     gap: 3.5rem;
   }
 
-  .lg\:gap-5 {
-    gap: 1.25rem;
-  }
-
-  .lg\:gap-10 {
-    gap: 2.5rem;
-  }
-
   .lg\:gap-20 {
     gap: 5rem;
   }
 
-  .lg\:gap-12 {
-    gap: 3rem;
+  .lg\:gap-5 {
+    gap: 1.25rem;
   }
 
   .lg\:py-28 {

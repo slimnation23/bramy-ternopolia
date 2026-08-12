@@ -1,27 +1,7 @@
-const getSliderOffsets = () => {
-  const screenWidth = window.innerWidth;
-
-  // Try to get actual header position for precise alignment
-  const header = document.querySelector('.container.px-6 h2');
-  const contentStart = header
-    ? header.getBoundingClientRect().left
-    : (screenWidth - Math.min(1280, screenWidth - 48)) / 2 + 24;
-  const paddingLeft = (screenWidth - Math.min(1280, screenWidth - 48)) / 2;
-
-  // This one is for the overlapping slider (starts at ~46% of screen)
-  const overlapOffset = screenWidth > 1024 ? screenWidth * 0.46 : contentStart;
-
-  return { contentStart, overlapOffset, paddingLeft };
-};
-
-let offsets = getSliderOffsets();
-
 const swiper = new Swiper('.eventsSlider', {
   slidesPerView: 'auto',
-  spaceBetween: 24,
+  spaceBetween: 16,
   freeMode: true,
-  slidesOffsetBefore: offsets.overlapOffset,
-  slidesOffsetAfter: offsets.paddingLeft,
   grabCursor: true,
   mousewheel: {
     forceToAxis: true,
@@ -194,7 +174,7 @@ let isMenuOpen = false;
 
 function toggleMenu() {
   isMenuOpen = !isMenuOpen;
-  
+
   if (isMenuOpen) {
     mobileMenu.classList.remove('translate-x-full');
     // Анімація перетворення гамбургера на хрестик

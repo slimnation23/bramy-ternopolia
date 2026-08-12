@@ -102,20 +102,6 @@
 }
 
 @layer components {
-  /* Event Card Styles */
-  .event-card {
-    @apply relative overflow-hidden rounded-sm border-2 bg-white transition-all duration-300;
-  }
-
-  .group:hover .event-card {
-    @apply -translate-x-1 -translate-y-1 shadow-[6px_6px_0px_0px_#000];
-  }
-
-  /* Instagram Bubble */
-  .instagram-bubble {
-    @apply flex items-center bg-[url('../images/Vector.webp')] bg-no-repeat bg-contain;
-  }
-
   /* Map Markers */
   .custom-marker {
     @apply flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-sky-600 text-white font-bold text-sm cursor-pointer;
