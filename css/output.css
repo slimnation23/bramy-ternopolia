@@ -624,6 +624,18 @@ html {
   text-decoration: none;
 }
 
+.btn-secondary-small:hover {
+  box-shadow: 0px 4px 0px 0px #ffffff;
+  transform: translate(0px, 2px);
+}
+
+.btn-secondary-small:active {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0px 0px 0px 0px #ffffff;
+  transform: translate(2px, 2px);
+}
+
 .container {
   width: 100%;
 }
@@ -801,6 +813,10 @@ html {
   top: 3rem;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -817,20 +833,12 @@ html {
   z-index: 40;
 }
 
-.z-\[-1\] {
-  z-index: -1;
-}
-
-.-z-10 {
-  z-index: -10;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
 .z-50 {
   z-index: 50;
+}
+
+.z-\[-1\] {
+  z-index: -1;
 }
 
 .mx-auto {
@@ -884,6 +892,10 @@ html {
 
 .hidden {
   display: none;
+}
+
+.h-1 {
+  height: 0.25rem;
 }
 
 .h-10 {
@@ -946,24 +958,16 @@ html {
   height: 100%;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
 .min-h-\[417px\] {
   min-height: 417px;
 }
 
-.min-h-\[868px\] {
-  min-height: 868px;
-}
-
-.min-h-\[500px\] {
-  min-height: 500px;
-}
-
 .min-h-\[600px\] {
   min-height: 600px;
+}
+
+.min-h-\[868px\] {
+  min-height: 868px;
 }
 
 .\!w-4 {
@@ -1051,10 +1055,6 @@ html {
   flex-shrink: 0;
 }
 
-.origin-left {
-  transform-origin: left;
-}
-
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1123,6 +1123,10 @@ html {
   justify-content: space-between;
 }
 
+.gap-1\.5 {
+  gap: 0.375rem;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
@@ -1155,20 +1159,16 @@ html {
   gap: 1.25rem;
 }
 
-.gap-9 {
-  gap: 2.25rem;
-}
-
 .gap-6 {
   gap: 1.5rem;
 }
 
-.gap-1\.5 {
-  gap: 0.375rem;
-}
-
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
 }
 
 .overflow-hidden {
@@ -1206,6 +1206,11 @@ html {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1)) !important;
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .bg-coffee {
   --tw-bg-opacity: 1;
   background-color: rgb(239 236 232 / var(--tw-bg-opacity, 1));
@@ -1235,25 +1240,8 @@ html {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-black\/30 {
-  background-color: rgb(0 0 0 / 0.3);
-}
-
-.bg-black\/70 {
-  background-color: rgb(0 0 0 / 0.7);
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[url\(\'\.\.\/images\/tarnopol-001\.png\'\)\] {
   background-image: url('../images/tarnopol-001.png');
-}
-
-.bg-contain {
-  background-size: contain;
 }
 
 .bg-cover {
@@ -1262,10 +1250,6 @@ html {
 
 .bg-center {
   background-position: center;
-}
-
-.bg-no-repeat {
-  background-repeat: no-repeat;
 }
 
 .object-cover {
@@ -1315,8 +1299,8 @@ html {
   padding-top: 2.5rem !important;
 }
 
-.pb-24 {
-  padding-bottom: 6rem;
+.pb-14 {
+  padding-bottom: 3.5rem;
 }
 
 .pb-5 {
@@ -1337,10 +1321,6 @@ html {
 
 .pt-20 {
   padding-top: 5rem;
-}
-
-.pb-14 {
-  padding-bottom: 3.5rem;
 }
 
 .pt-32 {
@@ -1405,16 +1385,12 @@ html {
   font-style: italic;
 }
 
-.\!leading-\[64px\] {
-  line-height: 64px !important;
+.\!leading-\[1\.2\] {
+  line-height: 1.2 !important;
 }
 
 .leading-tight {
   line-height: 1.25;
-}
-
-.\!leading-\[1\.2\] {
-  line-height: 1.2 !important;
 }
 
 .text-white {
@@ -1470,9 +1446,9 @@ html {
 /* Fonts */
 
 @font-face {
-  font-family: 'Ermilov';
+  font-family: "Ermilov";
 
-  src: url('../fonts/Ermilov-bold.woff2') format('woff2');
+  src: url("../fonts/Ermilov-bold.woff2") format("woff2");
 
   font-weight: 700;
 
@@ -1482,9 +1458,9 @@ html {
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
 
-  src: url('../fonts/Gilroy-light.woff2') format('woff2');
+  src: url("../fonts/Gilroy-light.woff2") format("woff2");
 
   font-weight: 400;
 
@@ -1494,9 +1470,9 @@ html {
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
 
-  src: url('../fonts/Gilroy-medium.woff2') format('woff2');
+  src: url("../fonts/Gilroy-medium.woff2") format("woff2");
 
   font-weight: 500;
 
@@ -1506,9 +1482,9 @@ html {
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
 
-  src: url('../fonts/Gilroy-bold.woff2') format('woff2');
+  src: url("../fonts/Gilroy-bold.woff2") format("woff2");
 
   font-weight: 700;
 
@@ -1572,10 +1548,6 @@ html {
     margin-top: 0px;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -1590,14 +1562,6 @@ html {
 
   .md\:h-full {
     height: 100%;
-  }
-
-  .md\:h-\[700px\] {
-    height: 700px;
-  }
-
-  .md\:h-\[740px\] {
-    height: 740px;
   }
 
   .md\:w-1\/2 {
@@ -1616,12 +1580,12 @@ html {
     align-items: flex-end;
   }
 
-  .md\:gap-4 {
-    gap: 1rem;
-  }
-
   .md\:gap-14 {
     gap: 3.5rem;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
   }
 
   .md\:pb-24 {
@@ -1632,10 +1596,6 @@ html {
 @media (min-width: 1024px) {
   .lg\:block {
     display: block;
-  }
-
-  .lg\:flex {
-    display: flex;
   }
 
   .lg\:hidden {
@@ -1656,11 +1616,6 @@ html {
 
   .lg\:text-5xl {
     font-size: 3rem;
-    line-height: 1;
-  }
-
-  .lg\:text-7xl {
-    font-size: 4.5rem;
     line-height: 1;
   }
 
