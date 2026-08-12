@@ -198,9 +198,9 @@ function toggleMenu() {
   if (isMenuOpen) {
     mobileMenu.classList.remove('translate-x-full');
     // Анімація перетворення гамбургера на хрестик
-    mobileMenuBtn.children[0].style.transform = 'translateY(8px) rotate(45deg)';
+    mobileMenuBtn.children[0].style.transform = 'translateY(10px) rotate(45deg)';
     mobileMenuBtn.children[1].style.opacity = '0';
-    mobileMenuBtn.children[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+    mobileMenuBtn.children[2].style.transform = 'translateY(-10px) rotate(-45deg)';
     document.body.style.overflow = 'hidden'; // Заборона скролінгу
   } else {
     mobileMenu.classList.add('translate-x-full');
