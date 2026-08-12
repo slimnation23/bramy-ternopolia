@@ -1031,6 +1031,14 @@ html {
   width: 100%;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[575px\] {
+  width: 575px;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1244,6 +1252,27 @@ html {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[\#221C09\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 28 9 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#221C09\/15\] {
+  background-color: #221C09/15;
+}
+
+.bg-\[\#221C09\/10\] {
+  background-color: #221C09/10;
+}
+
+.bg-\[\#221C09\]\/15 {
+  background-color: rgb(34 28 9 / 0.15);
+}
+
 .bg-\[url\(\'\.\.\/images\/tarnopol-001\.png\'\)\] {
   background-image: url('../images/tarnopol-001.png');
 }
@@ -1302,6 +1331,16 @@ html {
 .py-36 {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .\!pt-10 {
@@ -1629,6 +1668,18 @@ html {
 
   .lg\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .lg\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .lg\:gap-20 {
+    gap: 5rem;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
   }
 
   .lg\:py-28 {

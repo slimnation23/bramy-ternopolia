@@ -17,9 +17,10 @@
   </head>
 
   <body>
+    <!-- Header -->
     <header class="relative bg-white z-50">
       <nav
-        class="lg:container mx-auto pt-10 pb-5 px-6 flex justify-between items-center transition-all duration-700"
+        class="lg:container mx-auto pt-10 pb-5 px-5 flex justify-between items-center transition-all duration-700"
       >
         <a href="#" class="relative z-50">
           <img
@@ -97,7 +98,7 @@
       <!-- Мобільне меню (випадаюче) -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-32 px-6"
+        class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-32 px-5"
       >
         <ul class="font-medium flex flex-col gap-8 text-2xl">
           <li>
@@ -124,11 +125,12 @@
       </div>
     </header>
 
+    <!-- Hero -->
     <section
       class="bg-[url('../images/tarnopol-001.png')] w-full flex flex-col min-h-[600px] md:h-[744px] bg-cover bg-center pt-14 pb-14 md:pb-24 relative z-0"
     >
       <div
-        class="lg:container mx-auto px-6 flex flex-col justify-between flex-1 w-full text-white"
+        class="lg:container mx-auto px-5 flex flex-col justify-between flex-1 w-full text-white"
       >
         <h1
           class="font-ermilov uppercase text-3xl lg:text-5xl !leading-[1.2] lg:!leading-[64px] max-w-4xl mt-8 md:mt-0"
@@ -152,11 +154,12 @@
       </div>
     </section>
 
+    <!-- About Us -->
     <section id="about" class="py-16 lg:py-28">
       <div
-        class="lg:container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-5"
+        class="lg:container mx-auto px-5 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-20"
       >
-        <div class="flex flex-col gap-3 lg:gap-5 lg:w-5/12">
+        <div class="flex flex-col gap-3 lg:gap-5 lg:w-1/2">
           <h2 class="text-4xl font-ermilov uppercase">Про нас</h2>
           <p class="text-xl text-justify">
             Ми - ініціатива, створена у 2022 році небайдужими мешканцями
@@ -174,95 +177,80 @@
       </div>
     </section>
 
-    <section class="w-full pt-20 relative overflow-hidden">
-      <img
-        src="images/bg.webp"
-        class="absolute inset-0 w-full h-full object-cover z-[-1]"
-        alt="bg"
-      />
-      <div class="container mx-auto relative z-10 px-6">
-        <div class="relative w-fit">
-          <img
-            src="images/people.webp"
-            alt="people"
-            class="h-[420px] w-[283px] object-cover rounded-sm"
-          />
+    <!-- Follow us -->
+    <section class="w-full py-12 relative overflow-hidden bg-[#221C09]/15">
+      <div class="lg:container mx-auto flex flex-col gap-10 relative px-5">
+        <p class="text-xl font-medium leading-tight md:w-1/2">
+          Слідкуйте за нами у <b>Instagram:</b> архітектурні відкриття, бекстейдж
+          реставрацій, історії та анонси подій.
+        </p>
 
-          <div
-            class="absolute -top-10 left-52 instagram-bubble w-[380px] h-[190px] px-12 z-30"
-          >
-            <p class="text-xl font-bold text-white leading-tight text-center">
-              Слідкуйте за нами у Instagram: архітектурні відкриття, бекстейдж
-              реставрацій, історії та анонси подій.
-            </p>
+        <!-- Slider -->
+        <div
+          class="swiper eventsSlider w-full h-full"
+        >
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <a href="#" class="swiper-slide !w-[288px]">
+              <div class="group cursor-pointer">
+                <div class="event-card">
+                  <img
+                    src="images/img-4.webp"
+                    alt="event"
+                    class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </a>
+            <!-- Slide 2 -->
+            <a href="#" class="swiper-slide !w-[288px]">
+              <div class="group cursor-pointer">
+                <div class="event-card">
+                  <img
+                    src="images/img-4.webp"
+                    alt="event"
+                    class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </a>
+            <!-- Slide 3 -->
+            <a href="#" class="swiper-slide !w-[288px]">
+              <div class="group cursor-pointer">
+                <div class="event-card">
+                  <img
+                    src="images/img-4.webp"
+                    alt="event"
+                    class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </a>
+            <!-- Slide 4 -->
+            <a href="#" class="swiper-slide !w-[288px]">
+              <div class="group cursor-pointer">
+                <div class="event-card">
+                  <img
+                    src="images/img-4.webp"
+                    alt="event"
+                    class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </a>
+            <!-- Slide 5 -->
+            <a href="#" class="swiper-slide !w-[288px]">
+              <div class="group cursor-pointer">
+                <div class="event-card">
+                  <img
+                    src="images/img-4.webp"
+                    alt="event"
+                    class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </div>
-
-      <div
-        class="swiper eventsSlider w-full absolute top-12 left-0 z-40 h-full !pt-10"
-      >
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <a href="#" class="swiper-slide !w-[288px]">
-            <div class="group cursor-pointer">
-              <div class="event-card">
-                <img
-                  src="images/img-4.webp"
-                  alt="event"
-                  class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </a>
-          <!-- Slide 2 -->
-          <a href="#" class="swiper-slide !w-[288px]">
-            <div class="group cursor-pointer">
-              <div class="event-card">
-                <img
-                  src="images/img-4.webp"
-                  alt="event"
-                  class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </a>
-          <!-- Slide 3 -->
-          <a href="#" class="swiper-slide !w-[288px]">
-            <div class="group cursor-pointer">
-              <div class="event-card">
-                <img
-                  src="images/img-4.webp"
-                  alt="event"
-                  class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </a>
-          <!-- Slide 4 -->
-          <a href="#" class="swiper-slide !w-[288px]">
-            <div class="group cursor-pointer">
-              <div class="event-card">
-                <img
-                  src="images/img-4.webp"
-                  alt="event"
-                  class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </a>
-          <!-- Slide 5 -->
-          <a href="#" class="swiper-slide !w-[288px]">
-            <div class="group cursor-pointer">
-              <div class="event-card">
-                <img
-                  src="images/img-4.webp"
-                  alt="event"
-                  class="w-full h-[362px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </section>
