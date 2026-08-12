@@ -609,6 +609,21 @@ html {
   transform: translate(2px, 2px);
 }
 
+.btn-secondary-small {
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 24px;
+  font-size: 20px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .container {
   width: 100%;
 }
@@ -730,10 +745,6 @@ html {
   top: -2.5rem;
 }
 
-.bottom-5 {
-  bottom: 1.25rem;
-}
-
 .bottom-6 {
   bottom: 1.5rem;
 }
@@ -823,10 +834,6 @@ html {
   margin-top: 3rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -897,10 +904,6 @@ html {
 
 .h-\[400px\] {
   height: 400px;
-}
-
-.h-\[408px\] {
-  height: 408px;
 }
 
 .h-\[418px\] {
@@ -1167,16 +1170,16 @@ html {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[url\(\'\.\.\/images\/bg\.webp\'\)\] {
-  background-image: url('../images/bg.webp');
+.bg-\[url\(\'\.\.\/images\/tarnopol-001\.png\'\)\] {
+  background-image: url('../images/tarnopol-001.png');
 }
 
-.bg-cover {
-  background-size: cover;
+.bg-contain {
+  background-size: contain;
 }
 
-.bg-center {
-  background-position: center;
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .object-cover {
@@ -1226,6 +1229,10 @@ html {
   padding-top: 2.5rem !important;
 }
 
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1236,6 +1243,10 @@ html {
 
 .pt-10 {
   padding-top: 2.5rem;
+}
+
+.pt-14 {
+  padding-top: 3.5rem;
 }
 
 .pt-20 {
@@ -1412,8 +1423,20 @@ html {
 }
 
 @media (min-width: 768px) {
+  .md\:h-\[744px\] {
+    height: 744px;
+  }
+
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:h-\[700px\] {
+    height: 700px;
+  }
+
+  .md\:h-\[740px\] {
+    height: 740px;
   }
 
   .md\:w-1\/2 {
