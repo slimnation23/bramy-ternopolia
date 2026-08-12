@@ -817,6 +817,14 @@ html {
   z-index: -1;
 }
 
+.-z-10 {
+  z-index: -10;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -930,6 +938,14 @@ html {
   min-height: 868px;
 }
 
+.min-h-\[500px\] {
+  min-height: 500px;
+}
+
+.min-h-\[600px\] {
+  min-height: 600px;
+}
+
 .\!w-4 {
   width: 1rem !important;
 }
@@ -1009,6 +1025,10 @@ html {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
 }
 
 .-translate-x-1\/2 {
@@ -1106,6 +1126,10 @@ html {
   gap: 2.25rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1170,12 +1194,28 @@ html {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-black\/30 {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.bg-black\/70 {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
 .bg-\[url\(\'\.\.\/images\/tarnopol-001\.png\'\)\] {
   background-image: url('../images/tarnopol-001.png');
 }
 
 .bg-contain {
   background-size: contain;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
@@ -1253,6 +1293,10 @@ html {
   padding-top: 5rem;
 }
 
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1317,6 +1361,10 @@ html {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.\!leading-\[1\.2\] {
+  line-height: 1.2 !important;
 }
 
 .text-white {
@@ -1423,6 +1471,10 @@ html {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:h-\[744px\] {
     height: 744px;
   }
@@ -1443,8 +1495,24 @@ html {
     width: 50%;
   }
 
+  .md\:w-auto {
+    width: auto;
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+
+  .md\:pb-24 {
+    padding-bottom: 6rem;
   }
 }
 
@@ -1464,5 +1532,14 @@ html {
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .lg\:\!leading-\[64px\] {
+    line-height: 64px !important;
   }
 }
