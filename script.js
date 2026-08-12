@@ -185,3 +185,38 @@ mapData.forEach((point) => {
 
 // Initial load
 updateMapDetail(1);
+
+// Мобільне меню
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+let isMenuOpen = false;
+
+function toggleMenu() {
+  isMenuOpen = !isMenuOpen;
+  
+  if (isMenuOpen) {
+    mobileMenu.classList.remove('translate-x-full');
+    // Анімація перетворення гамбургера на хрестик
+    mobileMenuBtn.children[0].style.transform = 'translateY(8px) rotate(45deg)';
+    mobileMenuBtn.children[1].style.opacity = '0';
+    mobileMenuBtn.children[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+    document.body.style.overflow = 'hidden'; // Заборона скролінгу
+  } else {
+    mobileMenu.classList.add('translate-x-full');
+    // Повернення гамбургера до початкового стану
+    mobileMenuBtn.children[0].style.transform = 'translateY(0) rotate(0)';
+    mobileMenuBtn.children[1].style.opacity = '1';
+    mobileMenuBtn.children[2].style.transform = 'translateY(0) rotate(0)';
+    document.body.style.overflow = 'auto'; // Дозвіл скролінгу
+  }
+}
+
+mobileMenuBtn.addEventListener('click', toggleMenu);
+
+// Закриття меню при кліку на посилання
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (isMenuOpen) toggleMenu();
+  });
+});
