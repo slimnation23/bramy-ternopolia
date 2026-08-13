@@ -10,8 +10,8 @@ const swiper = new Swiper('.eventsSlider', {
 
 // Projects Slider
 const projectsSwiper = new Swiper('.projectsSlider', {
-  slidesPerView: 1,
-  spaceBetween: 0,
+  slidesPerView: 2,
+  spaceBetween: 24,
   loop: true,
   navigation: {
     nextEl: '.projects-next',
