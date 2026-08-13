@@ -10,40 +10,26 @@ const swiper = new Swiper('.eventsSlider', {
 
 // Projects Slider
 const projectsSwiper = new Swiper('.projectsSlider', {
-  slidesPerView: 2,
-  spaceBetween: 24,
   loop: true,
   navigation: {
     nextEl: '.projects-next',
     prevEl: '.projects-prev',
   },
+  breakpoints: {
+    320: { slidesPerView: 1, spaceBetween: 16 },
+    767: { slidesPerView: 2, spaceBetween: 24 }
+  }
 });
 
 // Actual Events Slider (Break-out)
 const actualEventsSwiper = new Swiper('.actualEventsSlider', {
   slidesPerView: 'auto',
   spaceBetween: 40,
-  slidesOffsetBefore: offsets.contentStart,
-  slidesOffsetAfter: offsets.paddingLeft,
   grabCursor: true,
   freeMode: true,
   mousewheel: {
     forceToAxis: true,
   },
-});
-
-window.addEventListener('resize', () => {
-  offsets = getSliderOffsets();
-
-  // Update Instagram overlapping slider
-  swiper.params.slidesOffsetBefore = offsets.overlapOffset;
-  swiper.params.slidesOffsetAfter = offsets.paddingLeft;
-  swiper.update();
-
-  // Update break-out events slider
-  actualEventsSwiper.params.slidesOffsetBefore = offsets.contentStart;
-  actualEventsSwiper.params.slidesOffsetAfter = offsets.paddingLeft;
-  actualEventsSwiper.update();
 });
 
 // Interactive Map
