@@ -249,7 +249,7 @@
         <div class="flex gap-20 relative">
           <!-- Custom Navigation Arrows -->
           <button
-            class="projects-prev absolute -left-3.5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black rounded-full flex items-center justify-center"
+            class="projects-prev absolute -left-3.5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black rounded-full hidden md:flex items-center justify-center"
           >
             <img
               src="images/icons/Arrow-left.svg"
@@ -258,7 +258,7 @@
             />
           </button>
           <button
-            class="projects-next absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black rounded-full flex items-center justify-center"
+            class="projects-next absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black rounded-full hidden md:flex items-center justify-center"
           >
             <img
               src="images/icons/Arrow-right.svg"
@@ -272,7 +272,7 @@
               <div class="swiper-slide relative">
                 <img
                   src="images/slider/project-1.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
+                  class="w-full h-auto lg:h-[452px] object-cover"
                   alt="Project slide"
                 />
                 <p
@@ -285,7 +285,7 @@
               <div class="swiper-slide relative">
                 <img
                   src="images/slider/project-2.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
+                  class="w-full h-auto lg:h-[452px] object-cover"
                   alt="Project slide"
                 />
                 <p
@@ -298,7 +298,7 @@
               <div class="swiper-slide relative">
                 <img
                   src="images/slider/project-1.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
+                  class="w-full h-auto lg:h-[452px] object-cover"
                   alt="Project slide"
                 />
                 <p
@@ -311,7 +311,7 @@
               <div class="swiper-slide relative">
                 <img
                   src="images/slider/project-2.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
+                  class="w-full h-auto lg:h-[452px] object-cover"
                   alt="Project slide"
                 />
                 <p
@@ -328,7 +328,7 @@
 
     <!-- Restore -->
     <section
-      class="bg-[url('../images/restore-bg.png')] w-full flex flex-col min-h-[440px] bg-cover bg-center py-6 md:py-14 relative z-0"
+      class="bg-[url('../images/restore-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
       <div
         class="lg:container mx-auto px-5 flex flex-col gap-5 justify-between flex-1 w-full text-white"
@@ -343,7 +343,10 @@
             Якщо ви мешкаєте в будинку з історією - ми можемо допомогти.
             Заповніть форму, і ми зв’яжемося з вами.
           </p>
-          <a href="#support" class="btn-secondary-small w-fit">
+          <a
+            href="#support"
+            class="btn-secondary-small w-full text-center sm:w-fit"
+          >
             Заповнити форму
           </a>
         </div>
@@ -433,7 +436,9 @@
       <div class="lg:container mx-auto flex flex-col gap-10 relative px-5">
         <h2 class="text-4xl font-ermilov uppercase">Анонс МАЙБУТНІХ ПОДІЙ</h2>
 
-        <div class="swiper projectsSlider relative w-full h-full !overflow-visible">
+        <div
+          class="swiper projectsSlider relative w-full h-full !overflow-visible"
+        >
           <div class="swiper-wrapper text-white">
             <!-- Slide 1 -->
             <div class="swiper-slide">
@@ -550,155 +555,240 @@
       </div>
     </section>
 
-    <section id="map" class="py-36 container mx-auto px-6">
-      <h2 class="text-4xl font-ermilov uppercase max-w-4xl">
-        Інтерактивна мапа історичних брам Тернополя
-      </h2>
-
-      <div class="mt-12 flex gap-10">
-        <!-- Map Container -->
-        <div class="w-1/2 flex flex-col gap-10">
-          <div id="leaflet-map" class="h-[400px]"></div>
-          <div id="map-detail-info" class="max-w-lg">
-            <div class="flex items-center gap-4 mb-8">
-              <div
-                class="flex items-center justify-center border-cyan border-2 rounded-full w-10 h-10 text-white"
-              >
-                <span
-                  id="map-point-id"
-                  class="flex items-center justify-center rounded-full p-2 w-8 h-8 bg-cyan font-bold text-xl"
-                >
-                  1
-                </span>
-              </div>
-              <h3 id="map-point-title" class="text-3xl font-bold font-ermilov">
-                Сагайдачного, 11
-              </h3>
-            </div>
-            <div class="flex flex-col gap-4 text-lg pl-14">
-              <p id="map-point-desc" class="text-xl text-justify leading-tight">
-                Сецесійна брама початку XX століття, відреставрована завдяки ГО
-                «Брами Тернополя» у 2024 році.
-              </p>
-              <p>
-                Вітраж:
-                <a
-                  href="#"
-                  id="map-point-vitrazh"
-                  class="underline hover:opacity-70 transition-all"
-                >
-                  Ліля Василько
-                </a>
-              </p>
-              <p id="map-point-photo">
-                Фото:
-                <a href="#" class="underline hover:opacity-70 transition-all">
-                  Захар Дябло
-                </a>
-                ,
-                <a href="#" class="underline hover:opacity-70 transition-all">
-                  Анна Золотнюк
-                </a>
-              </p>
-            </div>
-            <div class="md:w-1/2 p-8 flex flex-col justify-between">
-              <!-- Slide counter or pagination if needed -->
-              <div class="mt-8 flex items-center gap-2">
-                <span id="map-slide-current" class="text-sm font-bold">01</span>
-                <span class="text-sm opacity-30">/</span>
-                <span id="map-slide-total" class="text-sm opacity-30">03</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Detail Info & Slider -->
-        <div
-          class="flex flex-col w-1/2 md:flex-row bg-white relative rounded-sm border-2 border-black overflow-hidden min-h-[417px]"
-        >
-          <!-- Right Slider Part -->
-          <div class="w-full relative h-[400px] md:h-full">
-            <div class="swiper mapDetailSlider h-full">
-              <div class="swiper-wrapper" id="map-slider-wrapper">
-                <!-- Slides will be injected via JS -->
-              </div>
-
-              <!-- Custom Pagination -->
-              <div
-                class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2 map-detail-pagination"
-              ></div>
-            </div>
-
-            <!-- Navigation Arrow -->
-            <button
-              class="map-detail-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-black rounded-full flex items-center justify-center"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="support"
-      class="py-36 relative container mx-auto px-6 min-h-[868px] overflow-hidden"
-    >
-      <div class="max-w-4x flex flex-col items-center gap-20">
-        <div class="flex flex-col items-center">
-          <h2 class="text-4xl font-ermilov uppercase text-center">
-            Бажаєте підтримати проєкт?
-          </h2>
-          <p class="text-xl text-center max-w-xl mt-6">
-            Історична брама вимагає невідкладного комплексного відновлення.
-            Межах проєкту буде проведено демонтаж пошкоджених елементів.
+    <!-- Our merch -->
+    <section id="projects" class="pt-14 pb-14 md:pb-24">
+      <div class="lg:container mx-auto flex flex-col gap-6 lg:gap-8 px-5">
+        <div class="flex flex-col gap-3">
+          <h2 class="text-4xl font-ermilov uppercase">Наш мерч</h2>
+          <p class="text-lg lg:text-2xl max-w-2xl">
+            Це візуальне продовження наших цінностей. Лімітована серія одягу та
+            сувенірів, розроблена з увагою до деталей.
           </p>
         </div>
-        <div class="flex justify-between gap-5 max-w-xl w-full">
-          <a href="#" class="btn-primary-big">Patreon</a>
-          <a href="#" class="btn-primary-big">MONO Base</a>
+        <div class="flex gap-20 relative">
+          <!-- Custom Navigation Arrows -->
+          <button
+            class="projects-prev absolute -left-3.5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black rounded-full hidden md:flex items-center justify-center"
+          >
+            <img
+              src="images/icons/Arrow-left.svg"
+              alt="left"
+              class="object-fill"
+            />
+          </button>
+          <button
+            class="projects-next absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black rounded-full hidden md:flex items-center justify-center"
+          >
+            <img
+              src="images/icons/Arrow-right.svg"
+              alt="right"
+              class="object-fill"
+            />
+          </button>
+          <div class="swiper projectsSlider relative w-full h-full">
+            <div class="swiper-wrapper text-white">
+              <!-- Slide 1 -->
+              <div class="swiper-slide relative">
+                <img
+                  src="images/merch.png"
+                  class="md:w-full h-auto lg:h-[492px] lg:object-cover"
+                  alt="Project slide"
+                />
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide relative">
+                <img
+                  src="images/merch.png"
+                  class="md:w-full h-auto lg:h-[492px] lg:object-cover"
+                  alt="Project slide"
+                />
+              </div>
+              <!-- Slide 3 -->
+              <div class="swiper-slide relative">
+                <img
+                  src="images/merch.png"
+                  class="md:w-full h-auto lg:h-[492px] lg:object-cover"
+                  alt="Project slide"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <img
-        src="images/Rectangle.webp"
-        alt="1"
-        class="absolute -bottom-32 left-0 rotate-12 w-[392px] h-[418px] pointer-events-none"
-      />
-      <img
-        src="images/Rectangle.webp"
-        alt="2"
-        class="absolute -bottom-56 left-1/4 translate-x-4 w-[392px] h-[418px] pointer-events-none"
-      />
-      <img
-        src="images/Rectangle.webp"
-        alt="3"
-        class="absolute -bottom-24 right-1/4 translate-x-24 rotate-[11deg] w-[392px] h-[418px] pointer-events-none"
-      />
-      <img
-        src="images/Rectangle.webp"
-        alt="4"
-        class="absolute -bottom-32 right-0 -rotate-3 w-[392px] h-[418px] pointer-events-none"
-      />
     </section>
 
-    <footer class="py-20 bg-gray2">
-      <div class="container mx-auto px-6 flex flex-col gap-16">
-        <div class="flex items-center">
-          <div class="w-1/2">
-            <img src="images/icons/icon.svg" alt="logo" class="h-9 w-52" />
+    <!-- Map -->
+    <section id="map" class="py-16 lg:py-28">
+      <div class="lg:container mx-auto flex flex-col gap-6 lg:gap-8 px-5">
+        <h2 class="text-4xl font-ermilov uppercase">
+          Інтерактивна мапа
+          <br />
+          історичних брам Тернополя
+        </h2>
+        <p class="text-lg lg:text-2xl max-w-2xl">
+          Ми створили інтерактивну мапу старих брам Тернополя, як пам’ять про
+          архітектуру та важливість дії. Перегляньте, та долучіться до їхнього
+          збереження.
+        </p>
+
+        <div class="mt-12 flex flex-col lg:flex-row gap-10">
+          <!-- Map Container -->
+          <div class="lg:w-1/2 flex flex-col gap-10">
+            <div id="leaflet-map" class="h-[400px]"></div>
+            <div id="map-detail-info" class="max-w-lg">
+              <div class="flex items-center gap-4 mb-8">
+                <div
+                  class="flex items-center justify-center border-cyan border-2 rounded-full w-10 h-10 text-white"
+                >
+                  <span
+                    id="map-point-id"
+                    class="flex items-center justify-center rounded-full p-2 w-8 h-8 bg-cyan font-bold text-xl"
+                  >
+                    1
+                  </span>
+                </div>
+                <h3
+                  id="map-point-title"
+                  class="text-3xl font-bold font-ermilov"
+                >
+                  Сагайдачного, 11
+                </h3>
+              </div>
+              <div class="flex flex-col gap-4 text-lg pl-14">
+                <p
+                  id="map-point-desc"
+                  class="text-xl text-justify leading-tight"
+                >
+                  Сецесійна брама початку XX століття, відреставрована завдяки
+                  ГО «Брами Тернополя» у 2024 році.
+                </p>
+                <p>
+                  Вітраж:
+                  <a
+                    href="#"
+                    id="map-point-vitrazh"
+                    class="underline hover:opacity-70 transition-all"
+                  >
+                    Ліля Василько
+                  </a>
+                </p>
+                <p id="map-point-photo">
+                  Фото:
+                  <a href="#" class="underline hover:opacity-70 transition-all">
+                    Захар Дябло
+                  </a>
+                  ,
+                  <a href="#" class="underline hover:opacity-70 transition-all">
+                    Анна Золотнюк
+                  </a>
+                </p>
+              </div>
+              <div class="md:w-1/2 pl-14 flex flex-col justify-between">
+                <!-- Slide counter or pagination if needed -->
+                <div class="mt-8 flex items-center gap-2">
+                  <span id="map-slide-current" class="text-sm font-bold">
+                    01
+                  </span>
+                  <span class="text-sm opacity-30">/</span>
+                  <span id="map-slide-total" class="text-sm opacity-30">
+                    03
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="w-1/2 flex gap-11 items-center">
+
+          <!-- Detail Info & Slider -->
+          <div
+            class="flex flex-col lg:w-1/2 md:flex-row bg-white relative rounded-sm overflow-hidden min-h-[417px]"
+          >
+            <!-- Right Slider Part -->
+            <div
+              class="w-full max-w-[450px] mx-auto lg:max-w-full relative h-[500px] lg:h-[656px]"
+            >
+              <div class="swiper mapDetailSlider h-full">
+                <div class="swiper-wrapper" id="map-slider-wrapper">
+                  <!-- Slides will be injected via JS -->
+                </div>
+
+                <!-- Custom Pagination -->
+                <div
+                  class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2 map-detail-pagination"
+                ></div>
+              </div>
+
+              <!-- Navigation Arrow -->
+              <button
+                class="map-detail-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-black rounded-full flex items-center justify-center"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section
+      id="support"
+      class="bg-[url('../images/support-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
+    >
+      <div
+        class="lg:container mx-auto px-5 flex flex-col gap-5 justify-between flex-1 w-full text-white"
+      >
+        <h2 class="text-4xl lg:text-6xl font-ermilov uppercase">
+          Бажаєте підтримати проєкт?
+        </h2>
+        <div
+          class="flex flex-col lg:flex-row justify-between lg:items-center gap-5"
+        >
+          <p class="text-lg lg:text-2xl max-w-xl">
+            Допоможіть нам зберегти спадщину Тернопілля. Ваша підтримка це ще
+            одна врятована брама, ще один віднайдений розпис, ще одне
+            дослідження.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-5 lg:gap-10">
+            <a
+              href="#support"
+              class="btn-secondary-small w-full text-center sm:w-fit"
+            >
+              Patreon
+            </a>
+            <a
+              href="#support"
+              class="btn-secondary-small w-full text-center sm:w-fit"
+            >
+              MONO Base
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-gray2">
+      <div class="lg:container mx-auto px-5 flex flex-col gap-16">
+        <div
+          class="flex flex-col md:flex-row justify-between md:items-center gap-5"
+        >
+          <a href="#" class="w-fit">
+            <img src="images/icons/icon.svg" alt="logo" class="h-9 w-52" />
+          </a>
+          <div
+            class="md:w-1/2 flex flex-col md:flex-row gap-2.5 md:gap-11 md:items-center"
+          >
             <p class="text2xl">Ми в соцмережах</p>
             <div class="flex gap-9 ites-center">
               <a href="#">
@@ -721,24 +811,20 @@
             </div>
           </div>
         </div>
-        <div class="flex">
-          <div class="w-1/2">
-            <p>© 2025 Громадська організація Брами Тернополя</p>
-          </div>
-          <div class="w-1/2 flex justify-between gap-11">
-            <a
-              href="#"
-              class="hover:opacity-70 transition-all duration-300 ease-in-out"
-            >
-              Конфіденційність та політика
-            </a>
-            <a
-              href="#"
-              class="hover:opacity-70 transition-all duration-300 ease-in-out"
-            >
-              Правила та умови
-            </a>
-          </div>
+        <div class="flex flex-col md:flex-row justify-between gap-5">
+          <p>© 2025 Громадська організація Брами Тернополя</p>
+          <a
+            href="#"
+            class="hover:opacity-70 transition-all duration-300 ease-in-out"
+          >
+            Конфіденційність та політика
+          </a>
+          <a
+            href="#"
+            class="hover:opacity-70 transition-all duration-300 ease-in-out"
+          >
+            Правила та умови
+          </a>
         </div>
       </div>
     </footer>
