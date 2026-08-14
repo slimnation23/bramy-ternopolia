@@ -965,6 +965,10 @@ html {
   min-height: 868px;
 }
 
+.min-h-\[496px\] {
+  min-height: 496px;
+}
+
 .\!w-4 {
   width: 1rem !important;
 }
@@ -1166,6 +1170,10 @@ html {
   gap: 2.25rem;
 }
 
+.gap-2\.5 {
+  gap: 0.625rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1243,6 +1251,10 @@ html {
 
 .bg-\[url\(\'\.\.\/images\/tarnopol-001\.png\'\)\] {
   background-image: url('../images/tarnopol-001.png');
+}
+
+.bg-\[url\(\'\.\.\/images\/support-bg\.png\'\)\] {
+  background-image: url('../images/support-bg.png');
 }
 
 .bg-cover {
@@ -1374,6 +1386,11 @@ html {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -1533,6 +1550,17 @@ html {
   outline-offset: 2px;
 }
 
+@media (min-width: 640px) {
+  .sm\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:bottom-6 {
     bottom: 1.5rem;
@@ -1618,6 +1646,10 @@ html {
     align-items: flex-end;
   }
 
+  .md\:items-center {
+    align-items: center;
+  }
+
   .md\:gap-14 {
     gap: 3.5rem;
   }
@@ -1628,6 +1660,10 @@ html {
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-11 {
+    gap: 2.75rem;
   }
 
   .md\:object-cover {
@@ -1767,6 +1803,11 @@ html {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 
   .lg\:\!leading-\[64px\] {

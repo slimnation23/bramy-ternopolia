@@ -328,7 +328,7 @@
 
     <!-- Restore -->
     <section
-      class="bg-[url('../images/restore-bg.png')] w-full flex flex-col min-h-[440px] bg-cover bg-center py-6 md:py-14 relative z-0"
+      class="bg-[url('../images/restore-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
       <div
         class="lg:container mx-auto px-5 flex flex-col gap-5 justify-between flex-1 w-full text-white"
@@ -343,7 +343,10 @@
             Якщо ви мешкаєте в будинку з історією - ми можемо допомогти.
             Заповніть форму, і ми зв’яжемося з вами.
           </p>
-          <a href="#support" class="btn-secondary-small w-fit">
+          <a
+            href="#support"
+            class="btn-secondary-small w-full text-center sm:w-fit"
+          >
             Заповнити форму
           </a>
         </div>
@@ -700,7 +703,9 @@
             class="flex flex-col lg:w-1/2 md:flex-row bg-white relative rounded-sm overflow-hidden min-h-[417px]"
           >
             <!-- Right Slider Part -->
-            <div class="w-full max-w-[450px] mx-auto lg:max-w-full relative h-[500px] lg:h-[656px]">
+            <div
+              class="w-full max-w-[450px] mx-auto lg:max-w-full relative h-[500px] lg:h-[656px]"
+            >
               <div class="swiper mapDetailSlider h-full">
                 <div class="swiper-wrapper" id="map-slider-wrapper">
                   <!-- Slides will be injected via JS -->
@@ -735,54 +740,55 @@
       </div>
     </section>
 
+    <!-- Support -->
     <section
       id="support"
-      class="py-36 relative container mx-auto px-6 min-h-[868px] overflow-hidden"
+      class="bg-[url('../images/support-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
-      <div class="max-w-4x flex flex-col items-center gap-20">
-        <div class="flex flex-col items-center">
-          <h2 class="text-4xl font-ermilov uppercase text-center">
-            Бажаєте підтримати проєкт?
-          </h2>
-          <p class="text-xl text-center max-w-xl mt-6">
-            Історична брама вимагає невідкладного комплексного відновлення.
-            Межах проєкту буде проведено демонтаж пошкоджених елементів.
+      <div
+        class="lg:container mx-auto px-5 flex flex-col gap-5 justify-between flex-1 w-full text-white"
+      >
+        <h2 class="text-4xl lg:text-6xl font-ermilov uppercase">
+          Бажаєте підтримати проєкт?
+        </h2>
+        <div
+          class="flex flex-col lg:flex-row justify-between lg:items-center gap-5"
+        >
+          <p class="text-lg lg:text-2xl max-w-xl">
+            Допоможіть нам зберегти спадщину Тернопілля. Ваша підтримка це ще
+            одна врятована брама, ще один віднайдений розпис, ще одне
+            дослідження.
           </p>
-        </div>
-        <div class="flex justify-between gap-5 max-w-xl w-full">
-          <a href="#" class="btn-primary-big">Patreon</a>
-          <a href="#" class="btn-primary-big">MONO Base</a>
+          <div class="flex flex-col sm:flex-row gap-5 lg:gap-10">
+            <a
+              href="#support"
+              class="btn-secondary-small w-full text-center sm:w-fit"
+            >
+              Patreon
+            </a>
+            <a
+              href="#support"
+              class="btn-secondary-small w-full text-center sm:w-fit"
+            >
+              MONO Base
+            </a>
+          </div>
         </div>
       </div>
-      <img
-        src="images/Rectangle.webp"
-        alt="1"
-        class="absolute -bottom-32 left-0 rotate-12 w-[392px] h-[418px] pointer-events-none"
-      />
-      <img
-        src="images/Rectangle.webp"
-        alt="2"
-        class="absolute -bottom-56 left-1/4 translate-x-4 w-[392px] h-[418px] pointer-events-none"
-      />
-      <img
-        src="images/Rectangle.webp"
-        alt="3"
-        class="absolute -bottom-24 right-1/4 translate-x-24 rotate-[11deg] w-[392px] h-[418px] pointer-events-none"
-      />
-      <img
-        src="images/Rectangle.webp"
-        alt="4"
-        class="absolute -bottom-32 right-0 -rotate-3 w-[392px] h-[418px] pointer-events-none"
-      />
     </section>
 
+    <!-- Footer -->
     <footer class="py-20 bg-gray2">
-      <div class="container mx-auto px-6 flex flex-col gap-16">
-        <div class="flex items-center">
-          <div class="w-1/2">
+      <div class="lg:container mx-auto px-5 flex flex-col gap-16">
+        <div
+          class="flex flex-col md:flex-row justify-between md:items-center gap-5"
+        >
+          <a href="#" class="w-fit">
             <img src="images/icons/icon.svg" alt="logo" class="h-9 w-52" />
-          </div>
-          <div class="w-1/2 flex gap-11 items-center">
+          </a>
+          <div
+            class="md:w-1/2 flex flex-col md:flex-row gap-2.5 md:gap-11 md:items-center"
+          >
             <p class="text2xl">Ми в соцмережах</p>
             <div class="flex gap-9 ites-center">
               <a href="#">
@@ -805,24 +811,20 @@
             </div>
           </div>
         </div>
-        <div class="flex">
-          <div class="w-1/2">
-            <p>© 2025 Громадська організація Брами Тернополя</p>
-          </div>
-          <div class="w-1/2 flex justify-between gap-11">
-            <a
-              href="#"
-              class="hover:opacity-70 transition-all duration-300 ease-in-out"
-            >
-              Конфіденційність та політика
-            </a>
-            <a
-              href="#"
-              class="hover:opacity-70 transition-all duration-300 ease-in-out"
-            >
-              Правила та умови
-            </a>
-          </div>
+        <div class="flex flex-col md:flex-row justify-between gap-5">
+          <p>© 2025 Громадська організація Брами Тернополя</p>
+          <a
+            href="#"
+            class="hover:opacity-70 transition-all duration-300 ease-in-out"
+          >
+            Конфіденційність та політика
+          </a>
+          <a
+            href="#"
+            class="hover:opacity-70 transition-all duration-300 ease-in-out"
+          >
+            Правила та умови
+          </a>
         </div>
       </div>
     </footer>
