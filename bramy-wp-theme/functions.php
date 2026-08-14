@@ -34,3 +34,61 @@ function bramy_ternopola_setup() {
     add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'bramy_ternopola_setup');
+
+// Реєстрація меню
+function bramy_register_menus() {
+    register_nav_menus(array(
+        'header-menu' => 'Головне меню (Шапка)',
+        'mobile-menu' => 'Мобільне меню'
+    ));
+}
+add_action('init', 'bramy_register_menus');
+
+// Додавання Tailwind класів до посилань <a> в меню
+function bramy_menu_link_classes($atts, $item, $args) {
+    if (isset($args->theme_location)) {
+        if ($args->theme_location == 'header-menu') {
+            $atts['class'] = 'hover:opacity-70 transition-all duration-300 ease-in-out';
+        } elseif ($args->theme_location == 'mobile-menu') {
+            $atts['class'] = 'mobile-link hover:opacity-70';
+        }
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'bramy_menu_link_classes', 10, 3);
+
+// Реєстрація Custom Post Type для "Проєктів"
+function bramy_register_projects_cpt() {
+    $labels = array(
+        'name'                  => 'Проєкти',
+        'singular_name'         => 'Проєкт',
+        'menu_name'             => 'Проєкти',
+        'add_new'               => 'Додати новий',
+        'add_new_item'          => 'Додати новий проєкт',
+        'edit_item'             => 'Редагувати проєкт',
+        'new_item'              => 'Новий проєкт',
+        'view_item'             => 'Переглянути проєкт',
+        'search_items'          => 'Шукати проєкти',
+        'not_found'             => 'Проєктів не знайдено',
+        'not_found_in_trash'    => 'В кошику проєктів не знайдено',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'projects' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-hammer', // Іконка молотка в адмінці
+        'supports'           => array( 'title', 'thumbnail' ), // Заголовок і Мініатюра
+    );
+
+    register_post_type( 'bramy_project', $args );
+}
+add_action( 'init', 'bramy_register_projects_cpt' );

@@ -37,40 +37,14 @@
 
         <!-- Десктопне меню -->
         <div class="hidden md:flex items-center text-xl md:gap-14">
-          <ul class="font-medium flex items-center gap-5 lg:gap-14">
-            <li>
-              <a
-                href="#about"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Про проєкт
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Реставрації
-              </a>
-            </li>
-            <li>
-              <a
-                href="#events"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Події
-              </a>
-            </li>
-            <li>
-              <a
-                href="#map"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Мапа
-              </a>
-            </li>
-          </ul>
+          <?php
+          wp_nav_menu(array(
+              'theme_location' => 'header-menu',
+              'container'      => false,
+              'menu_class'     => 'font-medium flex items-center gap-5 lg:gap-14',
+              'fallback_cb'    => false
+          ));
+          ?>
           <a href="#support" class="btn-primary-small">Підтримати</a>
         </div>
 
@@ -96,20 +70,14 @@
         id="mobile-menu"
         class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-32 px-5"
       >
-        <ul class="font-medium flex flex-col gap-8 text-2xl">
-          <li>
-            <a href="#about" class="mobile-link hover:opacity-70">Про проєкт</a>
-          </li>
-          <li>
-            <a href="#projects" class="mobile-link hover:opacity-70">
-              Реставрації
-            </a>
-          </li>
-          <li>
-            <a href="#events" class="mobile-link hover:opacity-70">Події</a>
-          </li>
-          <li><a href="#map" class="mobile-link hover:opacity-70">Мапа</a></li>
-        </ul>
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'mobile-menu',
+            'container'      => false,
+            'menu_class'     => 'font-medium flex flex-col gap-8 text-2xl',
+            'fallback_cb'    => false
+        ));
+        ?>
         <div class="mt-12">
           <a
             href="#support"

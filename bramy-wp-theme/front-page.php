@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+    <!-- Hero -->
     <section
       class="bg-[url('../images/tarnopol-001.png')] w-full flex flex-col min-h-[600px] md:h-[744px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
@@ -8,20 +9,28 @@
         <h1
           class="font-ermilov uppercase text-3xl lg:text-5xl !leading-[1.2] lg:!leading-[64px] max-w-4xl"
         >
-          Розповідаємо про Тернопільщину - зберігаємо її архітектурну спадщину
+          <?php 
+            $hero_title = function_exists('get_field') ? get_field('hero_title') : '';
+            echo $hero_title ? $hero_title : 'Розповідаємо про Тернопільщину - зберігаємо її архітектурну спадщину';
+          ?>
         </h1>
         <div
           class="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-4 mt-12 md:mt-0"
         >
           <p class="text-xl lg:text-2xl max-w-xl">
-            Ми зберігаємо архітектурну спадщину Тернопільщини через освіту, дії
-            громади та любов до краю.
+            <?php 
+              $hero_desc = function_exists('get_field') ? get_field('hero_desc') : '';
+              echo $hero_desc ? $hero_desc : 'Ми зберігаємо архітектурну спадщину Тернопільщини через освіту, дії громади та любов до краю.';
+            ?>
           </p>
           <a
             href="#support"
             class="btn-secondary-small w-full md:w-auto shrink-0 text-center"
           >
-            Долучайся до змін
+            <?php 
+              $hero_btn = function_exists('get_field') ? get_field('hero_btn_text') : '';
+              echo $hero_btn ? $hero_btn : 'Долучайся до змін';
+            ?>
           </a>
         </div>
       </div>
@@ -33,19 +42,25 @@
         class="lg:container mx-auto px-5 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-20"
       >
         <div class="flex flex-col gap-3 lg:gap-5 lg:w-1/2">
-          <h2 class="text-4xl font-ermilov uppercase">Про нас</h2>
-          <p class="text-xl text-justify">
-            Ми - ініціатива, створена у 2022 році небайдужими мешканцями
-            Тернополя у відповідь на хаотичну забудову та руйнування
-            архітектури. Наша команда з 10 фахівців об’єднує досвід у сферах
-            архітектури, культури, права та реставрації. За два роки ми провели
-            понад 20 подій і спільно врятували кілька історичних об'єктів. Наша
-            головна мета - підняти свідомість громади та показати: спадщина -
-            важлива складова нації.
-          </p>
+          <h2 class="text-4xl font-ermilov uppercase">
+            <?php 
+              $about_title = function_exists('get_field') ? get_field('about_title') : '';
+              echo $about_title ? $about_title : 'Про нас';
+            ?>
+          </h2>
+          <div class="text-xl text-justify space-y-4">
+            <?php 
+              $about_desc = function_exists('get_field') ? get_field('about_desc') : '';
+              echo $about_desc ? $about_desc : 'Ми - ініціатива, створена у 2022 році...';
+            ?>
+          </div>
         </div>
         <div class="lg:w-1/2">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-us.png" alt="about us" class="w-full h-full" />
+          <?php 
+            $about_img = function_exists('get_field') ? get_field('about_img') : '';
+            $img_url = $about_img ? $about_img : get_template_directory_uri() . '/assets/images/about-us.png';
+          ?>
+          <img src="<?php echo esc_url($img_url); ?>" alt="about us" class="w-full h-full object-cover" />
         </div>
       </div>
     </section>
@@ -53,57 +68,32 @@
     <!-- Follow us -->
     <section class="w-full py-12 relative overflow-hidden bg-[#221C09]/15">
       <div class="lg:container mx-auto flex flex-col gap-10 relative px-5">
-        <p class="text-xl font-medium leading-tight md:w-1/2">
-          Слідкуйте за нами у
-          <b>Instagram:</b>
-          архітектурні відкриття,
-          <br />
-          бекстейдж реставрацій, історії та анонси подій.
-        </p>
+        <div class="text-xl font-medium leading-tight md:w-1/2">
+          <?php 
+            $insta_text = function_exists('get_field') ? get_field('insta_text') : '';
+            echo $insta_text ? $insta_text : 'Слідкуйте за нами у <b>Instagram:</b> архітектурні відкриття, <br/> бекстейдж реставрацій, історії та анонси подій.';
+          ?>
+        </div>
 
         <!-- Slider -->
         <div class="swiper eventsSlider w-full h-full !overflow-visible">
           <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <a href="#" class="swiper-slide !w-[288px]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/1.png"
-                alt="event"
-                class="w-full h-[362px] object-cover"
-              />
-            </a>
-            <!-- Slide 2 -->
-            <a href="#" class="swiper-slide !w-[288px]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/2.png"
-                alt="event"
-                class="w-full h-[362px] object-cover"
-              />
-            </a>
-            <!-- Slide 3 -->
-            <a href="#" class="swiper-slide !w-[288px]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/3.png"
-                alt="event"
-                class="w-full h-[362px] object-cover"
-              />
-            </a>
-            <!-- Slide 4 -->
-            <a href="#" class="swiper-slide !w-[288px]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/4.png"
-                alt="event"
-                class="w-full h-[362px] object-cover"
-              />
-            </a>
-            <!-- Slide 5 -->
-            <a href="#" class="swiper-slide !w-[288px]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/5.png"
-                alt="event"
-                class="w-full h-[362px] object-cover"
-              />
-            </a>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+              <?php 
+                $insta_img = function_exists('get_field') ? get_field('insta_img_' . $i) : '';
+                $insta_link = function_exists('get_field') ? get_field('insta_link_' . $i) : '';
+                
+                $img_url = $insta_img ? $insta_img : get_template_directory_uri() . '/assets/images/slider/' . $i . '.png';
+                $link_url = $insta_link ? $insta_link : '#';
+              ?>
+              <a href="<?php echo esc_url($link_url); ?>" target="_blank" class="swiper-slide !w-[288px]">
+                <img
+                  src="<?php echo esc_url($img_url); ?>"
+                  alt="instagram"
+                  class="w-full h-[362px] object-cover"
+                />
+              </a>
+            <?php endfor; ?>
           </div>
         </div>
       </div>
@@ -141,58 +131,58 @@
           </button>
           <div class="swiper projectsSlider relative w-full h-full">
             <div class="swiper-wrapper text-white">
-              <!-- Slide 1 -->
-              <div class="swiper-slide relative">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/project-1.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
-                  alt="Project slide"
-                />
-                <p
-                  class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7"
-                >
-                  Кована сецесійна брама на вул. Сагайдачного
-                </p>
-              </div>
-              <!-- Slide 2 -->
-              <div class="swiper-slide relative">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/project-2.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
-                  alt="Project slide"
-                />
-                <p
-                  class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7"
-                >
-                  100 літні розписи в кам’яниці №11
-                </p>
-              </div>
-              <!-- Slide 3 -->
-              <div class="swiper-slide relative">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/project-1.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
-                  alt="Project slide"
-                />
-                <p
-                  class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7"
-                >
-                  Кована сецесійна брама на вул. Сагайдачного
-                </p>
-              </div>
-              <!-- Slide 4 -->
-              <div class="swiper-slide relative">
-                <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/project-2.png"
-                  class="w-full h-56 lg:h-[452px] object-cover"
-                  alt="Project slide"
-                />
-                <p
-                  class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7"
-                >
-                  100 літні розписи в кам’яниці №11
-                </p>
-              </div>
+              <?php
+                $projects_query = new WP_Query(array(
+                  'post_type'      => 'bramy_project',
+                  'posts_per_page' => -1, // Всі проєкти
+                  'post_status'    => 'publish',
+                  'orderby'        => 'date',
+                  'order'          => 'DESC'
+                ));
+
+                if ($projects_query->have_posts()) :
+                  while ($projects_query->have_posts()) : $projects_query->the_post();
+                    $thumbnail_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/assets/images/slider/project-1.png';
+              ?>
+                <div class="swiper-slide relative">
+                  <img
+                    src="<?php echo esc_url($thumbnail_url); ?>"
+                    class="w-full h-56 lg:h-[452px] object-cover"
+                    alt="<?php echo esc_attr(get_the_title()); ?>"
+                  />
+                  <p
+                    class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7"
+                  >
+                    <?php the_title(); ?>
+                  </p>
+                </div>
+              <?php
+                  endwhile;
+                  wp_reset_postdata();
+                else :
+              ?>
+                <!-- Fallback / Demo Slides if no projects are added yet -->
+                <div class="swiper-slide relative">
+                  <img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/project-1.png"
+                    class="w-full h-56 lg:h-[452px] object-cover"
+                    alt="Demo Project"
+                  />
+                  <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7">
+                    Кована сецесійна брама (Демо)
+                  </p>
+                </div>
+                <div class="swiper-slide relative">
+                  <img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/slider/project-2.png"
+                    class="w-full h-56 lg:h-[452px] object-cover"
+                    alt="Demo Project"
+                  />
+                  <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7">
+                    100 літні розписи (Демо)
+                  </p>
+                </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
