@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@font-face {
+  font-family: "Ermilov";
+  src: url("../fonts/Ermilov-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    @apply font-gilroy text-black bg-white scroll-smooth;
+  }
+  .btn-primary-small {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 24px;
+    font-size: 20px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    font-weight: 700;
+    background-color: #fff;
+    color: #000000;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-primary-big {
+    display: inline-block;
+    width: fit-content;
+    padding: 20px 48px;
+    font-size: 34px;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    font-weight: 700;
+    background-color: #fff;
+    color: #000000;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-primary-small:hover,
+  .btn-primary-big:hover {
+    box-shadow: 0px 4px 0px 0px #000000;
+    transform: translate(0px, 2px);
+  }
+  .btn-primary-small:active,
+  .btn-primary-big:active {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0px 0px 0px 0px #000000;
+    transform: translate(2px, 2px);
+  }
+  .btn-secondary-small {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 24px;
+    font-size: 20px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #ffffff;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-secondary-small:hover {
+    box-shadow: 0px 4px 0px 0px #ffffff;
+    transform: translate(0px, 2px);
+  }
+  .btn-secondary-small:active {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 0px 0px 0px #ffffff;
+    transform: translate(2px, 2px);
+  }
+}
+
+@layer components {
+  /* Map Markers */
+  .custom-marker {
+    @apply flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-sky-600 text-white font-bold text-sm cursor-pointer;
+  }
+}
