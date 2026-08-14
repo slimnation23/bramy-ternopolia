@@ -929,6 +929,10 @@ html {
   height: 16rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .min-h-\[417px\] {
   min-height: 417px;
 }
@@ -1594,6 +1598,11 @@ html {
     gap: 1.5rem;
   }
 
+  .md\:object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
   .md\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -1659,6 +1668,11 @@ html {
 
   .lg\:gap-8 {
     gap: 2rem;
+  }
+
+  .lg\:object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .lg\:py-28 {
