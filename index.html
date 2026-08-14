@@ -614,102 +614,122 @@
       </div>
     </section>
 
-    <section id="map" class="py-36 container mx-auto px-6">
-      <h2 class="text-4xl font-ermilov uppercase max-w-4xl">
-        Інтерактивна мапа історичних брам Тернополя
-      </h2>
+    <!-- Map -->
+    <section id="map" class="py-16 lg:py-28">
+      <div class="lg:container mx-auto flex flex-col gap-6 lg:gap-8 px-5">
+        <h2 class="text-4xl font-ermilov uppercase">
+          Інтерактивна мапа
+          <br />
+          історичних брам Тернополя
+        </h2>
+        <p class="text-lg lg:text-2xl max-w-2xl">
+          Ми створили інтерактивну мапу старих брам Тернополя, як пам’ять про
+          архітектуру та важливість дії. Перегляньте, та долучіться до їхнього
+          збереження.
+        </p>
 
-      <div class="mt-12 flex gap-10">
-        <!-- Map Container -->
-        <div class="w-1/2 flex flex-col gap-10">
-          <div id="leaflet-map" class="h-[400px]"></div>
-          <div id="map-detail-info" class="max-w-lg">
-            <div class="flex items-center gap-4 mb-8">
-              <div
-                class="flex items-center justify-center border-cyan border-2 rounded-full w-10 h-10 text-white"
-              >
-                <span
-                  id="map-point-id"
-                  class="flex items-center justify-center rounded-full p-2 w-8 h-8 bg-cyan font-bold text-xl"
+        <div class="mt-12 flex flex-col lg:flex-row gap-10">
+          <!-- Map Container -->
+          <div class="lg:w-1/2 flex flex-col gap-10">
+            <div id="leaflet-map" class="h-[400px]"></div>
+            <div id="map-detail-info" class="max-w-lg">
+              <div class="flex items-center gap-4 mb-8">
+                <div
+                  class="flex items-center justify-center border-cyan border-2 rounded-full w-10 h-10 text-white"
                 >
-                  1
-                </span>
+                  <span
+                    id="map-point-id"
+                    class="flex items-center justify-center rounded-full p-2 w-8 h-8 bg-cyan font-bold text-xl"
+                  >
+                    1
+                  </span>
+                </div>
+                <h3
+                  id="map-point-title"
+                  class="text-3xl font-bold font-ermilov"
+                >
+                  Сагайдачного, 11
+                </h3>
               </div>
-              <h3 id="map-point-title" class="text-3xl font-bold font-ermilov">
-                Сагайдачного, 11
-              </h3>
-            </div>
-            <div class="flex flex-col gap-4 text-lg pl-14">
-              <p id="map-point-desc" class="text-xl text-justify leading-tight">
-                Сецесійна брама початку XX століття, відреставрована завдяки ГО
-                «Брами Тернополя» у 2024 році.
-              </p>
-              <p>
-                Вітраж:
-                <a
-                  href="#"
-                  id="map-point-vitrazh"
-                  class="underline hover:opacity-70 transition-all"
+              <div class="flex flex-col gap-4 text-lg pl-14">
+                <p
+                  id="map-point-desc"
+                  class="text-xl text-justify leading-tight"
                 >
-                  Ліля Василько
-                </a>
-              </p>
-              <p id="map-point-photo">
-                Фото:
-                <a href="#" class="underline hover:opacity-70 transition-all">
-                  Захар Дябло
-                </a>
-                ,
-                <a href="#" class="underline hover:opacity-70 transition-all">
-                  Анна Золотнюк
-                </a>
-              </p>
-            </div>
-            <div class="md:w-1/2 p-8 flex flex-col justify-between">
-              <!-- Slide counter or pagination if needed -->
-              <div class="mt-8 flex items-center gap-2">
-                <span id="map-slide-current" class="text-sm font-bold">01</span>
-                <span class="text-sm opacity-30">/</span>
-                <span id="map-slide-total" class="text-sm opacity-30">03</span>
+                  Сецесійна брама початку XX століття, відреставрована завдяки
+                  ГО «Брами Тернополя» у 2024 році.
+                </p>
+                <p>
+                  Вітраж:
+                  <a
+                    href="#"
+                    id="map-point-vitrazh"
+                    class="underline hover:opacity-70 transition-all"
+                  >
+                    Ліля Василько
+                  </a>
+                </p>
+                <p id="map-point-photo">
+                  Фото:
+                  <a href="#" class="underline hover:opacity-70 transition-all">
+                    Захар Дябло
+                  </a>
+                  ,
+                  <a href="#" class="underline hover:opacity-70 transition-all">
+                    Анна Золотнюк
+                  </a>
+                </p>
+              </div>
+              <div class="md:w-1/2 p-8 flex flex-col justify-between">
+                <!-- Slide counter or pagination if needed -->
+                <div class="mt-8 flex items-center gap-2">
+                  <span id="map-slide-current" class="text-sm font-bold">
+                    01
+                  </span>
+                  <span class="text-sm opacity-30">/</span>
+                  <span id="map-slide-total" class="text-sm opacity-30">
+                    03
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Detail Info & Slider -->
-        <div
-          class="flex flex-col w-1/2 md:flex-row bg-white relative rounded-sm border-2 border-black overflow-hidden min-h-[417px]"
-        >
-          <!-- Right Slider Part -->
-          <div class="w-full relative h-[400px] md:h-full">
-            <div class="swiper mapDetailSlider h-full">
-              <div class="swiper-wrapper" id="map-slider-wrapper">
-                <!-- Slides will be injected via JS -->
+          <!-- Detail Info & Slider -->
+          <div
+            class="flex flex-col lg:w-1/2 md:flex-row bg-white relative rounded-sm border-2 border-black overflow-hidden min-h-[417px]"
+          >
+            <!-- Right Slider Part -->
+            <div class="w-full relative h-[400px] lg:h-full">
+              <div class="swiper mapDetailSlider h-full">
+                <div class="swiper-wrapper" id="map-slider-wrapper">
+                  <!-- Slides will be injected via JS -->
+                </div>
+
+                <!-- Custom Pagination -->
+                <div
+                  class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2 map-detail-pagination"
+                ></div>
               </div>
 
-              <!-- Custom Pagination -->
-              <div
-                class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2 map-detail-pagination"
-              ></div>
-            </div>
-
-            <!-- Navigation Arrow -->
-            <button
-              class="map-detail-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-black rounded-full flex items-center justify-center"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <!-- Navigation Arrow -->
+              <button
+                class="map-detail-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-black rounded-full flex items-center justify-center"
               >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>

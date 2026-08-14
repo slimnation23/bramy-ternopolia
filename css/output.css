@@ -1638,6 +1638,10 @@ html {
     height: 492px;
   }
 
+  .lg\:h-full {
+    height: 100%;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
