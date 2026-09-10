@@ -192,8 +192,8 @@ export default {
       ],
       fields: [
         { name: 'logo', title: 'Логотип', type: 'image', options: { hotspot: true } },
-        { name: 'description', title: 'Опис (текст під логотипом)', type: 'text' },
-        { name: 'copyright', title: 'Текст копірайту', type: 'string' },
+        { name: 'description', title: 'Текст біля соцмереж (напр. "Ми в соцмережах")', type: 'string' },
+        { name: 'copyright', title: 'Текст копірайту (напр. "© 2025...")', type: 'string' },
         { name: 'facebook', title: 'Посилання', type: 'url', fieldset: 'fbGroup' },
         { name: 'facebookIcon', title: 'Іконка', type: 'image', fieldset: 'fbGroup', options: { accept: 'image/svg+xml,image/*' } },
         { name: 'youtube', title: 'Посилання', type: 'url', fieldset: 'ytGroup' },
