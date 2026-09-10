@@ -247,7 +247,13 @@ async function fetchSanityData() {
       if (wrapper) {
         wrapper.innerHTML = instagramPosts.map(post => {
           if (post.image) {
-            return `<a href="${post.link || '#'}" target="_blank" class="swiper-slide w-[288px]!"><img loading="lazy" src="${urlFor(post.image).height(400).url()}" alt="${post.title || 'Instagram'}" class="w-full h-90.5 object-cover" /></a>`;
+            return `
+              <div class="swiper-slide w-[288px]!">
+                <a href="${post.link || '#'}" target="_blank" class="block w-full h-full">
+                  <img loading="lazy" src="${urlFor(post.image).height(400).url()}" alt="${post.title || 'Instagram'}" class="w-full h-90.5 object-cover" />
+                </a>
+              </div>
+            `;
           }
           return '';
         }).join('');
