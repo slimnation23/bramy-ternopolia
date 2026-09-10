@@ -136,14 +136,27 @@ export default {
       fields: [
         { name: 'logo', title: 'Логотип', type: 'image', options: { hotspot: true } },
         { name: 'description', title: 'Опис (текст під логотипом)', type: 'text' },
-        { name: 'email', title: 'Email', type: 'string' },
         { name: 'facebook', title: 'Посилання Facebook', type: 'url' },
         { name: 'youtube', title: 'Посилання YouTube', type: 'url' },
         { name: 'instagram', title: 'Посилання Instagram', type: 'url' },
-        { name: 'privacyText', title: 'Текст "Privacy Policy"', type: 'string' },
-        { name: 'privacyLink', title: 'Посилання "Privacy Policy"', type: 'url' },
-        { name: 'termsText', title: 'Текст "Terms and Conditions"', type: 'string' },
-        { name: 'termsLink', title: 'Посилання "Terms and Conditions"', type: 'url' },
+        {
+          name: 'privacy',
+          title: 'Конфіденційність та політика',
+          type: 'object',
+          fields: [
+            { name: 'text', title: 'Текст', type: 'string' },
+            { name: 'link', title: 'Посилання', type: 'url' },
+          ]
+        },
+        {
+          name: 'terms',
+          title: 'Правила та умови',
+          type: 'object',
+          fields: [
+            { name: 'text', title: 'Текст', type: 'string' },
+            { name: 'link', title: 'Посилання', type: 'url' },
+          ]
+        },
         { name: 'copyright', title: 'Текст копірайту', type: 'string' },
       ],
     },

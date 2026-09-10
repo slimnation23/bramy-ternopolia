@@ -109,26 +109,20 @@ async function fetchSanityData() {
           if (fLogo) fLogo.src = logoUrl;
         }
         if (homepage.footer.description) document.getElementById('footer-desc').textContent = homepage.footer.description;
-        if (homepage.footer.email) {
-          const el = document.getElementById('footer-email');
-          el.href = `mailto:${homepage.footer.email}`;
-          el.textContent = homepage.footer.email;
-          el.classList.remove('hidden');
-        }
         if (homepage.footer.facebook) document.getElementById('footer-fb').href = homepage.footer.facebook;
         if (homepage.footer.youtube) document.getElementById('footer-yt').href = homepage.footer.youtube;
         if (homepage.footer.instagram) document.getElementById('footer-ig').href = homepage.footer.instagram;
         
         if (homepage.footer.copyright) document.getElementById('footer-copyright').textContent = homepage.footer.copyright;
-        if (homepage.footer.privacyText) {
+        if (homepage.footer.privacy) {
           const p = document.getElementById('footer-privacy');
-          p.textContent = homepage.footer.privacyText;
-          if (homepage.footer.privacyLink) p.href = homepage.footer.privacyLink;
+          if (homepage.footer.privacy.text) p.textContent = homepage.footer.privacy.text;
+          if (homepage.footer.privacy.link) p.href = homepage.footer.privacy.link;
         }
-        if (homepage.footer.termsText) {
+        if (homepage.footer.terms) {
           const t = document.getElementById('footer-terms');
-          t.textContent = homepage.footer.termsText;
-          if (homepage.footer.termsLink) t.href = homepage.footer.termsLink;
+          if (homepage.footer.terms.text) t.textContent = homepage.footer.terms.text;
+          if (homepage.footer.terms.link) t.href = homepage.footer.terms.link;
         }
       }
     }
@@ -276,8 +270,8 @@ const map = L.map('leaflet-map', {
   scrollWheelZoom: false,
 }).setView([49.552, 25.592], 15);
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
 let mapDetailSwiper;
@@ -290,7 +284,7 @@ const initMapDetailSlider = (totalSlides) => {
   mapDetailSwiper = new Swiper('.mapDetailSlider', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: totalSlides >= 3,
+    loop: totalSlides > 1,
     observer: true,
     observeParents: true,
     navigation: {
@@ -325,6 +319,16 @@ const updateMapDetail = (id) => {
   
   if (document.getElementById('map-point-vitrazh')) {
     document.getElementById('map-point-vitrazh').textContent = data.vitrazh || 'Немає даних';
+  }
+
+  const photoEl = document.getElementById('map-point-photo');
+  if (photoEl) {
+    if (data.photo && data.photo.length > 0) {
+      photoEl.innerHTML = `Фото: ${data.photo.map(author => `<span class="underline">${author}</span>`).join(', ')}`;
+      photoEl.classList.remove('hidden');
+    } else {
+      photoEl.classList.add('hidden');
+    }
   }
 
   // Update slides
