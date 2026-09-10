@@ -30,21 +30,15 @@ export default {
       type: 'object',
       fields: [
         { name: 'text', title: 'Текст', type: 'text' },
-        {
-          name: 'photos',
-          title: 'Фотографії',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                { name: 'image', title: 'Фото', type: 'image', options: { hotspot: true } },
-                { name: 'link', title: 'Посилання', type: 'url' },
-              ],
-            },
-          ],
-          validation: Rule => Rule.max(5)
-        },
+      ],
+    },
+    {
+      name: 'projectsText',
+      title: 'Секція "Наші проєкти" (Тексти)',
+      type: 'object',
+      fields: [
+        { name: 'title', title: 'Заголовок', type: 'string' },
+        { name: 'description', title: 'Опис', type: 'text' },
       ],
     },
     {
@@ -54,6 +48,7 @@ export default {
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
+        { name: 'buttonText', title: 'Текст кнопки', type: 'string' },
         { name: 'buttonLink', title: 'Посилання на Google форму', type: 'url' },
         { name: 'backgroundImage', title: 'Фонове зображення', type: 'image', options: { hotspot: true } },
       ],

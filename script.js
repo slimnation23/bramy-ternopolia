@@ -7,6 +7,7 @@ async function fetchSanityData() {
     const homepage = await client.fetch(`*[_type == "homepage"][0]`);
     const projects = await client.fetch(`*[_type == "project"] | order(_createdAt asc)`);
     const mapPoints = await client.fetch(`*[_type == "mapPoint"] | order(id asc)`);
+    const instagramPosts = await client.fetch(`*[_type == "instagramPost"] | order(order asc, _createdAt desc)`);
     
     if (homepage) {
       if (homepage.hero) {
@@ -24,20 +25,17 @@ async function fetchSanityData() {
       
       if (homepage.instagram) {
         if (homepage.instagram.text) document.getElementById('insta-text').textContent = homepage.instagram.text;
-        if (homepage.instagram.photos && homepage.instagram.photos.length > 0) {
-          const wrapper = document.getElementById('insta-wrapper');
-          wrapper.innerHTML = homepage.instagram.photos.map(photo => {
-            if (photo.image) {
-              return `<a href="${photo.link || '#'}" target="_blank" class="swiper-slide !w-[288px]"><img src="${urlFor(photo.image).height(400).url()}" alt="Instagram" class="w-full h-[362px] object-cover" /></a>`;
-            }
-            return '';
-          }).join('');
-        }
+      }
+      
+      if (homepage.projectsText) {
+        if (homepage.projectsText.title) document.getElementById('projects-title').textContent = homepage.projectsText.title;
+        if (homepage.projectsText.description) document.getElementById('projects-desc').textContent = homepage.projectsText.description;
       }
 
       if (homepage.restore) {
         if (homepage.restore.title) document.getElementById('restore-title').textContent = homepage.restore.title;
         if (homepage.restore.description) document.getElementById('restore-desc').textContent = homepage.restore.description;
+        if (homepage.restore.buttonText) document.getElementById('restore-btn').textContent = homepage.restore.buttonText;
         if (homepage.restore.buttonLink) document.getElementById('restore-btn').href = homepage.restore.buttonLink;
         if (homepage.restore.backgroundImage) document.getElementById('restore-section').style.backgroundImage = `url(${urlFor(homepage.restore.backgroundImage).width(1920).url()})`;
       }
@@ -126,6 +124,18 @@ async function fetchSanityData() {
                 <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7 drop-shadow-md">${proj.title || ''}</p>
               </div>
             `;
+          }
+          return '';
+        }).join('');
+      }
+    }
+
+    if (instagramPosts && instagramPosts.length > 0) {
+      const wrapper = document.getElementById('insta-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = instagramPosts.map(post => {
+          if (post.image) {
+            return `<a href="${post.link || '#'}" target="_blank" class="swiper-slide !w-[288px]"><img src="${urlFor(post.image).height(400).url()}" alt="${post.title || 'Instagram'}" class="w-full h-[362px] object-cover" /></a>`;
           }
           return '';
         }).join('');
