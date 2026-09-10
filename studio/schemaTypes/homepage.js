@@ -229,6 +229,7 @@ export default {
         { name: 'title', title: 'Заголовок сторінки (Title / og:title)', type: 'string' },
         { name: 'description', title: 'Опис сторінки (Description / og:description)', type: 'text' },
         { name: 'image', title: 'Зображення для соцмереж (og:image)', type: 'image', options: { hotspot: true } },
+        { name: 'url', title: 'URL адреса сайту (og:url)', type: 'url' },
       ],
     },
   ],

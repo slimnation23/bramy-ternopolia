@@ -26,6 +26,10 @@ async function fetchSanityData() {
           document.querySelector('meta[property="og:image"]')?.setAttribute('content', imgUrl);
           document.querySelector('meta[property="twitter:image"]')?.setAttribute('content', imgUrl);
         }
+        if (homepage.seo.url) {
+          document.querySelector('meta[property="og:url"]')?.setAttribute('content', homepage.seo.url);
+          document.querySelector('meta[property="twitter:url"]')?.setAttribute('content', homepage.seo.url);
+        }
       }
 
       if (homepage.header) {
