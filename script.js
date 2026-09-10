@@ -66,6 +66,7 @@ async function fetchSanityData() {
 
 function initSliders() {
   const swiper = new Swiper('.eventsSlider', {
+    slidesPerView: 'auto',
     spaceBetween: 16,
     freeMode: true,
     grabCursor: true,
@@ -76,8 +77,10 @@ function initSliders() {
 
   document.querySelectorAll('.projectsSlider').forEach(sliderElement => {
     const wrapper = sliderElement.parentElement;
+    const slideCount = sliderElement.querySelectorAll('.swiper-slide').length;
+    
     new Swiper(sliderElement, {
-      loop: true,
+      loop: slideCount >= 3, // Цикл працює лише якщо є 3 або більше проєктів
       navigation: {
         nextEl: wrapper.querySelector('.projects-next'),
         prevEl: wrapper.querySelector('.projects-prev'),
