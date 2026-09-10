@@ -4,6 +4,15 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'header',
+      title: 'Шапка сайту (Header)',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        { name: 'logo', title: 'Логотип (замість тексту)', type: 'image', options: { hotspot: true } },
+      ],
+    },
+    {
       name: 'hero',
       title: 'Головний банер (Hero)',
       type: 'object',
@@ -112,7 +121,9 @@ export default {
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
+        { name: 'patreonText', title: 'Текст кнопки Patreon', type: 'string' },
         { name: 'patreonLink', title: 'Посилання Patreon', type: 'url' },
+        { name: 'monoText', title: 'Текст кнопки Mono Base', type: 'string' },
         { name: 'monoLink', title: 'Посилання Mono Base', type: 'url' },
         { name: 'backgroundImage', title: 'Фонове зображення', type: 'image', options: { hotspot: true } },
       ],
@@ -123,9 +134,17 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'logo', title: 'Логотип', type: 'image', options: { hotspot: true } },
+        { name: 'description', title: 'Опис (текст під логотипом)', type: 'text' },
+        { name: 'email', title: 'Email', type: 'string' },
         { name: 'facebook', title: 'Посилання Facebook', type: 'url' },
         { name: 'youtube', title: 'Посилання YouTube', type: 'url' },
         { name: 'instagram', title: 'Посилання Instagram', type: 'url' },
+        { name: 'privacyText', title: 'Текст "Privacy Policy"', type: 'string' },
+        { name: 'privacyLink', title: 'Посилання "Privacy Policy"', type: 'url' },
+        { name: 'termsText', title: 'Текст "Terms and Conditions"', type: 'string' },
+        { name: 'termsLink', title: 'Посилання "Terms and Conditions"', type: 'url' },
+        { name: 'copyright', title: 'Текст копірайту', type: 'string' },
       ],
     },
   ],

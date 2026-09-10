@@ -10,6 +10,16 @@ async function fetchSanityData() {
     const instagramPosts = await client.fetch(`*[_type == "instagramPost"] | order(order asc, _createdAt desc)`);
     
     if (homepage) {
+      if (homepage.header) {
+        if (homepage.header.logo) {
+          const logoUrl = urlFor(homepage.header.logo).width(200).url();
+          const dLogo = document.getElementById('header-logo-desktop');
+          const mLogo = document.getElementById('header-logo-mobile');
+          if (dLogo) dLogo.src = logoUrl;
+          if (mLogo) mLogo.src = logoUrl;
+        }
+      }
+
       if (homepage.hero) {
         if (homepage.hero.title) document.getElementById('hero-title').textContent = homepage.hero.title;
         if (homepage.hero.description) document.getElementById('hero-desc').textContent = homepage.hero.description;
@@ -79,15 +89,47 @@ async function fetchSanityData() {
       if (homepage.support) {
         if (homepage.support.title) document.getElementById('support-title').textContent = homepage.support.title;
         if (homepage.support.description) document.getElementById('support-desc').textContent = homepage.support.description;
-        if (homepage.support.patreonLink) document.getElementById('support-patreon').href = homepage.support.patreonLink;
-        if (homepage.support.monoLink) document.getElementById('support-mono').href = homepage.support.monoLink;
+        if (homepage.support.patreonLink) {
+          const btn = document.getElementById('support-patreon');
+          btn.href = homepage.support.patreonLink;
+          if (homepage.support.patreonText) btn.textContent = homepage.support.patreonText;
+        }
+        if (homepage.support.monoLink) {
+          const btn = document.getElementById('support-mono');
+          btn.href = homepage.support.monoLink;
+          if (homepage.support.monoText) btn.textContent = homepage.support.monoText;
+        }
         if (homepage.support.backgroundImage) document.getElementById('support-section').style.backgroundImage = `url(${urlFor(homepage.support.backgroundImage).width(1920).url()})`;
       }
 
       if (homepage.footer) {
+        if (homepage.footer.logo) {
+          const logoUrl = urlFor(homepage.footer.logo).width(200).url();
+          const fLogo = document.getElementById('footer-logo');
+          if (fLogo) fLogo.src = logoUrl;
+        }
+        if (homepage.footer.description) document.getElementById('footer-desc').textContent = homepage.footer.description;
+        if (homepage.footer.email) {
+          const el = document.getElementById('footer-email');
+          el.href = `mailto:${homepage.footer.email}`;
+          el.textContent = homepage.footer.email;
+          el.classList.remove('hidden');
+        }
         if (homepage.footer.facebook) document.getElementById('footer-fb').href = homepage.footer.facebook;
         if (homepage.footer.youtube) document.getElementById('footer-yt').href = homepage.footer.youtube;
         if (homepage.footer.instagram) document.getElementById('footer-ig').href = homepage.footer.instagram;
+        
+        if (homepage.footer.copyright) document.getElementById('footer-copyright').textContent = homepage.footer.copyright;
+        if (homepage.footer.privacyText) {
+          const p = document.getElementById('footer-privacy');
+          p.textContent = homepage.footer.privacyText;
+          if (homepage.footer.privacyLink) p.href = homepage.footer.privacyLink;
+        }
+        if (homepage.footer.termsText) {
+          const t = document.getElementById('footer-terms');
+          t.textContent = homepage.footer.termsText;
+          if (homepage.footer.termsLink) t.href = homepage.footer.termsLink;
+        }
       }
     }
     
@@ -171,7 +213,6 @@ async function fetchSanityData() {
           id: point.id,
           title: point.title || '',
           coords: [lat, lng],
-          googleMapsLink: point.googleMapsLink || '',
           desc: point.desc || '',
           vitrazh: point.vitrazh || '',
           photo: point.photoAuthors || [],
@@ -284,16 +325,6 @@ const updateMapDetail = (id) => {
   
   if (document.getElementById('map-point-vitrazh')) {
     document.getElementById('map-point-vitrazh').textContent = data.vitrazh || 'Немає даних';
-  }
-
-  const gmapsLink = document.getElementById('map-point-gmaps');
-  if (gmapsLink) {
-    if (data.googleMapsLink) {
-      gmapsLink.href = data.googleMapsLink;
-      gmapsLink.classList.remove('hidden');
-    } else {
-      gmapsLink.classList.add('hidden');
-    }
   }
 
   // Update slides

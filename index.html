@@ -693,10 +693,6 @@
                     Анна Золотнюк
                   </a>
                 </p>
-                <a id="map-point-gmaps" href="#" target="_blank" class="hidden text-cyan underline hover:opacity-70 transition-all text-base lg:text-lg flex items-center gap-2 mt-2">
-                  <img src="images/icons/Arrow-right.svg" class="w-4 h-4 rotate-[-45deg]" style="filter: invert(41%) sepia(93%) saturate(6663%) hue-rotate(170deg) brightness(98%) contrast(105%);" alt="link" />
-                  Відкрити в Google Maps
-                </a>
               </div>
               <div class="md:w-1/2 pl-14 flex flex-col justify-between">
                 <!-- Slide counter or pagination if needed -->
@@ -805,12 +801,13 @@
           class="flex flex-col md:flex-row justify-between md:items-center gap-5"
         >
           <a href="#" class="w-fit">
-            <img src="images/icons/icon.svg" alt="logo" class="h-9 w-52" />
+            <img id="footer-logo" src="images/icons/icon.svg" alt="logo" class="h-9 w-auto object-contain" />
           </a>
           <div
             class="md:w-1/2 flex flex-col md:flex-row gap-2.5 md:gap-11 md:items-center"
           >
-            <p class="text-2xl">Ми в соцмережах</p>
+            <p id="footer-desc" class="text-2xl">Ми в соцмережах</p>
+            <a id="footer-email" href="mailto:" class="text-lg hidden hover:opacity-70 transition-all"></a>
             <div class="flex gap-9 items-center">
               <a
                 id="footer-fb"
@@ -851,14 +848,16 @@
           </div>
         </div>
         <div class="flex flex-col md:flex-row justify-between gap-5">
-          <p>© 2025 Громадська організація Брами Тернополя</p>
+          <p id="footer-copyright">© 2025 Громадська організація Брами Тернополя</p>
           <a
+            id="footer-privacy"
             href="#"
             class="hover:opacity-70 transition-all duration-300 ease-in-out"
           >
             Конфіденційність та політика
           </a>
           <a
+            id="footer-terms"
             href="#"
             class="hover:opacity-70 transition-all duration-300 ease-in-out"
           >

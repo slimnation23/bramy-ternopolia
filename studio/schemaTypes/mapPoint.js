@@ -23,12 +23,6 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'googleMapsLink',
-      title: 'Посилання на Google Maps (необов\'язково)',
-      type: 'url',
-      description: 'Коротке або довге посилання, щоб користувачі могли перейти в додаток',
-    },
-    {
       name: 'desc',
       title: 'Опис історії',
       type: 'text',
