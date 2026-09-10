@@ -2,6 +2,9 @@ export default {
   name: 'futureEvent',
   title: 'Майбутні події',
   type: 'document',
+  fieldsets: [
+    { name: 'button', title: 'Налаштування кнопки', options: { columns: 2 } }
+  ],
   fields: [
     {
       name: 'title',
@@ -30,13 +33,15 @@ export default {
     },
     {
       name: 'buttonText',
-      title: 'Текст кнопки (напр. "Заповнити форму")',
+      title: 'Текст',
       type: 'string',
+      fieldset: 'button',
     },
     {
       name: 'buttonLink',
-      title: 'Посилання для реєстрації',
+      title: 'Посилання',
       type: 'url',
+      fieldset: 'button',
     },
     {
       name: 'order',

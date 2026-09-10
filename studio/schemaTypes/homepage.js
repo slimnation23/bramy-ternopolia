@@ -88,12 +88,15 @@ export default {
       title: 'Секція "Відновлення брами"',
       type: 'object',
       options: { collapsible: true, collapsed: true },
+      fieldsets: [
+        { name: 'button', title: 'Налаштування кнопки', options: { columns: 2 } }
+      ],
       fields: [
         { name: 'sectionId', title: 'ID секції (наприклад: restore)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
-        { name: 'buttonText', title: 'Текст кнопки', type: 'string' },
-        { name: 'buttonLink', title: 'Посилання на Google форму', type: 'url' },
+        { name: 'buttonText', title: 'Текст кнопки', type: 'string', fieldset: 'button' },
+        { name: 'buttonLink', title: 'Посилання на Google форму', type: 'url', fieldset: 'button' },
         { name: 'backgroundImage', title: 'Фонове зображення', type: 'image', options: { hotspot: true } },
       ],
     },

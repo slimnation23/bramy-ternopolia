@@ -150,6 +150,8 @@ async function fetchSanityData() {
       }
 
       if (homepage.futureEvents) {
+        const futureSection = document.getElementById('future-events');
+        if (homepage.futureEvents.sectionId && futureSection) futureSection.id = homepage.futureEvents.sectionId;
         if (homepage.futureEvents.title) document.getElementById('future-events-title').textContent = homepage.futureEvents.title;
       }
 
