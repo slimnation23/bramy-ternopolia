@@ -16,9 +16,7 @@ export default defineConfig({
         S.list()
           .title('Content')
           .items([
-            S.listItem()
-              .title('Головна сторінка')
-              .child(S.document().schemaType('homepage').documentId('homepage')),
+            S.documentTypeListItem('homepage').title('Головна сторінка'),
             S.documentTypeListItem('instagramPost').title('Instagram фото'),
             S.documentTypeListItem('project').title('Наші проєкти'),
             S.documentTypeListItem('futureEvent').title('Майбутні події'),

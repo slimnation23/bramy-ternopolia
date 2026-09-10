@@ -172,11 +172,12 @@ async function fetchSanityData() {
           title: point.title || '',
           coords: [lat, lng],
           googleMapsLink: point.googleMapsLink || '',
-        desc: point.desc || '',
-        vitrazh: point.vitrazh || '',
-        photo: point.photoAuthors || [],
-        images: point.images ? point.images.map(img => urlFor(img).height(600).url()) : []
-      }));
+          desc: point.desc || '',
+          vitrazh: point.vitrazh || '',
+          photo: point.photoAuthors || [],
+          images: point.images ? point.images.map(img => urlFor(img).height(600).url()) : []
+        };
+      });
     }
     
     initSliders();
