@@ -12,5 +12,6 @@ export const client = createClient({
 const builder = createImageUrlBuilder(client)
 
 export function urlFor(source) {
-  return builder.image(source)
+  // auto('format') автоматично конвертує в WebP/AVIF та оптимізує якість
+  return builder.image(source).auto('format')
 }
