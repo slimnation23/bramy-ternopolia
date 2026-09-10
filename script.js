@@ -132,15 +132,15 @@ async function fetchSanityData() {
         if (homepage.events.gallery && homepage.events.gallery.length === 6) {
           const g = homepage.events.gallery;
           document.getElementById('events-gallery').innerHTML = `
-            <div class="flex flex-col gap-4 md:gap-6 h-[450px] md:h-[700px] lg:h-[800px]">
+            <div class="flex flex-col gap-4 md:gap-6 h-112.5 md:h-175 lg:h-200">
               <div class="h-[45%] w-full"><img src="${urlFor(g[0]).height(400).url()}" class="w-full h-full object-cover" alt="event" /></div>
               <div class="h-[55%] w-full"><img src="${urlFor(g[1]).height(500).url()}" class="w-full h-full object-cover" alt="event" /></div>
             </div>
-            <div class="flex flex-col gap-4 md:gap-6 h-[450px] md:h-[700px] lg:h-[800px]">
+            <div class="flex flex-col gap-4 md:gap-6 h-112.5 md:h-175 lg:h-200">
               <div class="h-[55%] w-full"><img src="${urlFor(g[2]).height(500).url()}" class="w-full h-full object-cover" alt="event" /></div>
               <div class="h-[45%] w-full"><img src="${urlFor(g[3]).height(400).url()}" class="w-full h-full object-cover" alt="event" /></div>
             </div>
-            <div class="col-span-2 md:col-span-1 flex flex-row md:flex-col gap-4 md:gap-6 h-[250px] md:h-[700px] lg:h-[800px]">
+            <div class="col-span-2 md:col-span-1 flex flex-row md:flex-col gap-4 md:gap-6 h-62.5 md:h-175 lg:h-200">
               <div class="w-1/2 md:w-full h-full md:h-[45%]"><img src="${urlFor(g[4]).height(400).url()}" class="w-full h-full object-cover" alt="event" /></div>
               <div class="w-1/2 md:w-full h-full md:h-[55%]"><img src="${urlFor(g[5]).height(500).url()}" class="w-full h-full object-cover" alt="event" /></div>
             </div>
@@ -216,7 +216,7 @@ async function fetchSanityData() {
           if (proj.image) {
             return `
               <div class="swiper-slide relative">
-                <img src="${urlFor(proj.image).height(500).url()}" class="w-full h-56 lg:h-[452px] object-cover" alt="${proj.title || 'Project'}" />
+                <img src="${urlFor(proj.image).height(500).url()}" class="w-full h-56 lg:h-113 object-cover" alt="${proj.title || 'Project'}" />
                 <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7 drop-shadow-md">${proj.title || ''}</p>
               </div>
             `;
@@ -231,7 +231,7 @@ async function fetchSanityData() {
       if (wrapper) {
         wrapper.innerHTML = instagramPosts.map(post => {
           if (post.image) {
-            return `<a href="${post.link || '#'}" target="_blank" class="swiper-slide !w-[288px]"><img src="${urlFor(post.image).height(400).url()}" alt="${post.title || 'Instagram'}" class="w-full h-[362px] object-cover" /></a>`;
+            return `<a href="${post.link || '#'}" target="_blank" class="swiper-slide w-[288px]!"><img src="${urlFor(post.image).height(400).url()}" alt="${post.title || 'Instagram'}" class="w-full h-90.5 object-cover" /></a>`;
           }
           return '';
         }).join('');
@@ -245,7 +245,7 @@ async function fetchSanityData() {
         wrapper.innerHTML = futureEventDocs.map(slide => `
           <div class="swiper-slide">
             <div class="relative">
-              <img src="${slide.image ? urlFor(slide.image).height(400).url() : ''}" class="w-full h-48 lg:h-[372px] object-cover" alt="event slide" />
+              <img src="${slide.image ? urlFor(slide.image).height(400).url() : ''}" class="w-full h-48 lg:h-93 object-cover" alt="event slide" />
               <span class="text-lg lg:text-3xl font-bold absolute right-2 top-2 md:right-6 md:top-6">${slide.date || ''}</span>
               <p class="text-lg lg:text-3xl font-bold absolute bottom-2 left-2 md:left-6 md:bottom-6">${slide.title || ''}</p>
             </div>
@@ -266,7 +266,7 @@ async function fetchSanityData() {
           if (item.image) {
             return `
               <div class="swiper-slide relative">
-                <img src="${urlFor(item.image).height(500).url()}" class="md:w-full h-auto lg:h-[492px] lg:object-cover" alt="${item.title || 'merch'}" />
+                <img src="${urlFor(item.image).height(500).url()}" class="md:w-full h-auto lg:h-123 lg:object-cover" alt="${item.title || 'merch'}" />
               </div>
             `;
           }
