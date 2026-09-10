@@ -7,6 +7,7 @@ export default {
       name: 'hero',
       title: 'Головний банер (Hero)',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -18,6 +19,7 @@ export default {
       name: 'about',
       title: 'Секція "Про нас"',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -28,6 +30,7 @@ export default {
       name: 'instagram',
       title: 'Секція Instagram',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'text', title: 'Текст', type: 'text' },
       ],
@@ -36,6 +39,7 @@ export default {
       name: 'projectsText',
       title: 'Секція "Наші проєкти" (Тексти)',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -45,6 +49,7 @@ export default {
       name: 'restore',
       title: 'Секція "Відновлення брами"',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -57,6 +62,7 @@ export default {
       name: 'events',
       title: 'Секція "Наші події"',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -73,6 +79,7 @@ export default {
       name: 'futureEvents',
       title: 'Секція "Анонс майбутніх подій"',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         {
@@ -98,6 +105,7 @@ export default {
       name: 'merch',
       title: 'Секція "Наш мерч"',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -113,6 +121,7 @@ export default {
       name: 'map',
       title: 'Секція "Інтерактивна мапа" (Тексти)',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -122,6 +131,7 @@ export default {
       name: 'support',
       title: 'Секція "Підтримати проєкт"',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
@@ -134,6 +144,7 @@ export default {
       name: 'footer',
       title: 'Футер (Соцмережі)',
       type: 'object',
+      options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'facebook', title: 'Посилання Facebook', type: 'url' },
         { name: 'youtube', title: 'Посилання YouTube', type: 'url' },
