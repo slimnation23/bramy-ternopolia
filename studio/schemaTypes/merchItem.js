@@ -4,12 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Назва товару/фото',
-      type: 'string',
-      validation: Rule => Rule.required(),
-    },
-    {
       name: 'image',
       title: 'Фото',
       type: 'image',
@@ -25,8 +19,13 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
       media: 'image',
     },
+    prepare(selection) {
+      return {
+        title: 'Фото мерчу',
+        media: selection.media,
+      }
+    }
   },
 }

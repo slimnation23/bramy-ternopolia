@@ -195,8 +195,22 @@ async function fetchSanityData() {
         }
         if (homepage.footer.description) document.getElementById('footer-desc').textContent = homepage.footer.description;
         if (homepage.footer.facebook) document.getElementById('footer-fb').href = homepage.footer.facebook;
+        if (homepage.footer.facebookIcon) {
+          const fbIcon = document.getElementById('footer-fb-icon');
+          if (fbIcon) fbIcon.src = urlFor(homepage.footer.facebookIcon).width(100).url();
+        }
+        
         if (homepage.footer.youtube) document.getElementById('footer-yt').href = homepage.footer.youtube;
+        if (homepage.footer.youtubeIcon) {
+          const ytIcon = document.getElementById('footer-yt-icon');
+          if (ytIcon) ytIcon.src = urlFor(homepage.footer.youtubeIcon).width(100).url();
+        }
+        
         if (homepage.footer.instagram) document.getElementById('footer-ig').href = homepage.footer.instagram;
+        if (homepage.footer.instagramIcon) {
+          const igIcon = document.getElementById('footer-ig-icon');
+          if (igIcon) igIcon.src = urlFor(homepage.footer.instagramIcon).width(100).url();
+        }
         
         if (homepage.footer.copyright) document.getElementById('footer-copyright').textContent = homepage.footer.copyright;
         if (homepage.footer.privacy) {
