@@ -127,6 +127,7 @@
 
     <!-- Hero -->
     <section
+      id="hero-section"
       class="bg-[url('../images/tarnopol-001.png')] w-full flex flex-col min-h-[600px] md:h-[744px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
       <div
@@ -330,22 +331,24 @@
 
     <!-- Restore -->
     <section
+      id="restore-section"
       class="bg-[url('../images/restore-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
       <div
         class="lg:container mx-auto px-5 flex flex-col gap-5 justify-between flex-1 w-full text-white"
       >
-        <h2 class="text-4xl font-ermilov uppercase max-w-2xl">
+        <h2 id="restore-title" class="text-4xl font-ermilov uppercase max-w-2xl">
           Хочете відновити свою браму, розписи чи ліпнину?
         </h2>
         <div
           class="flex flex-col lg:flex-row justify-between lg:items-center gap-5"
         >
-          <p class="text-lg lg:text-2xl max-w-2xl">
+          <p id="restore-desc" class="text-lg lg:text-2xl max-w-2xl">
             Якщо ви мешкаєте в будинку з історією - ми можемо допомогти.
             Заповніть форму, і ми зв’яжемося з вами.
           </p>
           <a
+            id="restore-btn"
             href="https://docs.google.com/forms/d/1Sidz5hJRD-VHfCTXhAw-ZLKpiSwG63sZ5EjhoqSMnAY/viewform?edit_requested=true"
             target="_blank"
             rel="noopener noreferrer"
@@ -363,8 +366,8 @@
         class="lg:container mx-auto mb-10 px-5 flex flex-col gap-6 lg:gap-10"
       >
         <div class="flex flex-col gap-3 lg:gap-5">
-          <h2 class="text-4xl font-ermilov uppercase">Наші події</h2>
-          <p class="text-lg lg:text-2xl max-w-2xl">
+          <h2 id="events-title" class="text-4xl font-ermilov uppercase">Наші події</h2>
+          <p id="events-desc" class="text-lg lg:text-2xl max-w-2xl">
             Ми проводимо публічні освітні події, лекції, воркшопи та екскурсії.
             А також проводимо події для корпоративних клієнтів
           </p>
@@ -372,7 +375,7 @@
 
         <!-- Gallery -->
         <div class="lg:container mx-auto">
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div id="events-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             <!-- 1 col -->
             <div
               class="flex flex-col gap-4 md:gap-6 h-[450px] md:h-[700px] lg:h-[800px]"
@@ -442,12 +445,12 @@
       <div
         class="lg:container mx-auto flex flex-col gap-3 lg:gap-5 relative px-5"
       >
-        <h2 class="text-4xl font-ermilov uppercase">Анонс МАЙБУТНІХ ПОДІЙ</h2>
+        <h2 id="future-events-title" class="text-4xl font-ermilov uppercase">Анонс МАЙБУТНІХ ПОДІЙ</h2>
 
         <div
           class="swiper projectsSlider relative w-full h-full !overflow-visible"
         >
-          <div class="swiper-wrapper text-white">
+          <div id="future-events-wrapper" class="swiper-wrapper text-white">
             <!-- Slide 1 -->
             <div class="swiper-slide">
               <div class="relative">
@@ -567,8 +570,8 @@
     <section id="projects" class="pt-14 pb-14 md:pb-24">
       <div class="lg:container mx-auto flex flex-col gap-6 lg:gap-8 px-5">
         <div class="flex flex-col gap-3 lg:gap-5">
-          <h2 class="text-4xl font-ermilov uppercase">Наш мерч</h2>
-          <p class="text-lg lg:text-2xl max-w-2xl">
+          <h2 id="merch-title" class="text-4xl font-ermilov uppercase">Наш мерч</h2>
+          <p id="merch-desc" class="text-lg lg:text-2xl max-w-2xl">
             Це візуальне продовження наших цінностей. Лімітована серія одягу та
             сувенірів, розроблена з увагою до деталей.
           </p>
@@ -594,7 +597,7 @@
             />
           </button>
           <div class="swiper projectsSlider relative w-full h-full">
-            <div class="swiper-wrapper text-white">
+            <div id="merch-wrapper" class="swiper-wrapper text-white">
               <!-- Slide 1 -->
               <div class="swiper-slide relative">
                 <img
@@ -628,12 +631,12 @@
     <!-- Map -->
     <section id="map" class="py-16 lg:py-28">
       <div class="lg:container mx-auto flex flex-col gap-3 lg:gap-5 px-5">
-        <h2 class="text-4xl font-ermilov uppercase">
+        <h2 id="map-section-title" class="text-4xl font-ermilov uppercase">
           Інтерактивна мапа
           <br />
           історичних брам Тернополя
         </h2>
-        <p class="text-lg lg:text-2xl max-w-2xl">
+        <p id="map-section-desc" class="text-lg lg:text-2xl max-w-2xl">
           Ми створили інтерактивну мапу старих брам Тернополя, як пам’ять про
           архітектуру та важливість дії. Перегляньте, та долучіться до їхнього
           збереження.
@@ -750,25 +753,26 @@
 
     <!-- Support -->
     <section
-      id="support"
+      id="support-section"
       class="bg-[url('../images/support-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
       <div
         class="lg:container mx-auto px-5 flex flex-col gap-5 justify-between flex-1 w-full text-white"
       >
-        <h2 class="text-4xl lg:text-6xl font-ermilov uppercase">
+        <h2 id="support-title" class="text-4xl lg:text-6xl font-ermilov uppercase">
           Бажаєте підтримати проєкт?
         </h2>
         <div
           class="flex flex-col lg:flex-row justify-between lg:items-center gap-5"
         >
-          <p class="text-lg lg:text-2xl max-w-xl">
+          <p id="support-desc" class="text-lg lg:text-2xl max-w-xl">
             Допоможіть нам зберегти спадщину Тернопілля. Ваша підтримка це ще
             одна врятована брама, ще один віднайдений розпис, ще одне
             дослідження.
           </p>
           <div class="flex flex-col sm:flex-row gap-5 lg:gap-10">
             <a
+              id="support-patreon"
               href="https://www.patreon.com/cw/bramy_tarnopola"
               target="_blank"
               rel="noopener noreferrer"
@@ -777,6 +781,7 @@
               Patreon
             </a>
             <a
+              id="support-mono"
               href="https://base.monobank.ua/Aj6jJ2bVpGWR6d#subscriptions"
               target="_blank"
               rel="noopener noreferrer"
@@ -804,6 +809,7 @@
             <p class="text-2xl">Ми в соцмережах</p>
             <div class="flex gap-9 items-center">
               <a
+                id="footer-fb"
                 href="https://www.facebook.com/profile.php?id=100094400920484"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -812,6 +818,7 @@
                 <img src="images/icons/fb.svg" alt="fb" class="w-12 h-12" />
               </a>
               <a
+                id="footer-yt"
                 href="https://www.youtube.com/@BramyTernopola"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -824,6 +831,7 @@
                 />
               </a>
               <a
+                id="footer-ig"
                 href="https://www.instagram.com/bramy.ternopola/"
                 target="_blank"
                 rel="noopener noreferrer"

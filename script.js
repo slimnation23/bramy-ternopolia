@@ -1,15 +1,19 @@
 import { client, urlFor } from './sanity.js';
 
+let mapData = [];
+
 async function fetchSanityData() {
   try {
     const homepage = await client.fetch(`*[_type == "homepage"][0]`);
     const projects = await client.fetch(`*[_type == "project"] | order(_createdAt asc)`);
+    const mapPoints = await client.fetch(`*[_type == "mapPoint"] | order(id asc)`);
     
     if (homepage) {
       if (homepage.hero) {
         if (homepage.hero.title) document.getElementById('hero-title').textContent = homepage.hero.title;
         if (homepage.hero.description) document.getElementById('hero-desc').textContent = homepage.hero.description;
         if (homepage.hero.buttonText) document.getElementById('hero-btn').textContent = homepage.hero.buttonText;
+        if (homepage.hero.backgroundImage) document.getElementById('hero-section').style.backgroundImage = `url(${urlFor(homepage.hero.backgroundImage).width(1920).url()})`;
       }
       
       if (homepage.about) {
@@ -20,20 +24,94 @@ async function fetchSanityData() {
       
       if (homepage.instagram) {
         if (homepage.instagram.text) document.getElementById('insta-text').textContent = homepage.instagram.text;
-        
         if (homepage.instagram.photos && homepage.instagram.photos.length > 0) {
           const wrapper = document.getElementById('insta-wrapper');
           wrapper.innerHTML = homepage.instagram.photos.map(photo => {
             if (photo.image) {
-              return `
-                <a href="${photo.link || '#'}" target="_blank" class="swiper-slide !w-[288px]">
-                  <img src="${urlFor(photo.image).height(400).url()}" alt="Instagram photo" class="w-full h-[362px] object-cover" />
-                </a>
-              `;
+              return `<a href="${photo.link || '#'}" target="_blank" class="swiper-slide !w-[288px]"><img src="${urlFor(photo.image).height(400).url()}" alt="Instagram" class="w-full h-[362px] object-cover" /></a>`;
             }
             return '';
           }).join('');
         }
+      }
+
+      if (homepage.restore) {
+        if (homepage.restore.title) document.getElementById('restore-title').textContent = homepage.restore.title;
+        if (homepage.restore.description) document.getElementById('restore-desc').textContent = homepage.restore.description;
+        if (homepage.restore.buttonLink) document.getElementById('restore-btn').href = homepage.restore.buttonLink;
+        if (homepage.restore.backgroundImage) document.getElementById('restore-section').style.backgroundImage = `url(${urlFor(homepage.restore.backgroundImage).width(1920).url()})`;
+      }
+
+      if (homepage.events) {
+        if (homepage.events.title) document.getElementById('events-title').textContent = homepage.events.title;
+        if (homepage.events.description) document.getElementById('events-desc').textContent = homepage.events.description;
+        if (homepage.events.gallery && homepage.events.gallery.length === 6) {
+          const g = homepage.events.gallery;
+          document.getElementById('events-gallery').innerHTML = `
+            <div class="flex flex-col gap-4 md:gap-6 h-[450px] md:h-[700px] lg:h-[800px]">
+              <div class="h-[45%] w-full"><img src="${urlFor(g[0]).height(400).url()}" class="w-full h-full object-cover" alt="event" /></div>
+              <div class="h-[55%] w-full"><img src="${urlFor(g[1]).height(500).url()}" class="w-full h-full object-cover" alt="event" /></div>
+            </div>
+            <div class="flex flex-col gap-4 md:gap-6 h-[450px] md:h-[700px] lg:h-[800px]">
+              <div class="h-[55%] w-full"><img src="${urlFor(g[2]).height(500).url()}" class="w-full h-full object-cover" alt="event" /></div>
+              <div class="h-[45%] w-full"><img src="${urlFor(g[3]).height(400).url()}" class="w-full h-full object-cover" alt="event" /></div>
+            </div>
+            <div class="col-span-2 md:col-span-1 flex flex-row md:flex-col gap-4 md:gap-6 h-[250px] md:h-[700px] lg:h-[800px]">
+              <div class="w-1/2 md:w-full h-full md:h-[45%]"><img src="${urlFor(g[4]).height(400).url()}" class="w-full h-full object-cover" alt="event" /></div>
+              <div class="w-1/2 md:w-full h-full md:h-[55%]"><img src="${urlFor(g[5]).height(500).url()}" class="w-full h-full object-cover" alt="event" /></div>
+            </div>
+          `;
+        }
+      }
+
+      if (homepage.futureEvents) {
+        if (homepage.futureEvents.title) document.getElementById('future-events-title').textContent = homepage.futureEvents.title;
+        if (homepage.futureEvents.slides && homepage.futureEvents.slides.length > 0) {
+          document.getElementById('future-events-wrapper').innerHTML = homepage.futureEvents.slides.map(slide => `
+            <div class="swiper-slide">
+              <div class="relative">
+                <img src="${slide.image ? urlFor(slide.image).height(400).url() : ''}" class="w-full h-48 lg:h-[372px] object-cover" alt="event slide" />
+                <span class="text-lg lg:text-3xl font-bold absolute right-2 top-2 md:right-6 md:top-6">${slide.date || ''}</span>
+                <p class="text-lg lg:text-3xl font-bold absolute bottom-2 left-2 md:left-6 md:bottom-6">${slide.title || ''}</p>
+              </div>
+              <div class="flex flex-col gap-4 mt-4 lg:mt-0 lg:p-6 text-black">
+                <p class="text-lg lg:text-xl font-medium">${slide.description || ''}</p>
+                ${slide.buttonLink ? `<a href="${slide.buttonLink}" target="_blank" class="btn-primary-small bg-transparent text-center">Зареєструватись</a>` : ''}
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      if (homepage.merch) {
+        if (homepage.merch.title) document.getElementById('merch-title').textContent = homepage.merch.title;
+        if (homepage.merch.description) document.getElementById('merch-desc').textContent = homepage.merch.description;
+        if (homepage.merch.slides && homepage.merch.slides.length > 0) {
+          document.getElementById('merch-wrapper').innerHTML = homepage.merch.slides.map(img => `
+            <div class="swiper-slide relative">
+              <img src="${urlFor(img).height(500).url()}" class="md:w-full h-auto lg:h-[492px] lg:object-cover" alt="merch" />
+            </div>
+          `).join('');
+        }
+      }
+
+      if (homepage.map) {
+        if (homepage.map.title) document.getElementById('map-section-title').innerHTML = homepage.map.title.replace(/\n/g, '<br/>');
+        if (homepage.map.description) document.getElementById('map-section-desc').textContent = homepage.map.description;
+      }
+
+      if (homepage.support) {
+        if (homepage.support.title) document.getElementById('support-title').textContent = homepage.support.title;
+        if (homepage.support.description) document.getElementById('support-desc').textContent = homepage.support.description;
+        if (homepage.support.patreonLink) document.getElementById('support-patreon').href = homepage.support.patreonLink;
+        if (homepage.support.monoLink) document.getElementById('support-mono').href = homepage.support.monoLink;
+        if (homepage.support.backgroundImage) document.getElementById('support-section').style.backgroundImage = `url(${urlFor(homepage.support.backgroundImage).width(1920).url()})`;
+      }
+
+      if (homepage.footer) {
+        if (homepage.footer.facebook) document.getElementById('footer-fb').href = homepage.footer.facebook;
+        if (homepage.footer.youtube) document.getElementById('footer-yt').href = homepage.footer.youtube;
+        if (homepage.footer.instagram) document.getElementById('footer-ig').href = homepage.footer.instagram;
       }
     }
     
@@ -45,9 +123,7 @@ async function fetchSanityData() {
             return `
               <div class="swiper-slide relative">
                 <img src="${urlFor(proj.image).height(500).url()}" class="w-full h-56 lg:h-[452px] object-cover" alt="${proj.title || 'Project'}" />
-                <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7 drop-shadow-md">
-                  ${proj.title || ''}
-                </p>
+                <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7 drop-shadow-md">${proj.title || ''}</p>
               </div>
             `;
           }
@@ -55,12 +131,26 @@ async function fetchSanityData() {
         }).join('');
       }
     }
+
+    if (mapPoints && mapPoints.length > 0) {
+      mapData = mapPoints.map(point => ({
+        id: point.id,
+        title: point.title || '',
+        coords: [point.lat, point.lng],
+        desc: point.desc || '',
+        vitrazh: point.vitrazh || '',
+        photo: point.photoAuthors || [],
+        images: point.images ? point.images.map(img => urlFor(img).height(600).url()) : []
+      }));
+    }
     
     initSliders();
+    initMapMarkers();
     
   } catch (error) {
     console.error("Помилка при завантаженні даних з Sanity:", error);
     initSliders();
+    initMapMarkers(); // Відмалювати хоча б пусту мапу
   }
 }
 
@@ -80,7 +170,7 @@ function initSliders() {
     const slideCount = sliderElement.querySelectorAll('.swiper-slide').length;
     
     new Swiper(sliderElement, {
-      loop: slideCount >= 3, // Цикл працює лише якщо є 3 або більше проєктів
+      loop: slideCount >= 3,
       navigation: {
         nextEl: wrapper.querySelector('.projects-next'),
         prevEl: wrapper.querySelector('.projects-prev'),
@@ -92,51 +182,26 @@ function initSliders() {
       }
     });
   });
+
+  const actualEventsSwiper = new Swiper('.actualEventsSlider', {
+    slidesPerView: 'auto',
+    spaceBetween: 40,
+    grabCursor: true,
+    freeMode: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
+  });
 }
 
-fetchSanityData();
+// Leaflet Map Logic
+const map = L.map('leaflet-map', {
+  scrollWheelZoom: false,
+}).setView([49.552, 25.592], 15);
 
-// Actual Events Slider (Break-out)
-const actualEventsSwiper = new Swiper('.actualEventsSlider', {
-  slidesPerView: 'auto',
-  spaceBetween: 40,
-  grabCursor: true,
-  freeMode: true,
-  mousewheel: {
-    forceToAxis: true,
-  },
-});
-
-// Interactive Map
-const mapData = [
-  {
-    id: 1,
-    title: 'Сагайдачного, 11',
-    coords: [49.5524448714347, 25.59096657666662],
-    desc: 'Сецесійна брама початку XX століття, відреставрована завдяки ГО «Брами Тернополя» у 2024 році.',
-    vitrazh: 'Ліля Василько',
-    photo: ['Захар Дябло', 'Анна Золотнюк'],
-    images: ['images/img-1.webp', 'images/img-2.webp', 'images/img-3.webp'],
-  },
-  {
-    id: 2,
-    title: 'Валова, 5',
-    coords: [49.553, 25.594],
-    desc: 'Історична пам’ятка архітектури, що зберегла унікальні ковані елементи. Була відновлена у 2023 році.',
-    vitrazh: 'Майстерня «Вітраж»',
-    photo: ['Олег Петренко'],
-    images: ['images/img-2.webp', 'images/img-3.webp', 'images/img-5.webp'],
-  },
-  {
-    id: 3,
-    title: 'Руська, 12',
-    coords: [49.551, 25.591],
-    desc: 'Одна з найстаріших брам міста, яка вимагала складного конструктивного укріплення фундаменту.',
-    vitrazh: 'Архівні дані',
-    photo: ['Ірина Кравчук'],
-    images: ['images/img-5.webp', 'images/img-1.webp', 'images/img-4.webp'],
-  },
-];
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+}).addTo(map);
 
 let mapDetailSwiper;
 
@@ -148,7 +213,7 @@ const initMapDetailSlider = (totalSlides) => {
   mapDetailSwiper = new Swiper('.mapDetailSlider', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
+    loop: totalSlides >= 3,
     observer: true,
     observeParents: true,
     navigation: {
@@ -163,7 +228,7 @@ const initMapDetailSlider = (totalSlides) => {
     on: {
       slideChange: function () {
         const current = (this.realIndex + 1).toString().padStart(2, '0');
-        document.getElementById('map-slide-current').textContent = current;
+        if(document.getElementById('map-slide-current')) document.getElementById('map-slide-current').textContent = current;
       },
     },
   });
@@ -177,16 +242,17 @@ const updateMapDetail = (id) => {
   const data = mapData.find((item) => item.id === id);
   if (!data) return;
 
-  // Update text content
   if (document.getElementById('map-point-id')) document.getElementById('map-point-id').textContent = data.id;
   if (document.getElementById('map-point-title')) document.getElementById('map-point-title').textContent = data.title;
   if (document.getElementById('map-point-desc')) document.getElementById('map-point-desc').textContent = data.desc;
-  if (document.getElementById('map-point-vitrazh'))
-    document.getElementById('map-point-vitrazh').textContent = data.vitrazh;
+  
+  if (document.getElementById('map-point-vitrazh')) {
+    document.getElementById('map-point-vitrazh').textContent = data.vitrazh || 'Немає даних';
+  }
 
   // Update slides
   const wrapper = document.getElementById('map-slider-wrapper');
-  if (wrapper) {
+  if (wrapper && data.images && data.images.length > 0) {
     wrapper.innerHTML = data.images
       .map(
         (img) => `
@@ -196,36 +262,33 @@ const updateMapDetail = (id) => {
     `,
       )
       .join('');
+    initMapDetailSlider(data.images.length);
+  } else if (wrapper) {
+    wrapper.innerHTML = '<div class="swiper-slide flex items-center justify-center bg-gray-200 h-full w-full">Немає фотографій</div>';
+    initMapDetailSlider(1);
   }
-
-  initMapDetailSlider(data.images.length);
 };
 
-// Initialize Leaflet Map
-const map = L.map('leaflet-map', {
-  scrollWheelZoom: false,
-}).setView([49.552, 25.592], 15);
+function initMapMarkers() {
+  if (mapData.length > 0) {
+    mapData.forEach((point) => {
+      const customIcon = L.divIcon({
+        className: 'custom-marker',
+        html: `<span>${point.id}</span>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
+      });
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-}).addTo(map);
+      L.marker(point.coords, { icon: customIcon })
+        .addTo(map)
+        .on('click', () => updateMapDetail(point.id));
+    });
+    // Initial load
+    updateMapDetail(mapData[0].id);
+  }
+}
 
-mapData.forEach((point) => {
-  const customIcon = L.divIcon({
-    className: 'custom-marker',
-    html: `<span>${point.id}</span>`,
-    iconSize: [32, 32],
-    iconAnchor: [16, 16],
-  });
-
-  L.marker(point.coords, { icon: customIcon })
-    .addTo(map)
-    .on('click', () => updateMapDetail(point.id));
-});
-
-// Initial load
-updateMapDetail(1);
+fetchSanityData();
 
 // Мобільне меню
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -238,24 +301,23 @@ function toggleMenu() {
 
   if (isMenuOpen) {
     mobileMenu.classList.remove('translate-x-full');
-    // Анімація перетворення гамбургера на хрестик
     mobileMenuBtn.children[0].style.transform = 'translateY(10px) rotate(45deg)';
     mobileMenuBtn.children[1].style.opacity = '0';
     mobileMenuBtn.children[2].style.transform = 'translateY(-10px) rotate(-45deg)';
-    document.body.style.overflow = 'hidden'; // Заборона скролінгу
+    document.body.style.overflow = 'hidden';
   } else {
     mobileMenu.classList.add('translate-x-full');
-    // Повернення гамбургера до початкового стану
     mobileMenuBtn.children[0].style.transform = 'translateY(0) rotate(0)';
     mobileMenuBtn.children[1].style.opacity = '1';
     mobileMenuBtn.children[2].style.transform = 'translateY(0) rotate(0)';
-    document.body.style.overflow = 'auto'; // Дозвіл скролінгу
+    document.body.style.overflow = 'auto';
   }
 }
 
-mobileMenuBtn.addEventListener('click', toggleMenu);
+if(mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+}
 
-// Закриття меню при кліку на посилання
 mobileLinks.forEach(link => {
   link.addEventListener('click', () => {
     if (isMenuOpen) toggleMenu();
