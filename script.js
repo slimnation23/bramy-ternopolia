@@ -8,30 +8,7 @@ async function fetchSanityData() {
     const projects = await client.fetch(`*[_type == "project"] | order(_createdAt asc)`);
     const mapPoints = await client.fetch(`*[_type == "mapPoint"] | order(id asc)`);
     const instagramPosts = await client.fetch(`*[_type == "instagramPost"] | order(order asc, _createdAt desc)`);
-    
     if (homepage) {
-      if (homepage.seo) {
-        if (homepage.seo.title) {
-          document.title = homepage.seo.title;
-          document.querySelector('meta[property="og:title"]')?.setAttribute('content', homepage.seo.title);
-          document.querySelector('meta[property="twitter:title"]')?.setAttribute('content', homepage.seo.title);
-        }
-        if (homepage.seo.description) {
-          document.querySelector('meta[name="description"]')?.setAttribute('content', homepage.seo.description);
-          document.querySelector('meta[property="og:description"]')?.setAttribute('content', homepage.seo.description);
-          document.querySelector('meta[property="twitter:description"]')?.setAttribute('content', homepage.seo.description);
-        }
-        if (homepage.seo.image) {
-          const imgUrl = urlFor(homepage.seo.image).width(1200).height(630).url();
-          document.querySelector('meta[property="og:image"]')?.setAttribute('content', imgUrl);
-          document.querySelector('meta[property="twitter:image"]')?.setAttribute('content', imgUrl);
-        }
-        if (homepage.seo.url) {
-          document.querySelector('meta[property="og:url"]')?.setAttribute('content', homepage.seo.url);
-          document.querySelector('meta[property="twitter:url"]')?.setAttribute('content', homepage.seo.url);
-        }
-      }
-
       if (homepage.header) {
         if (homepage.header.logoDesktop) {
           const dLogo = document.getElementById('header-logo-desktop');
