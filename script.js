@@ -9,17 +9,21 @@ const swiper = new Swiper('.eventsSlider', {
 });
 
 // Projects Slider
-const projectsSwiper = new Swiper('.projectsSlider', {
-  loop: true,
-  navigation: {
-    nextEl: '.projects-next',
-    prevEl: '.projects-prev',
-  },
-  breakpoints: {
-    320: { slidesPerView: 1.1, spaceBetween: 16 },
-    767: { slidesPerView: 2, spaceBetween: 24 },
-    1280: { slidesPerView: 3, spaceBetween: 24 }
-  }
+document.querySelectorAll('.projectsSlider').forEach(sliderElement => {
+  const wrapper = sliderElement.parentElement;
+  
+  new Swiper(sliderElement, {
+    loop: true,
+    navigation: {
+      nextEl: wrapper.querySelector('.projects-next'),
+      prevEl: wrapper.querySelector('.projects-prev'),
+    },
+    breakpoints: {
+      320: { slidesPerView: 1.1, spaceBetween: 16 },
+      767: { slidesPerView: 2, spaceBetween: 24 },
+      1280: { slidesPerView: 3, spaceBetween: 24 }
+    }
+  });
 });
 
 // Actual Events Slider (Break-out)
