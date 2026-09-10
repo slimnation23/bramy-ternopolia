@@ -158,10 +158,20 @@ async function fetchSanityData() {
     }
 
     if (mapPoints && mapPoints.length > 0) {
-      mapData = mapPoints.map(point => ({
-        id: point.id,
-        title: point.title || '',
-        coords: [point.lat, point.lng],
+      mapData = mapPoints.map(point => {
+        let lat = 0, lng = 0;
+        if (point.coordinates) {
+          const parts = point.coordinates.split(',');
+          if (parts.length >= 2) {
+            lat = parseFloat(parts[0].trim());
+            lng = parseFloat(parts[1].trim());
+          }
+        }
+        return {
+          id: point.id,
+          title: point.title || '',
+          coords: [lat, lng],
+          googleMapsLink: point.googleMapsLink || '',
         desc: point.desc || '',
         vitrazh: point.vitrazh || '',
         photo: point.photoAuthors || [],
@@ -273,6 +283,16 @@ const updateMapDetail = (id) => {
   
   if (document.getElementById('map-point-vitrazh')) {
     document.getElementById('map-point-vitrazh').textContent = data.vitrazh || 'Немає даних';
+  }
+
+  const gmapsLink = document.getElementById('map-point-gmaps');
+  if (gmapsLink) {
+    if (data.googleMapsLink) {
+      gmapsLink.href = data.googleMapsLink;
+      gmapsLink.classList.remove('hidden');
+    } else {
+      gmapsLink.classList.add('hidden');
+    }
   }
 
   // Update slides
