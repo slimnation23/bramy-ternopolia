@@ -20,7 +20,7 @@
     <!-- Header -->
     <header class="relative bg-white z-50">
       <nav
-        class="lg:container mx-auto pt-10 pb-5 px-5 flex justify-between items-center transition-all duration-700"
+        class="lg:container mx-auto p-5 flex justify-between items-center transition-all duration-700"
       >
         <a href="#" class="relative z-50">
           <img
@@ -41,41 +41,9 @@
 
         <!-- Десктопне меню -->
         <div class="hidden md:flex items-center text-xl md:gap-14">
-          <ul class="font-medium flex items-center gap-5 lg:gap-14">
-            <li>
-              <a
-                href="#about"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Про проєкт
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Реставрації
-              </a>
-            </li>
-            <li>
-              <a
-                href="#events"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Події
-              </a>
-            </li>
-            <li>
-              <a
-                href="#map"
-                class="hover:opacity-70 transition-all duration-300 ease-in-out"
-              >
-                Мапа
-              </a>
-            </li>
+          <ul id="nav-desktop-list" class="font-medium flex items-center gap-5 lg:gap-14">
           </ul>
-          <a href="#support" class="btn-primary-small">Підтримати</a>
+          <a id="nav-desktop-support" href="#support" class="btn-primary-small hidden"></a>
         </div>
 
         <!-- Кнопка мобільного меню (гамбургер) -->
@@ -100,27 +68,14 @@
         id="mobile-menu"
         class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-32 px-5"
       >
-        <ul class="font-medium flex flex-col gap-8 text-2xl">
-          <li>
-            <a href="#about" class="mobile-link hover:opacity-70">Про проєкт</a>
-          </li>
-          <li>
-            <a href="#projects" class="mobile-link hover:opacity-70">
-              Реставрації
-            </a>
-          </li>
-          <li>
-            <a href="#events" class="mobile-link hover:opacity-70">Події</a>
-          </li>
-          <li><a href="#map" class="mobile-link hover:opacity-70">Мапа</a></li>
+        <ul id="nav-mobile-list" class="font-medium flex flex-col gap-8 text-2xl">
         </ul>
         <div class="mt-12">
           <a
+            id="nav-mobile-support"
             href="#support"
-            class="btn-primary-small w-full text-center mobile-link"
-          >
-            Підтримати
-          </a>
+            class="btn-primary-small w-full text-center mobile-link hidden"
+          ></a>
         </div>
       </div>
     </header>
@@ -567,7 +522,7 @@
     </section>
 
     <!-- Our merch -->
-    <section id="projects" class="pt-14 pb-14 md:pb-24">
+    <section id="merch" class="pt-14 pb-14 md:pb-24">
       <div class="lg:container mx-auto flex flex-col gap-6 lg:gap-8 px-5">
         <div class="flex flex-col gap-3 lg:gap-5">
           <h2 id="merch-title" class="text-4xl font-ermilov uppercase">Наш мерч</h2>
@@ -753,7 +708,7 @@
 
     <!-- Support -->
     <section
-      id="support-section"
+      id="support"
       class="bg-[url('../images/support-bg.png')] w-full flex flex-col min-h-[496px] bg-cover bg-center py-6 md:py-14 relative z-0"
     >
       <div

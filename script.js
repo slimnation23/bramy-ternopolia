@@ -11,16 +11,84 @@ async function fetchSanityData() {
     
     if (homepage) {
       if (homepage.header) {
-        if (homepage.header.logo) {
-          const logoUrl = urlFor(homepage.header.logo).width(200).url();
+        if (homepage.header.logoDesktop) {
           const dLogo = document.getElementById('header-logo-desktop');
+          if (dLogo) dLogo.src = urlFor(homepage.header.logoDesktop).width(300).url();
+        }
+        if (homepage.header.logoMobile) {
           const mLogo = document.getElementById('header-logo-mobile');
-          if (dLogo) dLogo.src = logoUrl;
-          if (mLogo) mLogo.src = logoUrl;
+          if (mLogo) mLogo.src = urlFor(homepage.header.logoMobile).width(100).url();
+        }
+        
+        // Dynamic Navigation links
+        if (homepage.header.navItems && homepage.header.navItems.length > 0) {
+          const dList = document.getElementById('nav-desktop-list');
+          const mList = document.getElementById('nav-mobile-list');
+          
+          if (dList && mList) {
+            dList.innerHTML = '';
+            mList.innerHTML = '';
+            
+            homepage.header.navItems.forEach(item => {
+              if (item.text && item.link) {
+                // Desktop link
+                const dLi = document.createElement('li');
+                const dLink = document.createElement('a');
+                dLink.href = item.link;
+                dLink.className = 'hover:opacity-70 transition-all duration-300 ease-in-out';
+                dLink.textContent = item.text;
+                dLi.appendChild(dLink);
+                dList.appendChild(dLi);
+
+                // Mobile link
+                const mLi = document.createElement('li');
+                const mLink = document.createElement('a');
+                mLink.href = item.link;
+                mLink.className = 'mobile-link hover:opacity-70';
+                mLink.textContent = item.text;
+                mLi.appendChild(mLink);
+                mList.appendChild(mLi);
+              }
+            });
+            
+            // Re-attach mobile menu listeners for new links if needed
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            mobileLinks.forEach((link) => {
+              link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+                
+                // reset hamburger lines
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].style.transform = 'rotate(0) translate(0, 0)';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'rotate(0) translate(0, 0)';
+              });
+            });
+          }
+        }
+
+        if (homepage.header.navItemSupport) {
+          const dSup = document.getElementById('nav-desktop-support');
+          const mSup = document.getElementById('nav-mobile-support');
+          if (homepage.header.navItemSupport.text) {
+            dSup.textContent = homepage.header.navItemSupport.text;
+            mSup.textContent = homepage.header.navItemSupport.text;
+            dSup.classList.remove('hidden');
+            mSup.classList.remove('hidden');
+          }
+          if (homepage.header.navItemSupport.link) {
+            dSup.href = homepage.header.navItemSupport.link;
+            mSup.href = homepage.header.navItemSupport.link;
+          }
         }
       }
 
       if (homepage.hero) {
+        const heroSection = document.getElementById('hero-section');
+        if (homepage.hero.sectionId && heroSection) heroSection.id = homepage.hero.sectionId;
         if (homepage.hero.title) document.getElementById('hero-title').textContent = homepage.hero.title;
         if (homepage.hero.description) document.getElementById('hero-desc').textContent = homepage.hero.description;
         if (homepage.hero.buttonText) document.getElementById('hero-btn').textContent = homepage.hero.buttonText;
@@ -28,6 +96,8 @@ async function fetchSanityData() {
       }
       
       if (homepage.about) {
+        const aboutSection = document.getElementById('about');
+        if (homepage.about.sectionId && aboutSection) aboutSection.id = homepage.about.sectionId;
         if (homepage.about.title) document.getElementById('about-title').textContent = homepage.about.title;
         if (homepage.about.description) document.getElementById('about-desc').textContent = homepage.about.description;
         if (homepage.about.image) document.getElementById('about-img').src = urlFor(homepage.about.image).width(800).url();
@@ -38,11 +108,15 @@ async function fetchSanityData() {
       }
       
       if (homepage.projectsText) {
+        const projectsSection = document.getElementById('projects');
+        if (homepage.projectsText.sectionId && projectsSection) projectsSection.id = homepage.projectsText.sectionId;
         if (homepage.projectsText.title) document.getElementById('projects-title').textContent = homepage.projectsText.title;
         if (homepage.projectsText.description) document.getElementById('projects-desc').textContent = homepage.projectsText.description;
       }
 
       if (homepage.restore) {
+        const restoreSection = document.getElementById('restore-section');
+        if (homepage.restore.sectionId && restoreSection) restoreSection.id = homepage.restore.sectionId;
         if (homepage.restore.title) document.getElementById('restore-title').textContent = homepage.restore.title;
         if (homepage.restore.description) document.getElementById('restore-desc').textContent = homepage.restore.description;
         if (homepage.restore.buttonText) document.getElementById('restore-btn').textContent = homepage.restore.buttonText;
@@ -51,6 +125,8 @@ async function fetchSanityData() {
       }
 
       if (homepage.events) {
+        const eventsSection = document.getElementById('events');
+        if (homepage.events.sectionId && eventsSection) eventsSection.id = homepage.events.sectionId;
         if (homepage.events.title) document.getElementById('events-title').textContent = homepage.events.title;
         if (homepage.events.description) document.getElementById('events-desc').textContent = homepage.events.description;
         if (homepage.events.gallery && homepage.events.gallery.length === 6) {
@@ -77,16 +153,22 @@ async function fetchSanityData() {
       }
 
       if (homepage.merch) {
+        const merchSection = document.getElementById('merch');
+        if (homepage.merch.sectionId && merchSection) merchSection.id = homepage.merch.sectionId;
         if (homepage.merch.title) document.getElementById('merch-title').textContent = homepage.merch.title;
         if (homepage.merch.description) document.getElementById('merch-desc').textContent = homepage.merch.description;
       }
 
       if (homepage.map) {
+        const mapSection = document.getElementById('map');
+        if (homepage.map.sectionId && mapSection) mapSection.id = homepage.map.sectionId;
         if (homepage.map.title) document.getElementById('map-section-title').innerHTML = homepage.map.title.replace(/\n/g, '<br/>');
         if (homepage.map.description) document.getElementById('map-section-desc').textContent = homepage.map.description;
       }
 
       if (homepage.support) {
+        const supportSection = document.getElementById('support');
+        if (homepage.support.sectionId && supportSection) supportSection.id = homepage.support.sectionId;
         if (homepage.support.title) document.getElementById('support-title').textContent = homepage.support.title;
         if (homepage.support.description) document.getElementById('support-desc').textContent = homepage.support.description;
         if (homepage.support.patreon) {

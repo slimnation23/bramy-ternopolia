@@ -9,7 +9,31 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
-        { name: 'logo', title: 'Логотип (замість тексту)', type: 'image', options: { hotspot: true } },
+        { name: 'logoDesktop', title: 'Логотип (Десктоп)', type: 'image', options: { hotspot: true } },
+        { name: 'logoMobile', title: 'Логотип (Мобільна версія)', type: 'image', options: { hotspot: true } },
+        {
+          name: 'navItems',
+          title: 'Пункти меню (динамічний список)',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'text', title: 'Текст пункту', type: 'string' },
+                { name: 'link', title: 'Посилання (наприклад: #about)', type: 'string' },
+              ]
+            }
+          ]
+        },
+        {
+          name: 'navItemSupport',
+          title: 'Кнопка меню',
+          type: 'object',
+          fields: [
+            { name: 'text', title: 'Текст', type: 'string' },
+            { name: 'link', title: 'Посилання на сторінку або секцію (наприклад: #support)', type: 'string' },
+          ]
+        },
       ],
     },
     {
@@ -18,6 +42,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: hero)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
         { name: 'buttonText', title: 'Текст кнопки', type: 'string' },
@@ -30,9 +55,54 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: about)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
         { name: 'image', title: 'Зображення', type: 'image', options: { hotspot: true } },
+      ],
+    },
+    {
+      name: 'projectsSection',
+      title: 'Секція "Наші проєкти"',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: projects)', type: 'string' },
+        { name: 'title', title: 'Заголовок', type: 'string' },
+        { name: 'description', title: 'Опис', type: 'text' },
+      ],
+    },
+    {
+      name: 'eventsSection',
+      title: 'Секція "Наші події"',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: events)', type: 'string' },
+        { name: 'title', title: 'Заголовок', type: 'string' },
+        { name: 'description', title: 'Опис', type: 'text' },
+      ],
+    },
+    {
+      name: 'merchSection',
+      title: 'Секція "Наш мерч"',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: merch)', type: 'string' },
+        { name: 'title', title: 'Заголовок', type: 'string' },
+        { name: 'description', title: 'Опис', type: 'text' },
+      ],
+    },
+    {
+      name: 'mapSection',
+      title: 'Секція "Інтерактивна мапа"',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: map)', type: 'string' },
+        { name: 'title', title: 'Заголовок', type: 'string' },
+        { name: 'description', title: 'Опис', type: 'text' },
       ],
     },
     {
@@ -50,6 +120,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: projects)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
       ],
@@ -60,6 +131,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: restore)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
         { name: 'buttonText', title: 'Текст кнопки', type: 'string' },
@@ -73,6 +145,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: events)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
         {
@@ -90,6 +163,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: future-events)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
       ],
     },
@@ -99,6 +173,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: merch)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
       ],
@@ -109,6 +184,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: map)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
       ],
@@ -119,6 +195,7 @@ export default {
       type: 'object',
       options: { collapsible: true, collapsed: true },
       fields: [
+        { name: 'sectionId', title: 'ID секції (наприклад: support)', type: 'string' },
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
         {
