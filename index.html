@@ -133,6 +133,7 @@
         class="lg:container mx-auto px-5 flex flex-col justify-between flex-1 w-full text-white"
       >
         <h1
+          id="hero-title"
           class="font-ermilov uppercase text-3xl lg:text-5xl !leading-[1.2] lg:!leading-[64px] max-w-4xl"
         >
           Розповідаємо про Тернопільщину - зберігаємо її архітектурну спадщину
@@ -140,11 +141,12 @@
         <div
           class="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-4 mt-12 md:mt-0"
         >
-          <p class="text-xl lg:text-2xl max-w-xl">
+          <p id="hero-desc" class="text-xl lg:text-2xl max-w-xl">
             Ми зберігаємо архітектурну спадщину Тернопільщини через освіту, дії
             громади та любов до краю.
           </p>
           <a
+            id="hero-btn"
             href="#support"
             class="btn-secondary-small w-full md:w-auto shrink-0 text-center"
           >
@@ -160,8 +162,8 @@
         class="lg:container mx-auto px-5 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-20"
       >
         <div class="flex flex-col gap-3 lg:gap-5 lg:w-1/2">
-          <h2 class="text-4xl font-ermilov uppercase">Про нас</h2>
-          <p class="text-xl text-justify">
+          <h2 id="about-title" class="text-4xl font-ermilov uppercase">Про нас</h2>
+          <p id="about-desc" class="text-xl text-justify">
             Ми - ініціатива, створена у 2022 році небайдужими мешканцями
             Тернополя у відповідь на хаотичну забудову та руйнування
             архітектури. Наша команда з 10 фахівців об’єднує досвід у сферах
@@ -172,7 +174,7 @@
           </p>
         </div>
         <div class="lg:w-1/2">
-          <img src="images/about-us.png" alt="about us" class="w-full h-full" />
+          <img id="about-img" src="images/about-us.png" alt="about us" class="w-full h-full" />
         </div>
       </div>
     </section>
@@ -180,7 +182,7 @@
     <!-- Follow us -->
     <section class="w-full py-12 relative overflow-hidden bg-[#221C09]/15">
       <div class="lg:container mx-auto flex flex-col gap-10 relative px-5">
-        <p class="text-xl font-medium leading-tight md:w-1/2">
+        <p id="insta-text" class="text-xl font-medium leading-tight md:w-1/2 whitespace-pre-wrap">
           Слідкуйте за нами у
           <b>Instagram:</b>
           архітектурні відкриття,
@@ -190,7 +192,7 @@
 
         <!-- Slider -->
         <div class="swiper eventsSlider w-full h-full !overflow-visible">
-          <div class="swiper-wrapper">
+          <div id="insta-wrapper" class="swiper-wrapper">
             <!-- Slide 1 -->
             <a href="#" class="swiper-slide !w-[288px]">
               <img
@@ -267,7 +269,7 @@
             />
           </button>
           <div class="swiper projectsSlider relative w-full h-full">
-            <div class="swiper-wrapper text-white">
+            <div id="projects-wrapper-1" class="swiper-wrapper text-white">
               <!-- Slide 1 -->
               <div class="swiper-slide relative">
                 <img

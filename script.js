@@ -1,30 +1,97 @@
-const swiper = new Swiper('.eventsSlider', {
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-  freeMode: true,
-  grabCursor: true,
-  mousewheel: {
-    forceToAxis: true,
-  },
-});
+import { client, urlFor } from './sanity.js';
 
-// Projects Slider
-document.querySelectorAll('.projectsSlider').forEach(sliderElement => {
-  const wrapper = sliderElement.parentElement;
-  
-  new Swiper(sliderElement, {
-    loop: true,
-    navigation: {
-      nextEl: wrapper.querySelector('.projects-next'),
-      prevEl: wrapper.querySelector('.projects-prev'),
-    },
-    breakpoints: {
-      320: { slidesPerView: 1.1, spaceBetween: 16 },
-      767: { slidesPerView: 2, spaceBetween: 24 },
-      1280: { slidesPerView: 3, spaceBetween: 24 }
+async function fetchSanityData() {
+  try {
+    const homepage = await client.fetch(`*[_type == "homepage"][0]`);
+    const projects = await client.fetch(`*[_type == "project"] | order(_createdAt asc)`);
+    
+    if (homepage) {
+      if (homepage.hero) {
+        if (homepage.hero.title) document.getElementById('hero-title').textContent = homepage.hero.title;
+        if (homepage.hero.description) document.getElementById('hero-desc').textContent = homepage.hero.description;
+        if (homepage.hero.buttonText) document.getElementById('hero-btn').textContent = homepage.hero.buttonText;
+      }
+      
+      if (homepage.about) {
+        if (homepage.about.title) document.getElementById('about-title').textContent = homepage.about.title;
+        if (homepage.about.description) document.getElementById('about-desc').textContent = homepage.about.description;
+        if (homepage.about.image) document.getElementById('about-img').src = urlFor(homepage.about.image).width(800).url();
+      }
+      
+      if (homepage.instagram) {
+        if (homepage.instagram.text) document.getElementById('insta-text').textContent = homepage.instagram.text;
+        
+        if (homepage.instagram.photos && homepage.instagram.photos.length > 0) {
+          const wrapper = document.getElementById('insta-wrapper');
+          wrapper.innerHTML = homepage.instagram.photos.map(photo => {
+            if (photo.image) {
+              return `
+                <a href="${photo.link || '#'}" target="_blank" class="swiper-slide !w-[288px]">
+                  <img src="${urlFor(photo.image).height(400).url()}" alt="Instagram photo" class="w-full h-[362px] object-cover" />
+                </a>
+              `;
+            }
+            return '';
+          }).join('');
+        }
+      }
     }
+    
+    if (projects && projects.length > 0) {
+      const wrapper = document.getElementById('projects-wrapper-1');
+      if (wrapper) {
+        wrapper.innerHTML = projects.map(proj => {
+          if (proj.image) {
+            return `
+              <div class="swiper-slide relative">
+                <img src="${urlFor(proj.image).height(500).url()}" class="w-full h-56 lg:h-[452px] object-cover" alt="${proj.title || 'Project'}" />
+                <p class="text-xl lg:text-4xl font-bold absolute bottom-2 lg:bottom-7 left-2 lg:left-7 right-2 lg:right-7 drop-shadow-md">
+                  ${proj.title || ''}
+                </p>
+              </div>
+            `;
+          }
+          return '';
+        }).join('');
+      }
+    }
+    
+    initSliders();
+    
+  } catch (error) {
+    console.error("Помилка при завантаженні даних з Sanity:", error);
+    initSliders();
+  }
+}
+
+function initSliders() {
+  const swiper = new Swiper('.eventsSlider', {
+    spaceBetween: 16,
+    freeMode: true,
+    grabCursor: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
   });
-});
+
+  document.querySelectorAll('.projectsSlider').forEach(sliderElement => {
+    const wrapper = sliderElement.parentElement;
+    new Swiper(sliderElement, {
+      loop: true,
+      navigation: {
+        nextEl: wrapper.querySelector('.projects-next'),
+        prevEl: wrapper.querySelector('.projects-prev'),
+      },
+      breakpoints: {
+        320: { slidesPerView: 1.1, spaceBetween: 16 },
+        767: { slidesPerView: 2, spaceBetween: 24 },
+        1280: { slidesPerView: 3, spaceBetween: 24 }
+      }
+    });
+  });
+}
+
+fetchSanityData();
 
 // Actual Events Slider (Break-out)
 const actualEventsSwiper = new Swiper('.actualEventsSlider', {

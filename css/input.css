@@ -112,6 +112,17 @@
 @layer components {
   /* Map Markers */
   .custom-marker {
-    @apply flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-sky-600 text-white font-bold text-sm cursor-pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #0284c7;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
   }
 }

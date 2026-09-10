@@ -47,4 +47,11 @@ export default {
       ],
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Головна сторінка'
+      }
+    }
+  }
 }
