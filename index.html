@@ -19,14 +19,23 @@
     <meta property="twitter:description" content="Ініціатива зі збереження та реставрації історичних дверей Тернополя." />
     <meta property="twitter:image" content="https://slimnation23.github.io/bramy-ternopolia/icon.png" />
     <link rel="icon" type="image/svg+xml" href="images/icons/mob-icon.svg" />
+    <!-- Відкладене завантаження CSS для слайдера та карти -->
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"></noscript>
+    
     <link rel="stylesheet" href="css/input.css" />
   </head>
 
