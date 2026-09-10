@@ -133,7 +133,7 @@ async function fetchSanityData() {
             </div>
             <div class="flex flex-col gap-4 mt-4 lg:mt-0 lg:p-6 text-black">
               <p class="text-lg lg:text-xl font-medium">${slide.description || ''}</p>
-              ${slide.buttonLink ? `<a href="${slide.buttonLink}" target="_blank" class="btn-primary-small bg-transparent text-center">${slide.buttonText || 'Зареєструватись'}</a>` : ''}
+              ${(slide.buttonLink || slide.buttonText) ? `<a href="${slide.buttonLink || '#'}" target="_blank" class="btn-primary-small bg-transparent text-center">${slide.buttonText || 'Зареєструватись'}</a>` : ''}
             </div>
           </div>
         `).join('');
