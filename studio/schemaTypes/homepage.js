@@ -82,23 +82,6 @@ export default {
       options: { collapsible: true, collapsed: true },
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
-        {
-          name: 'slides',
-          title: 'Події (слайди)',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                { name: 'image', title: 'Зображення', type: 'image', options: { hotspot: true } },
-                { name: 'date', title: 'Дата (напр. /20/06/)', type: 'string' },
-                { name: 'title', title: 'Назва події', type: 'string' },
-                { name: 'description', title: 'Опис', type: 'text' },
-                { name: 'buttonLink', title: 'Посилання для реєстрації', type: 'url' },
-              ],
-            },
-          ],
-        },
       ],
     },
     {

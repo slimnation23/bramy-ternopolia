@@ -64,21 +64,6 @@ async function fetchSanityData() {
 
       if (homepage.futureEvents) {
         if (homepage.futureEvents.title) document.getElementById('future-events-title').textContent = homepage.futureEvents.title;
-        if (homepage.futureEvents.slides && homepage.futureEvents.slides.length > 0) {
-          document.getElementById('future-events-wrapper').innerHTML = homepage.futureEvents.slides.map(slide => `
-            <div class="swiper-slide">
-              <div class="relative">
-                <img src="${slide.image ? urlFor(slide.image).height(400).url() : ''}" class="w-full h-48 lg:h-[372px] object-cover" alt="event slide" />
-                <span class="text-lg lg:text-3xl font-bold absolute right-2 top-2 md:right-6 md:top-6">${slide.date || ''}</span>
-                <p class="text-lg lg:text-3xl font-bold absolute bottom-2 left-2 md:left-6 md:bottom-6">${slide.title || ''}</p>
-              </div>
-              <div class="flex flex-col gap-4 mt-4 lg:mt-0 lg:p-6 text-black">
-                <p class="text-lg lg:text-xl font-medium">${slide.description || ''}</p>
-                ${slide.buttonLink ? `<a href="${slide.buttonLink}" target="_blank" class="btn-primary-small bg-transparent text-center">Зареєструватись</a>` : ''}
-              </div>
-            </div>
-          `).join('');
-        }
       }
 
       if (homepage.merch) {
@@ -139,6 +124,26 @@ async function fetchSanityData() {
           }
           return '';
         }).join('');
+      }
+    }
+
+    const futureEventDocs = await client.fetch(`*[_type == "futureEvent"] | order(order asc, _createdAt desc)`);
+    if (futureEventDocs && futureEventDocs.length > 0) {
+      const wrapper = document.getElementById('future-events-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = futureEventDocs.map(slide => `
+          <div class="swiper-slide">
+            <div class="relative">
+              <img src="${slide.image ? urlFor(slide.image).height(400).url() : ''}" class="w-full h-48 lg:h-[372px] object-cover" alt="event slide" />
+              <span class="text-lg lg:text-3xl font-bold absolute right-2 top-2 md:right-6 md:top-6">${slide.date || ''}</span>
+              <p class="text-lg lg:text-3xl font-bold absolute bottom-2 left-2 md:left-6 md:bottom-6">${slide.title || ''}</p>
+            </div>
+            <div class="flex flex-col gap-4 mt-4 lg:mt-0 lg:p-6 text-black">
+              <p class="text-lg lg:text-xl font-medium">${slide.description || ''}</p>
+              ${slide.buttonLink ? `<a href="${slide.buttonLink}" target="_blank" class="btn-primary-small bg-transparent text-center">Зареєструватись</a>` : ''}
+            </div>
+          </div>
+        `).join('');
       }
     }
 
