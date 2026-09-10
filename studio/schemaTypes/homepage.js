@@ -46,6 +46,7 @@ export default {
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
         { name: 'buttonText', title: 'Текст кнопки', type: 'string' },
+        { name: 'buttonLink', title: 'Посилання (наприклад: #support або https://...)', type: 'string' },
         { name: 'backgroundImage', title: 'Фонове зображення', type: 'image', options: { hotspot: true } },
       ],
     },
@@ -61,50 +62,7 @@ export default {
         { name: 'image', title: 'Зображення', type: 'image', options: { hotspot: true } },
       ],
     },
-    {
-      name: 'projectsSection',
-      title: 'Секція "Наші проєкти"',
-      type: 'object',
-      options: { collapsible: true, collapsed: true },
-      fields: [
-        { name: 'sectionId', title: 'ID секції (наприклад: projects)', type: 'string' },
-        { name: 'title', title: 'Заголовок', type: 'string' },
-        { name: 'description', title: 'Опис', type: 'text' },
-      ],
-    },
-    {
-      name: 'eventsSection',
-      title: 'Секція "Наші події"',
-      type: 'object',
-      options: { collapsible: true, collapsed: true },
-      fields: [
-        { name: 'sectionId', title: 'ID секції (наприклад: events)', type: 'string' },
-        { name: 'title', title: 'Заголовок', type: 'string' },
-        { name: 'description', title: 'Опис', type: 'text' },
-      ],
-    },
-    {
-      name: 'merchSection',
-      title: 'Секція "Наш мерч"',
-      type: 'object',
-      options: { collapsible: true, collapsed: true },
-      fields: [
-        { name: 'sectionId', title: 'ID секції (наприклад: merch)', type: 'string' },
-        { name: 'title', title: 'Заголовок', type: 'string' },
-        { name: 'description', title: 'Опис', type: 'text' },
-      ],
-    },
-    {
-      name: 'mapSection',
-      title: 'Секція "Інтерактивна мапа"',
-      type: 'object',
-      options: { collapsible: true, collapsed: true },
-      fields: [
-        { name: 'sectionId', title: 'ID секції (наприклад: map)', type: 'string' },
-        { name: 'title', title: 'Заголовок', type: 'string' },
-        { name: 'description', title: 'Опис', type: 'text' },
-      ],
-    },
+
     {
       name: 'instagram',
       title: 'Секція Instagram',

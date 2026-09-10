@@ -92,6 +92,7 @@ async function fetchSanityData() {
         if (homepage.hero.title) document.getElementById('hero-title').textContent = homepage.hero.title;
         if (homepage.hero.description) document.getElementById('hero-desc').textContent = homepage.hero.description;
         if (homepage.hero.buttonText) document.getElementById('hero-btn').textContent = homepage.hero.buttonText;
+        if (homepage.hero.buttonLink) document.getElementById('hero-btn').href = homepage.hero.buttonLink;
         if (homepage.hero.backgroundImage && heroSection) heroSection.style.backgroundImage = `url(${urlFor(homepage.hero.backgroundImage).width(1920).url()})`;
       }
       
