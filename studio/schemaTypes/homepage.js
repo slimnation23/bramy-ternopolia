@@ -121,10 +121,24 @@ export default {
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
-        { name: 'patreonText', title: 'Текст кнопки Patreon', type: 'string' },
-        { name: 'patreonLink', title: 'Посилання Patreon', type: 'url' },
-        { name: 'monoText', title: 'Текст кнопки Mono Base', type: 'string' },
-        { name: 'monoLink', title: 'Посилання Mono Base', type: 'url' },
+        {
+          name: 'patreon',
+          title: 'Patreon',
+          type: 'object',
+          fields: [
+            { name: 'text', title: 'Текст кнопки', type: 'string' },
+            { name: 'link', title: 'Посилання', type: 'url' },
+          ]
+        },
+        {
+          name: 'mono',
+          title: 'Mono Base',
+          type: 'object',
+          fields: [
+            { name: 'text', title: 'Текст кнопки', type: 'string' },
+            { name: 'link', title: 'Посилання', type: 'url' },
+          ]
+        },
         { name: 'backgroundImage', title: 'Фонове зображення', type: 'image', options: { hotspot: true } },
       ],
     },
@@ -136,6 +150,7 @@ export default {
       fields: [
         { name: 'logo', title: 'Логотип', type: 'image', options: { hotspot: true } },
         { name: 'description', title: 'Опис (текст під логотипом)', type: 'text' },
+        { name: 'copyright', title: 'Текст копірайту', type: 'string' },
         { name: 'facebook', title: 'Посилання Facebook', type: 'url' },
         { name: 'youtube', title: 'Посилання YouTube', type: 'url' },
         { name: 'instagram', title: 'Посилання Instagram', type: 'url' },
@@ -157,7 +172,6 @@ export default {
             { name: 'link', title: 'Посилання', type: 'url' },
           ]
         },
-        { name: 'copyright', title: 'Текст копірайту', type: 'string' },
       ],
     },
   ],

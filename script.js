@@ -89,15 +89,15 @@ async function fetchSanityData() {
       if (homepage.support) {
         if (homepage.support.title) document.getElementById('support-title').textContent = homepage.support.title;
         if (homepage.support.description) document.getElementById('support-desc').textContent = homepage.support.description;
-        if (homepage.support.patreonLink) {
+        if (homepage.support.patreon) {
           const btn = document.getElementById('support-patreon');
-          btn.href = homepage.support.patreonLink;
-          if (homepage.support.patreonText) btn.textContent = homepage.support.patreonText;
+          if (homepage.support.patreon.link) btn.href = homepage.support.patreon.link;
+          if (homepage.support.patreon.text) btn.textContent = homepage.support.patreon.text;
         }
-        if (homepage.support.monoLink) {
+        if (homepage.support.mono) {
           const btn = document.getElementById('support-mono');
-          btn.href = homepage.support.monoLink;
-          if (homepage.support.monoText) btn.textContent = homepage.support.monoText;
+          if (homepage.support.mono.link) btn.href = homepage.support.mono.link;
+          if (homepage.support.mono.text) btn.textContent = homepage.support.mono.text;
         }
         if (homepage.support.backgroundImage) document.getElementById('support-section').style.backgroundImage = `url(${urlFor(homepage.support.backgroundImage).width(1920).url()})`;
       }
