@@ -92,12 +92,6 @@ export default {
       fields: [
         { name: 'title', title: 'Заголовок', type: 'string' },
         { name: 'description', title: 'Опис', type: 'text' },
-        {
-          name: 'slides',
-          title: 'Фотографії мерчу',
-          type: 'array',
-          of: [{ type: 'image', options: { hotspot: true } }],
-        },
       ],
     },
     {

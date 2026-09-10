@@ -29,6 +29,11 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'buttonText',
+      title: 'Текст кнопки (напр. "Заповнити форму")',
+      type: 'string',
+    },
+    {
       name: 'buttonLink',
       title: 'Посилання для реєстрації',
       type: 'url',

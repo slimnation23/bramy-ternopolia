@@ -69,13 +69,6 @@ async function fetchSanityData() {
       if (homepage.merch) {
         if (homepage.merch.title) document.getElementById('merch-title').textContent = homepage.merch.title;
         if (homepage.merch.description) document.getElementById('merch-desc').textContent = homepage.merch.description;
-        if (homepage.merch.slides && homepage.merch.slides.length > 0) {
-          document.getElementById('merch-wrapper').innerHTML = homepage.merch.slides.map(img => `
-            <div class="swiper-slide relative">
-              <img src="${urlFor(img).height(500).url()}" class="md:w-full h-auto lg:h-[492px] lg:object-cover" alt="merch" />
-            </div>
-          `).join('');
-        }
       }
 
       if (homepage.map) {
@@ -140,10 +133,27 @@ async function fetchSanityData() {
             </div>
             <div class="flex flex-col gap-4 mt-4 lg:mt-0 lg:p-6 text-black">
               <p class="text-lg lg:text-xl font-medium">${slide.description || ''}</p>
-              ${slide.buttonLink ? `<a href="${slide.buttonLink}" target="_blank" class="btn-primary-small bg-transparent text-center">Зареєструватись</a>` : ''}
+              ${slide.buttonLink ? `<a href="${slide.buttonLink}" target="_blank" class="btn-primary-small bg-transparent text-center">${slide.buttonText || 'Зареєструватись'}</a>` : ''}
             </div>
           </div>
         `).join('');
+      }
+    }
+
+    const merchItems = await client.fetch(`*[_type == "merchItem"] | order(order asc, _createdAt desc)`);
+    if (merchItems && merchItems.length > 0) {
+      const wrapper = document.getElementById('merch-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = merchItems.map(item => {
+          if (item.image) {
+            return `
+              <div class="swiper-slide relative">
+                <img src="${urlFor(item.image).height(500).url()}" class="md:w-full h-auto lg:h-[492px] lg:object-cover" alt="${item.title || 'merch'}" />
+              </div>
+            `;
+          }
+          return '';
+        }).join('');
       }
     }
 

@@ -10,7 +10,24 @@ export default defineConfig({
   projectId: 'rbsuzu4c',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Content')
+          .items([
+            S.listItem()
+              .title('Головна сторінка')
+              .child(S.document().schemaType('homepage').documentId('homepage')),
+            S.documentTypeListItem('instagramPost').title('Instagram фото'),
+            S.documentTypeListItem('project').title('Наші проєкти'),
+            S.documentTypeListItem('futureEvent').title('Майбутні події'),
+            S.documentTypeListItem('merchItem').title('Наш мерч'),
+            S.documentTypeListItem('mapPoint').title('Точки на мапі'),
+          ]),
+    }),
+    visionTool()
+  ],
 
   schema: {
     types: schemaTypes,
