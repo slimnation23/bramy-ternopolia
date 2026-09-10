@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --font-gilroy: "Gilroy", sans-serif;
+  --font-ermilov: "Ermilov", sans-serif;
+  
+  --color-coffee: #EFECE8;
+  --color-gray: #D2D2D2;
+  --color-gray2: #D9D9D9;
+  --color-cyan: #1CA5C3;
+}
+
 /* Fonts */
 @font-face {
   font-family: "Ermilov";
