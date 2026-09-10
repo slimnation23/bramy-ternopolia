@@ -92,7 +92,7 @@ async function fetchSanityData() {
         if (homepage.hero.title) document.getElementById('hero-title').textContent = homepage.hero.title;
         if (homepage.hero.description) document.getElementById('hero-desc').textContent = homepage.hero.description;
         if (homepage.hero.buttonText) document.getElementById('hero-btn').textContent = homepage.hero.buttonText;
-        if (homepage.hero.backgroundImage) document.getElementById('hero-section').style.backgroundImage = `url(${urlFor(homepage.hero.backgroundImage).width(1920).url()})`;
+        if (homepage.hero.backgroundImage && heroSection) heroSection.style.backgroundImage = `url(${urlFor(homepage.hero.backgroundImage).width(1920).url()})`;
       }
       
       if (homepage.about) {
@@ -121,7 +121,7 @@ async function fetchSanityData() {
         if (homepage.restore.description) document.getElementById('restore-desc').textContent = homepage.restore.description;
         if (homepage.restore.buttonText) document.getElementById('restore-btn').textContent = homepage.restore.buttonText;
         if (homepage.restore.buttonLink) document.getElementById('restore-btn').href = homepage.restore.buttonLink;
-        if (homepage.restore.backgroundImage) document.getElementById('restore-section').style.backgroundImage = `url(${urlFor(homepage.restore.backgroundImage).width(1920).url()})`;
+        if (homepage.restore.backgroundImage && restoreSection) restoreSection.style.backgroundImage = `url(${urlFor(homepage.restore.backgroundImage).width(1920).url()})`;
       }
 
       if (homepage.events) {
@@ -181,7 +181,7 @@ async function fetchSanityData() {
           if (homepage.support.mono.link) btn.href = homepage.support.mono.link;
           if (homepage.support.mono.text) btn.textContent = homepage.support.mono.text;
         }
-        if (homepage.support.backgroundImage) document.getElementById('support-section').style.backgroundImage = `url(${urlFor(homepage.support.backgroundImage).width(1920).url()})`;
+        if (homepage.support.backgroundImage && supportSection) supportSection.style.backgroundImage = `url(${urlFor(homepage.support.backgroundImage).width(1920).url()})`;
       }
 
       if (homepage.footer) {
