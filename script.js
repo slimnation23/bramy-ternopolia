@@ -345,7 +345,8 @@ function initSliders() {
     const slideCount = sliderElement.querySelectorAll('.swiper-slide').length;
     
     new Swiper(sliderElement, {
-      loop: slideCount >= 3,
+      // Swiper вимагає, щоб кількість слайдів була більшою за slidesPerView (у нас 3 на десктопі)
+      loop: slideCount > 3,
       navigation: {
         nextEl: wrapper.querySelector('.projects-next'),
         prevEl: wrapper.querySelector('.projects-prev'),
