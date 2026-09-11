@@ -7,7 +7,7 @@ async function fetchSanityData() {
     const homepage = await client.fetch(`*[_type == "homepage"][0]`);
     const projects = await client.fetch(`*[_type == "project"] | order(_createdAt asc)`);
     const mapPoints = await client.fetch(`*[_type == "mapPoint"] | order(id asc)`);
-    const instagramPosts = await client.fetch(`*[_type == "instagramPost"] | order(order asc, _createdAt desc)`);
+    const instagramPosts = await client.fetch(`*[_type == "instagramPost"] | order(order asc, _createdAt desc)[0...10]`);
     if (homepage) {
       if (homepage.header) {
         if (homepage.header.logoDesktop) {
